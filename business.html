@@ -47,6 +47,73 @@
       }
     }
     
+    /* Fix for menu text being cut off at the top - ensure proper spacing */
+    header {
+      padding: 5px 0 !important;
+      margin: 0 !important;
+      overflow: visible !important;
+    }
+    
+    nav {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    .nav {
+      align-items: center !important;
+      min-height: 60px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    .nav li a.gradation {
+      line-height: 1.4 !important;
+      padding: 8px 0 !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+    }
+    
+    .nav li {
+      display: flex !important;
+      align-items: center !important;
+      min-height: 40px !important;
+    }
+    
+    /* Ensure Entry button fills full height with no gaps at top/bottom */
+    .nav li:last-child {
+      display: flex !important;
+      align-items: stretch !important;
+      height: calc(100% + 10px) !important;
+      margin: -5px 0 !important;
+      padding: 0 !important;
+    }
+    
+    .entry-link {
+      display: flex !important;
+      align-items: stretch !important;
+      height: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    .entry-rectangle {
+      display: flex !important;
+      align-items: center !important;
+      height: 100% !important;
+      width: 100% !important;
+      min-height: 60px !important;
+      padding: 0 20px !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    
+    .entry-text {
+      line-height: 1.4 !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+    }
+    
     /* Smooth scroll behavior for anchor links */
     html {
       scroll-behavior: smooth;
