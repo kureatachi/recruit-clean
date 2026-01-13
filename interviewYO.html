@@ -1368,6 +1368,20 @@
       opacity: 0.8;
     }
     
+    /* SP版: パンくずリストのリンクに黄色と下線を追加 */
+    @media screen and (max-width: 750px) {
+      .pankuzu span a {
+        color: #FFCE02 !important;
+        text-decoration: underline !important;
+      }
+      
+      .pankuzu span a:hover {
+        color: #FFD31B !important;
+        text-decoration: underline !important;
+        opacity: 1 !important;
+      }
+    }
+    
     /* Prevent scroll_bar.js from affecting spacing on interview pages */
     #fade {
       position: relative !important;
@@ -1599,6 +1613,30 @@
       /* Hide "採用サイト" text in mobile navigation when hamburger menu is visible */
       .nav-ex span {
         display: none !important;
+      }
+      
+      /* Fix header spacing on SP version - align with content */
+      header {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      
+      .nav-ex {
+        padding: 15px 20px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .nav-ex .logo {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .nav-ex .logo img {
+        margin: 0 !important;
+        padding: 0 !important;
       }
       
       /* ============================================
@@ -2898,12 +2936,17 @@
       
       .pankuzu span a {
         font-size: 12px !important;
-        color: #333 !important;
-        text-decoration: none !important;
+        color: #FFCE02 !important;
+        text-decoration: underline !important;
         pointer-events: auto !important;
         position: relative !important;
         z-index: 10 !important;
         cursor: pointer !important;
+      }
+      
+      .pankuzu span a:hover {
+        color: #FFD31B !important;
+        text-decoration: underline !important;
       }
       
       .pankuzu span i {
