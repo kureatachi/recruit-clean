@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/tablet.css">
   <link rel="stylesheet" href="css/sp.css">
+  <link rel="stylesheet" href="css/common.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
@@ -71,7 +72,7 @@
     
     /* Fix for menu text being cut off at the top - ensure proper spacing */
     header {
-      padding: 5px 0 !important;
+      padding: 0 !important;
       margin: 0 !important;
       overflow: visible !important;
     }
@@ -105,9 +106,10 @@
     .nav li:last-child {
       display: flex !important;
       align-items: stretch !important;
-      height: calc(100% + 10px) !important;
-      margin: -5px 0 !important;
+      height: 100% !important;
+      margin: 0 !important;
       padding: 0 !important;
+      align-self: stretch !important;
     }
     
     .entry-link {
@@ -119,13 +121,30 @@
       padding: 0 !important;
     }
     
+    /* Remove any bottom margin/padding that could cause gap */
+    header nav ul.nav {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    
+    header nav {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    
+    header {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    
     .entry-rectangle {
       display: flex !important;
       align-items: center !important;
+      justify-content: flex-end !important;
       height: 100% !important;
       width: 100% !important;
       min-height: 60px !important;
-      padding: 0 20px !important;
+      padding: 0 !important;
       margin: 0 !important;
       box-sizing: border-box !important;
     }
@@ -134,6 +153,809 @@
       line-height: 1.4 !important;
       display: inline-block !important;
       vertical-align: middle !important;
+    }
+  </style>
+
+  <!-- Page-specific styles for index.html -->
+  <style>
+  .center-carousel-section {
+    position: relative;
+    margin: -120px 0 0 0;
+    padding: 120px 0 80px 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  .center-carousel-bg {
+    position: absolute;
+    background-image: url('img/interview/interview-main-image.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+    transform: scale(1.05);
+    top: -40px;
+    left: 0;
+    right: 0;
+    bottom: 80px;
+    height: calc(100% - 40px);
+  }
+  .center-carousel-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+  .center-carousel-head {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: -20px;
+    position: relative;
+  }
+  
+  .center-carousel-head h2,
+  .center-carousel-title {
+    font-size: 45px;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+    color: #333;
+  }
+  
+  .center-carousel-head h3,
+  .center-carousel-subtitle {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    color: #003E8F;
+    letter-spacing: 0.1em;
+  }
+  
+  .center-carousel-head p,
+  .center-carousel-description {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
+  .center-carousel-frame {
+    position: relative;
+    height: auto;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+  .center-carousel-track {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    overflow: visible;
+  }
+  .center-carousel-item {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 340px;
+    transform-origin: center center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, z-index 0s;
+    opacity: 0;
+  }
+  .center-card {
+    background: #fff;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+  }
+  .center-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .center-card-caption {
+    background: #B7C6DA;
+    color: #333;
+    padding: 16px 18px;
+  }
+  .center-card-quote {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .center-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border: none;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+  .center-carousel-btn.prev {
+    left: 10px;
+  }
+  .center-carousel-btn.next {
+    right: 10px;
+  }
+
+  @media (max-width: 1024px) {
+    .center-carousel-section {
+      padding: 80px 0;
+    }
+    .center-carousel-inner {
+      padding: 0 30px;
+    }
+    .center-carousel-item {
+      width: 280px;
+    }
+    .center-carousel-frame {
+      height: 460px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .center-carousel-section {
+      padding: 60px 0;
+    }
+    .center-carousel-head h2,
+    .center-carousel-title {
+      font-size: 28px;
+      font-weight: 900 !important;
+      font-family: 'Roboto', sans-serif !important;
+      margin-bottom: 0;
+      color: #333;
+    }
+    
+    .center-carousel-head h3,
+    .center-carousel-subtitle {
+      margin-top: 30px;
+      margin-bottom: 0;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: 'Roboto', sans-serif;
+      color: #003E8F;
+      letter-spacing: 0.1em;
+    }
+    
+    .center-carousel-head p,
+    .center-carousel-description {
+      font-size: 14px;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-top: 30px;
+      margin-bottom: 0;
+      color: #333;
+    }
+    .center-carousel-item {
+      width: 240px;
+    }
+    .center-carousel-btn {
+      width: 48px;
+      height: 48px;
+    }
+    .center-carousel-frame {
+      height: 420px;
+    }
+  }
+  
+  /* Hero banner responsive adjustments for 750px-850px range */
+  @media screen and (max-width: 850px) and (min-width: 750px) {
+    .visual.under.recruit .inner {
+      padding-top: clamp(120px, 15vw, 200px) !important;
+      padding-bottom: 20px !important;
+    }
+    
+    .hero-overlay-text {
+      margin-bottom: 15px !important;
+    }
+    
+    .hero-overlay-text h3 {
+      font-size: clamp(28px, 2vw + 12px, 36px) !important;
+      line-height: 1.5 !important;
+      margin-bottom: 10px !important;
+    }
+    
+    .hero-overlay-text h4 {
+      font-size: clamp(16px, 1.2vw + 8px, 18px) !important;
+      line-height: 1.6 !important;
+      margin: 10px 0 20px 0 !important;
+    }
+    
+    .hero-cta-buttons {
+      display: flex !important;
+      gap: 20px !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      align-items: center !important;
+      margin-top: 20px !important;
+    }
+    
+    .hero-cta-buttons .btn.ex2 {
+      width: auto !important;
+      min-width: 200px !important;
+      max-width: 240px !important;
+      height: 55px !important;
+      line-height: 55px !important;
+      font-size: 15px !important;
+      margin: 0 !important;
+    }
+  }
+    
+    /* Hero section mobile responsive styles */
+    @media screen and (max-width: 749px) {
+    /* Prevent horizontal scrolling on mobile */
+    html, body {
+      overflow-x: hidden !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+      position: relative;
+    }
+    
+    * {
+      max-width: 100% !important;
+      box-sizing: border-box;
+    }
+    
+    /* Show hero content on mobile (override sp.css) */
+    .visual.recruit .inner {
+      display: block !important;
+    }
+    
+    /* Adjust hero section height and padding - reduce top/bottom spacing for SP */
+    .visual.under.recruit {
+      height: auto !important;
+      min-height: auto !important;
+      padding-top: 0 !important;
+      padding-bottom: 20px !important;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow: hidden !important;
+    }
+    
+    /* Reduce top padding of inner content for SP */
+    .visual.under.recruit .inner {
+      padding-top: 80px !important;
+      padding-bottom: 20px !important;
+    }
+    
+    .visual.recruit .inner,
+    .visual.under.recruit .inner {
+      padding-top: 80px !important;
+      padding-bottom: 20px !important;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    
+    /* Make hero text responsive */
+    .hero-overlay-text h3 {
+      font-size: 24px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 10px !important;
+    }
+    
+    .hero-overlay-text h4 {
+      font-size: 16px !important;
+      line-height: 1.6 !important;
+      margin: 10px 0 20px 0 !important;
+    }
+    
+    /* Use fluid typography for section titles on mobile - matches the 1920px-390px range */
+    #career-areas .title,
+    #career-areas .title-border .title,
+    #career-areas h2.title,
+    #company .title,
+    #company .title-border .title,
+    #company h2.title,
+    #work-environment .title,
+    #work-environment .title-border .title,
+    #work-environment h2.title,
+    #job .title,
+    #job .title-border .title,
+    #job h2.title,
+    #recruitment-info .title,
+    #recruitment-info .title-border .title,
+    #recruitment-info h2.title {
+      font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
+    }
+    
+    .center-carousel-title {
+      font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
+      font-weight: 900 !important;
+      font-family: 'Roboto', sans-serif !important;
+    }
+    
+    /* Longer titles get smaller clamp */
+    #work-environment .title,
+    #work-environment .title-border .title,
+    #work-environment h2.title,
+    #recruitment-info .title,
+    #recruitment-info .title-border .title,
+    #recruitment-info h2.title {
+      font-size: clamp(28px, 0.78vw + 25.0px, 40px) !important;
+    }
+    
+    /* Make buttons stack vertically on mobile */
+    .hero-cta-buttons {
+      flex-direction: column !important;
+      gap: 15px !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    
+    .hero-cta-buttons .btn.ex2 {
+      width: 90% !important;
+      max-width: 280px !important;
+      height: 50px !important;
+      line-height: 50px !important;
+      font-size: 14px !important;
+      margin: 0 !important;
+    }
+    
+    /* Location cards mobile styles - text only, stacked vertically */
+    #career-areas .tn-wrap {
+      flex-direction: column !important;
+      align-items: center !important;
+      max-width: 90% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      gap: 10px !important;
+      padding: 0 10px !important;
+    }
+    
+    .location-card {
+      width: 100% !important;
+      flex: none !important;
+    }
+    
+    .location-card .location-image,
+    .location-card .hito-image {
+      display: none !important;
+    }
+    
+    .location-card p {
+      margin: 0 !important;
+      font-size: 18px !important;
+      padding: 20px 30px !important;
+    }
+    
+    /* Hide background image on mobile */
+    .company-background {
+      display: none !important;
+    }
+    
+    /* Reduce gap between sections on mobile */
+    #career-areas {
+      margin-bottom: 0 !important;
+    }
+    
+    #company {
+      margin-top: -200px !important;
+      padding-top: 0 !important;
+    }
+    
+    #company .company-content {
+      padding-top: 200px !important;
+    }
+    
+    /* Change "そうごう"を知る section colors to match "募集地域・職種を知る" on mobile */
+    #company .title {
+      color: #333 !important;
+    }
+    
+    #company .title-sub {
+      color: #003E8F !important;
+    }
+    
+    #company .center p {
+      color: #333 !important;
+    }
+    
+    /* Hide carousel background image on mobile */
+    .center-carousel-bg {
+      display: none !important;
+    }
+    
+    /* Reduce gap between philosophy-service cards and carousel on mobile */
+    #philosophy-service {
+      margin-bottom: 0 !important;
+    }
+    
+    /* Reduce gap from job section before carousel on mobile */
+    #job {
+      margin-top: 100px !important;
+      margin-bottom: 0 !important;
+    }
+    
+    /* Fix horizontal scrolling for carousel on mobile - centered, no scroll */
+    .center-carousel-section {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      overflow: hidden !important;
+      padding: 20px 0 !important;
+      margin-top: -80px !important;
+      margin-bottom: 0 !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+    }
+    
+    .center-carousel-inner {
+      padding: 40px 20px 20px 20px !important;
+      overflow: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+    }
+    
+    /* Fix carousel head text visibility on mobile - centered */
+    .center-carousel-head {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      transform: none !important;
+      margin-bottom: 30px !important;
+      padding: 0 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      text-align: center !important;
+    }
+    
+    .center-carousel-title {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
+      font-weight: 900 !important;
+      font-family: 'Roboto', sans-serif !important;
+      color: #333 !important;
+    }
+    
+    .center-carousel-subtitle {
+      margin-top: 30px !important;
+      margin-bottom: 0 !important;
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      font-family: 'Roboto', sans-serif !important;
+      color: #003E8F !important;
+      letter-spacing: 0.1em !important;
+    }
+    
+    .center-carousel-description {
+      margin-top: 30px !important;
+      margin-bottom: 0 !important;
+      font-size: 14px !important;
+      line-height: 1.8 !important;
+      font-weight: 300 !important;
+      font-family: 'Roboto', sans-serif !important;
+      color: #333 !important;
+      max-width: 600px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding: 0 !important;
+    }
+    
+    /* Carousel mobile adjustments - match interviewNK.html but keep captions */
+    .center-carousel-section {
+      padding: 40px 0 !important;
+      margin-top: -60px !important;
+    }
+    
+    /* Hide carousel background image on mobile */
+    .center-carousel-bg {
+      display: none !important;
+    }
+    
+    /* Adjust carousel head spacing */
+    .center-carousel-head {
+      margin-bottom: 0 !important;
+      text-align: center !important;
+    }
+    
+    .center-carousel-head h2,
+    .center-carousel-title {
+      font-size: 28px !important;
+      font-weight: 900 !important;
+      font-family: 'Roboto', sans-serif !important;
+      margin-bottom: 0 !important;
+    }
+    
+    .center-carousel-head h3,
+    .center-carousel-subtitle {
+      margin-top: 30px !important;
+      margin-bottom: 0 !important;
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      font-family: 'Roboto', sans-serif !important;
+    }
+    
+    .center-carousel-head p,
+    .center-carousel-description {
+      font-size: 14px !important;
+      line-height: 1.8 !important;
+      font-weight: 300 !important;
+      margin-top: 30px !important;
+      margin-bottom: 0 !important;
+    }
+    
+    /* Fix carousel frame and track for mobile - allow captions to show fully */
+    .center-carousel-frame {
+      height: auto !important;
+      min-height: 550px !important;
+      overflow: visible !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      padding: 0 20px 20px 20px !important;
+    }
+    
+    .center-carousel-track {
+      position: relative !important;
+      height: auto !important;
+      min-height: 500px !important;
+      overflow: visible !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+    }
+    
+    .center-carousel-item {
+      width: 85vw !important;
+      max-width: 350px !important;
+      overflow: visible !important;
+    }
+    
+    /* Keep captions visible on mobile for index.html - ensure they don't get cut */
+    .center-card {
+      overflow: visible !important;
+      height: auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    
+    .center-card img {
+      flex-shrink: 0 !important;
+    }
+    
+    .center-card-caption {
+      display: block !important;
+      background: #B7C6DA !important;
+      color: #333 !important;
+      padding: 16px 18px !important;
+      overflow: visible !important;
+      flex-shrink: 0 !important;
+    }
+    
+    .center-card-quote {
+      display: block !important;
+      margin: 0 !important;
+      font-size: 18px !important;
+      line-height: 1.6 !important;
+      font-weight: 400 !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+    }
+    
+    /* Fix arrow placement - center them properly */
+    .center-carousel-btn {
+      width: 48px !important;
+      height: 48px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      position: absolute !important;
+    }
+    
+    .center-carousel-btn.prev {
+      left: 5px !important;
+      right: auto !important;
+    }
+    
+    .center-carousel-btn.next {
+      right: 5px !important;
+      left: auto !important;
+    }
+    
+    /* Make three cards in one row for recruitment-info section on mobile */
+    #recruitment-info .tn-wrap {
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 6px !important;
+      justify-content: space-between !important;
+      display: flex !important;
+      padding: 0 10px !important;
+      max-width: 100% !important;
+    }
+    
+    #recruitment-info .tn-wrap .fade_in {
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+      max-width: none !important;
+      width: auto !important;
+      margin-bottom: 0 !important;
+      padding: 20px 8px !important;
+      min-height: 180px !important;
+    }
+    
+    /* Override inline min-width styles */
+    #recruitment-info .tn-wrap .fade_in[style] {
+      min-width: 0 !important;
+    }
+    
+    #recruitment-info .tn-wrap .fade_in img {
+      width: 40px !important;
+      height: 40px !important;
+      margin-bottom: 10px !important;
+    }
+    
+    #recruitment-info .tn-wrap .fade_in p {
+      font-size: 12px !important;
+      line-height: 1.3 !important;
+    }
+    
+    /* Fix section padding and margins for mobile */
+    section {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    
+    .cont-basic.ex {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    
+    /* Ensure all text containers fit */
+    .center {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    
+    /* Footer styling to match contact-2.html */
+    footer {
+      padding: 30px !important;
+    }
+    
+    footer .logo {
+      width: 300px !important;
+    }
+    
+    .nav-footer {
+      display: flex !important;
+      margin-top: 10px !important;
+    }
+    
+    .nav-footer li {
+      margin-right: 20px !important;
+    }
+    
+    .nav-footer a {
+      text-decoration: none !important;
+      font-weight: 700 !important;
+      color: #111 !important;
+    }
+    
+    .copyright {
+      display: block !important;
+      font-size: 12px !important;
+      margin-top: 30px !important;
+    }
+    
+    footer .center {
+      padding: 0 !important;
+      margin-top: 20px;
+    }
+    
+    footer .center img {
+      height: auto;
+      max-width: 100%;
+    }
+    
+    /* Fix card widths for "そうごう"を知る section cards on mobile */
+    .cont-basic.ex #philosophy-service {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+      box-sizing: border-box !important;
+    }
+    
+    #philosophy-service .tn-wrap {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 15px !important;
+      gap: 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    
+    #philosophy-service .tn-wrap .fade_in {
+      min-width: 0 !important;
+      max-width: calc(100% - 30px) !important;
+      width: calc(100% - 30px) !important;
+      flex: none !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    #philosophy-service .tn-wrap .fade_in > div {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 35px 25px !important;
+    }
+    
+    /* Fix card widths for "仕事内容・働く環境を知る" section cards on mobile */
+    .cont-basic.ex #work-environment {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+      box-sizing: border-box !important;
+    }
+    
+    #work-environment .tn-wrap {
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 15px !important;
+      gap: 20px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    
+    #work-environment .tn-wrap .fade_in {
+      min-width: 0 !important;
+      max-width: calc(100% - 30px) !important;
+      width: calc(100% - 30px) !important;
+      flex: none !important;
+      box-sizing: border-box !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    
+    #work-environment .tn-wrap .fade_in > div {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 40px 25px !important;
+    }
     }
   </style>
 
@@ -293,8 +1115,8 @@
           </h4>
         </div>
         <div class="hero-cta-buttons" style="display: flex; gap: 40px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
-          <a href="recruit.html" class="btn ex2" style="background: #FFCE02; color: #fff; white-space: nowrap; width: 240px; height: 60px; line-height: 60px; font-size: 16px; margin: 0 !important;">募集内容を見る<i class="fa-self"></i></a>
-          <a href="#" class="btn ex2" style="background: #FFCE02; color: #fff; white-space: nowrap; width: 240px; height: 60px; line-height: 60px; font-size: 16px; margin: 0 !important;">応募する<i class="fa-self"></i></a>
+          <a href="recruit.html" class="btn ex2" style="background: #FFCE02; color: #fff; white-space: nowrap; width: 240px; height: 60px; line-height: 60px; font-size: 16px; margin: 0;">募集内容を見る<i class="fa-self"></i></a>
+          <a href="#" class="btn ex2" style="background: #FFCE02; color: #fff; white-space: nowrap; width: 240px; height: 60px; line-height: 60px; font-size: 16px; margin: 0;">応募する<i class="fa-self"></i></a>
         </div>
       </div>
 
@@ -823,6 +1645,85 @@
       }
     }
     
+    /* Make entry box fully responsive from 1920px to 1100px (before hamburger menu) */
+    @media (max-width: 1920px) and (min-width: 1101px) {
+      /* Fluid responsive entry box - smoothly scales from 1920px to 1100px */
+      header nav {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        overflow: visible !important;
+      }
+      
+      .entry-rectangle {
+        width: auto !important;
+        min-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+        max-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+        height: 80px !important;
+        padding: 0 clamp(8px, 0.6vw + 2px, 12px) 0 clamp(20px, 1.2vw + 10px, 28px) !important;
+        gap: 10px !important;
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+        justify-content: flex-end !important;
+      }
+      
+      /* 採用サイトテキストの位置調整を維持 */
+      .nav li:nth-child(2) span {
+        transform: translateY(3px) !important;
+        display: inline-block !important;
+      }
+      
+      .entry-rectangle .entry-text {
+        font-size: 25px !important;
+        letter-spacing: 2px !important;
+      }
+      
+      .entry-rectangle .entry-icon {
+        height: 54px !important;
+        width: auto !important;
+        flex-shrink: 0 !important;
+      }
+      
+      /* Navigation menu text shrink */
+      .nav li a {
+        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+        white-space: nowrap !important;
+      }
+      
+      .nav li span {
+        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+        white-space: nowrap !important;
+      }
+      
+      .nav li {
+        margin-right: clamp(15px, 0.75vw + 15px, 30px) !important;
+      }
+      
+      .nav li:last-child {
+        margin-right: 0 !important;
+        margin-left: clamp(10px, 0.5vw + 10px, 20px) !important;
+        flex-shrink: 0 !important;
+      }
+      
+      .nav {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        overflow: visible !important;
+      }
+      
+      header {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      header nav {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+    }
     
     .nav {
       display: flex;
@@ -853,184 +1754,9 @@
     .nav li:last-child {
       margin-right: 0;
     }
-    /* メニューと採用サイトテキストのフォント */
-    .nav li a {
-      font-family: 'Roboto', sans-serif !important;
-      font-weight: bold !important;
-      font-size: 14px !important;
-      white-space: nowrap !important;
-      line-height: 1;
-      padding: 0;
-      margin: 0;
-      display: block;
-    }
-    .nav li span,
-    .recruit-site-text,
-    .nav-ex span {
-      font-family: 'Roboto', sans-serif !important;
-      font-weight: bold !important;
-      font-size: 14px !important;
-      white-space: nowrap !important;
-      line-height: 1;
-      padding: 0;
-      margin: 0;
-      display: block;
-    }
-    
-    /* Make entry box fully responsive from 1920px to 1100px (before hamburger menu) */
-    @media (max-width: 1920px) and (min-width: 1101px) {
-      /* Fluid responsive entry box - smoothly scales from 1920px to 1100px */
-      header nav {
-        padding-right: 0 !important;
-        margin-right: 0 !important;
-        overflow: visible !important;
-      }
-      
-      .entry-rectangle {
-        width: auto !important;
-        min-width: clamp(160px, 1.24vw + 89px, 213px) !important;
-        max-width: clamp(160px, 1.24vw + 89px, 213px) !important;
-        height: 80px !important;
-        padding: 0 clamp(8px, 0.6vw + 2px, 12px) 0 clamp(20px, 1.2vw + 10px, 28px) !important;
-        gap: 10px !important;
-        flex-shrink: 0 !important;
-        margin-right: 0 !important;
-      }
-      
-      .entry-rectangle .entry-text {
-        font-size: 25px !important;
-        letter-spacing: 2px !important;
-      }
-      
-      .entry-rectangle .entry-icon {
-        height: 54px !important;
-        width: auto !important;
-        flex-shrink: 0 !important;
-      }
-      
-      /* Make navigation menu text (black text) shrink instead of wrapping from 1920px to 1100px */
-      /* At 1920px: 14px, at 1100px: 12px */
-      .nav li a {
-        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
-        white-space: nowrap !important;
-      }
-      
-      /* Also make "採用サイト" text shrink */
-      .nav li span {
-        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
-        white-space: nowrap !important;
-      }
-      
-      .nav li {
-        margin-right: clamp(15px, 0.75vw + 15px, 30px) !important;
-      }
-      
-      .nav li:last-child {
-        margin-right: 0 !important;
-        margin-left: clamp(10px, 0.5vw + 10px, 20px) !important;
-        flex-shrink: 0 !important;
-      }
-      
-      /* Ensure entry box doesn't get cut off and no gap on right */
-      .nav {
-        padding-right: 0 !important;
-        margin-right: 0 !important;
-        overflow: visible !important;
-      }
-      
-      header {
-        padding-right: 0 !important;
-        margin-right: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      
-      header nav {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-      }
-    }
-    
-    /* Hide desktop nav and show hamburger menu at 1100px and below */
+    /* Hide carousel background image from 1100px and below */
     @media (max-width: 1100px) {
-      .nav {
-        display: none !important;
-      }
-      
-      /* Hide carousel background image from 1100px and below */
       .center-carousel-bg {
-        display: none !important;
-      }
-      /* Show mobile navigation when hamburger menu is visible */
-      .nav-ex {
-        display: block !important;
-      }
-      /* Ensure hamburger menu button is visible */
-      .menu-under {
-        display: block !important;
-        position: fixed !important;
-        right: 20px !important;
-        top: 20px !important;
-        width: 30px !important;
-        height: 20px !important;
-        z-index: 9999999 !important;
-        cursor: pointer !important;
-        background: transparent !important;
-        background-color: transparent !important;
-        border: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-      /* Ensure hamburger menu lines are visible */
-      .menu-under .menu__line {
-        background: #111 !important;
-        background-color: #111 !important;
-        display: block !important;
-        height: 2px !important;
-        min-height: 2px !important;
-        position: absolute !important;
-        left: 0 !important;
-        right: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        box-sizing: border-box !important;
-      }
-      .menu-under .menu__line--top {
-        top: 0 !important;
-        bottom: auto !important;
-      }
-      .menu-under .menu__line--center {
-        top: 9px !important;
-        bottom: auto !important;
-      }
-      .menu-under .menu__line--bottom {
-        top: auto !important;
-        bottom: 0 !important;
-      }
-      /* Active state for X button when menu is open */
-      .menu-under .menu__line--top.active {
-        top: 9px !important;
-        bottom: auto !important;
-        transform: rotate(45deg) !important;
-        transform-origin: center center !important;
-      }
-      .menu-under .menu__line--center.active {
-        transform: scaleX(0) !important;
-        opacity: 0 !important;
-      }
-      .menu-under .menu__line--bottom.active {
-        top: 9px !important;
-        bottom: auto !important;
-        transform: rotate(-45deg) !important;
-        transform-origin: center center !important;
-      }
-      /* Hide "採用サイト" text in mobile navigation when hamburger menu is visible */
-      .nav-ex span {
         display: none !important;
       }
       
@@ -1334,17 +2060,6 @@
         font-size: 12px !important;
       }
       
-      /* Entry button further adjustments */
-      .entry-rectangle {
-        min-width: 150px;
-        padding: 0 12px 0 28px;
-      }
-      .entry-rectangle .entry-text {
-        font-size: 22px !important;
-      }
-      .entry-rectangle .entry-icon {
-        height: 48px;
-      }
       .nav li:last-child {
         margin-right: 0 !important;
       }
@@ -1371,52 +2086,6 @@
       }
     }
     
-    /* Entry Rectangle Styling */
-    .entry-link {
-      text-decoration: none;
-      display: block;
-    }
-    .entry-rectangle {
-      width: auto;
-      min-width: 213px;
-      height: 80px;
-      background: #002F6B;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 12px 0 28px;
-      box-sizing: border-box;
-      margin: 0;
-      border: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .entry-link:hover .entry-rectangle {
-      background: #00408F;
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 47, 107, 0.4);
-    }
-    .entry-rectangle .entry-text {
-      color: #FFD31B;
-      font-size: 25px;
-      font-weight: 700;
-      font-family: 'Roboto', sans-serif;
-      letter-spacing: 2px;
-      transition: color 0.3s ease;
-    }
-    .entry-link:hover .entry-rectangle .entry-text {
-      color: #FFE066;
-    }
-    .entry-rectangle .entry-icon {
-      width: auto;
-      height: 54px;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-    .entry-link:hover .entry-rectangle .entry-icon {
-      transform: translateX(3px);
-    }
     /* 見出しのスタイル */
     .title-border .title {
       text-align: center;
@@ -2520,765 +3189,6 @@
     }
   </script>
 
-  <style>
-  .center-carousel-section {
-    position: relative;
-    margin: -120px 0 0 0;
-    padding: 120px 0 80px 0;
-    overflow-x: hidden;
-    overflow-y: visible;
-  }
-  .center-carousel-bg {
-    position: absolute;
-    background-image: url('img/interview/interview-main-image.png');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    filter: blur(2px);
-    transform: scale(1.05);
-    top: -40px;
-    left: 0;
-    right: 0;
-    bottom: 80px;
-    height: calc(100% - 40px);
-  }
-  .center-carousel-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 60px;
-  }
-  .center-carousel-head {
-    text-align: center;
-    margin-bottom: 0;
-    margin-top: -20px;
-    position: relative;
-  }
-  
-  .center-carousel-head h2,
-  .center-carousel-title {
-    font-size: 45px;
-    font-weight: 900;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 0;
-    color: #333;
-  }
-  
-  .center-carousel-head h3,
-  .center-carousel-subtitle {
-    margin-top: 30px;
-    margin-bottom: 0;
-    font-size: 18px;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
-    color: #003E8F;
-    letter-spacing: 0.1em;
-  }
-  
-  .center-carousel-head p,
-  .center-carousel-description {
-    margin-top: 30px;
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 1.8;
-    font-weight: 300;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-  }
-  .center-carousel-frame {
-    position: relative;
-    height: auto;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
-  }
-  .center-carousel-track {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 500px;
-    overflow: visible;
-  }
-  .center-carousel-item {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    width: 340px;
-    transform-origin: center center;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, z-index 0s;
-    opacity: 0;
-  }
-  .center-card {
-    background: #fff;
-    border-radius: 0;
-    overflow: hidden;
-    box-shadow: none;
-  }
-  .center-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .center-card-caption {
-    background: #B7C6DA;
-    color: #333;
-    padding: 16px 18px;
-  }
-  .center-card-quote {
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.6;
-    font-weight: 400;
-  }
-  .center-carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 56px;
-    height: 56px;
-    border: none;
-    border-radius: 50%;
-    background: #333;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 5;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  }
-  .center-carousel-btn.prev {
-    left: 10px;
-  }
-  .center-carousel-btn.next {
-    right: 10px;
-  }
-
-  @media (max-width: 1024px) {
-    .center-carousel-section {
-      padding: 80px 0;
-    }
-    .center-carousel-inner {
-      padding: 0 30px;
-    }
-    .center-carousel-item {
-      width: 280px;
-    }
-    .center-carousel-frame {
-      height: 460px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .center-carousel-section {
-      padding: 60px 0;
-    }
-    .center-carousel-head h2,
-    .center-carousel-title {
-      font-size: 28px;
-      font-weight: 900 !important;
-      font-family: 'Roboto', sans-serif !important;
-      margin-bottom: 0;
-      color: #333;
-    }
-    
-    .center-carousel-head h3,
-    .center-carousel-subtitle {
-      margin-top: 30px;
-      margin-bottom: 0;
-      font-size: 18px;
-      font-weight: 700;
-      font-family: 'Roboto', sans-serif;
-      color: #003E8F;
-      letter-spacing: 0.1em;
-    }
-    
-    .center-carousel-head p,
-    .center-carousel-description {
-      font-size: 14px;
-      line-height: 1.8;
-      font-weight: 300;
-      margin-top: 30px;
-      margin-bottom: 0;
-      color: #333;
-    }
-    .center-carousel-item {
-      width: 240px;
-    }
-    .center-carousel-btn {
-      width: 48px;
-      height: 48px;
-    }
-    .center-carousel-frame {
-      height: 420px;
-    }
-  }
-    
-    /* Hero section mobile responsive styles */
-    @media screen and (max-width: 749px) {
-    /* Prevent horizontal scrolling on mobile */
-    html, body {
-      overflow-x: hidden !important;
-      width: 100% !important;
-      max-width: 100vw !important;
-      position: relative;
-    }
-    
-    * {
-      max-width: 100% !important;
-      box-sizing: border-box;
-    }
-    
-    /* Show hero content on mobile (override sp.css) */
-    .visual.recruit .inner {
-      display: block !important;
-    }
-    
-    /* Adjust hero section height and padding - reduce top/bottom spacing for SP */
-    .visual.under.recruit {
-      height: auto !important;
-      min-height: auto !important;
-      padding-top: 0 !important;
-      padding-bottom: 20px !important;
-      background-size: cover !important;
-      background-position: center center !important;
-      background-repeat: no-repeat !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      overflow: hidden !important;
-    }
-    
-    /* Reduce top padding of inner content for SP */
-    .visual.under.recruit .inner {
-      padding-top: 80px !important;
-      padding-bottom: 20px !important;
-    }
-    
-    .visual.recruit .inner,
-    .visual.under.recruit .inner {
-      padding-top: 80px !important;
-      padding-bottom: 20px !important;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-    
-    /* Make hero text responsive */
-    .hero-overlay-text h3 {
-      font-size: 24px !important;
-      line-height: 1.5 !important;
-      margin-bottom: 10px !important;
-    }
-    
-    .hero-overlay-text h4 {
-      font-size: 16px !important;
-      line-height: 1.6 !important;
-      margin: 10px 0 20px 0 !important;
-    }
-    
-    /* Use fluid typography for section titles on mobile - matches the 1920px-390px range */
-    #career-areas .title,
-    #career-areas .title-border .title,
-    #career-areas h2.title,
-    #company .title,
-    #company .title-border .title,
-    #company h2.title,
-    #work-environment .title,
-    #work-environment .title-border .title,
-    #work-environment h2.title,
-    #job .title,
-    #job .title-border .title,
-    #job h2.title,
-    #recruitment-info .title,
-    #recruitment-info .title-border .title,
-    #recruitment-info h2.title {
-      font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
-    }
-    
-    .center-carousel-title {
-      font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
-      font-weight: 900 !important;
-      font-family: 'Roboto', sans-serif !important;
-    }
-    
-    /* Longer titles get smaller clamp */
-    #work-environment .title,
-    #work-environment .title-border .title,
-    #work-environment h2.title,
-    #recruitment-info .title,
-    #recruitment-info .title-border .title,
-    #recruitment-info h2.title {
-      font-size: clamp(28px, 0.78vw + 25.0px, 40px) !important;
-    }
-    
-    /* Make buttons stack vertically on mobile */
-    .hero-cta-buttons {
-      flex-direction: column !important;
-      gap: 15px !important;
-      justify-content: center !important;
-      align-items: center !important;
-    }
-    
-    .hero-cta-buttons .btn.ex2 {
-      width: 90% !important;
-      max-width: 280px !important;
-      height: 50px !important;
-      line-height: 50px !important;
-      font-size: 14px !important;
-      margin: 0 !important;
-    }
-    
-    /* Location cards mobile styles - text only, stacked vertically */
-    #career-areas .tn-wrap {
-      flex-direction: column !important;
-      align-items: center !important;
-      max-width: 90% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      gap: 10px !important;
-      padding: 0 10px !important;
-    }
-    
-    .location-card {
-      width: 100% !important;
-      flex: none !important;
-    }
-    
-    .location-card .location-image,
-    .location-card .hito-image {
-      display: none !important;
-    }
-    
-    .location-card p {
-      margin: 0 !important;
-      font-size: 18px !important;
-      padding: 20px 30px !important;
-    }
-    
-    /* Hide background image on mobile */
-    .company-background {
-      display: none !important;
-    }
-    
-    /* Reduce gap between sections on mobile */
-    #career-areas {
-      margin-bottom: 0 !important;
-    }
-    
-    #company {
-      margin-top: -200px !important;
-      padding-top: 0 !important;
-    }
-    
-    #company .company-content {
-      padding-top: 200px !important;
-    }
-    
-    /* Change "そうごう"を知る section colors to match "募集地域・職種を知る" on mobile */
-    #company .title {
-      color: #333 !important;
-    }
-    
-    #company .title-sub {
-      color: #003E8F !important;
-    }
-    
-    #company .center p {
-      color: #333 !important;
-    }
-    
-    /* Hide carousel background image on mobile */
-    .center-carousel-bg {
-      display: none !important;
-    }
-    
-    /* Reduce gap between philosophy-service cards and carousel on mobile */
-    #philosophy-service {
-      margin-bottom: 0 !important;
-    }
-    
-    /* Reduce gap from job section before carousel on mobile */
-    #job {
-      margin-top: 100px !important;
-      margin-bottom: 0 !important;
-    }
-    
-    /* Fix horizontal scrolling for carousel on mobile - centered, no scroll */
-    .center-carousel-section {
-      width: 100% !important;
-      max-width: 100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      overflow: hidden !important;
-      padding: 20px 0 !important;
-      margin-top: -80px !important;
-      margin-bottom: 0 !important;
-      box-sizing: border-box !important;
-      position: relative !important;
-    }
-    
-    .center-carousel-inner {
-      padding: 40px 20px 20px 20px !important;
-      overflow: hidden !important;
-      max-width: 100% !important;
-      width: 100% !important;
-      margin: 0 auto !important;
-      box-sizing: border-box !important;
-      position: relative !important;
-    }
-    
-    /* Fix carousel head text visibility on mobile - centered */
-    .center-carousel-head {
-      position: relative !important;
-      top: auto !important;
-      left: auto !important;
-      transform: none !important;
-      margin-bottom: 30px !important;
-      padding: 0 20px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      text-align: center !important;
-    }
-    
-    .center-carousel-title {
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
-      font-weight: 900 !important;
-      font-family: 'Roboto', sans-serif !important;
-      color: #333 !important;
-    }
-    
-    .center-carousel-subtitle {
-      margin-top: 30px !important;
-      margin-bottom: 0 !important;
-      font-size: 18px !important;
-      font-weight: 700 !important;
-      font-family: 'Roboto', sans-serif !important;
-      color: #003E8F !important;
-      letter-spacing: 0.1em !important;
-    }
-    
-    .center-carousel-description {
-      margin-top: 30px !important;
-      margin-bottom: 0 !important;
-      font-size: 14px !important;
-      line-height: 1.8 !important;
-      font-weight: 300 !important;
-      font-family: 'Roboto', sans-serif !important;
-      color: #333 !important;
-      max-width: 600px !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      padding: 0 !important;
-    }
-    
-    /* Carousel mobile adjustments - match interviewNK.html but keep captions */
-    .center-carousel-section {
-      padding: 40px 0 !important;
-      margin-top: -60px !important;
-    }
-    
-    /* Hide carousel background image on mobile */
-    .center-carousel-bg {
-      display: none !important;
-    }
-    
-    /* Adjust carousel head spacing */
-    .center-carousel-head {
-      margin-bottom: 0 !important;
-      text-align: center !important;
-    }
-    
-    .center-carousel-head h2,
-    .center-carousel-title {
-      font-size: 28px !important;
-      font-weight: 900 !important;
-      font-family: 'Roboto', sans-serif !important;
-      margin-bottom: 0 !important;
-    }
-    
-    .center-carousel-head h3,
-    .center-carousel-subtitle {
-      margin-top: 30px !important;
-      margin-bottom: 0 !important;
-      font-size: 18px !important;
-      font-weight: 700 !important;
-      font-family: 'Roboto', sans-serif !important;
-    }
-    
-    .center-carousel-head p,
-    .center-carousel-description {
-      font-size: 14px !important;
-      line-height: 1.8 !important;
-      font-weight: 300 !important;
-      margin-top: 30px !important;
-      margin-bottom: 0 !important;
-    }
-    
-    /* Fix carousel frame and track for mobile - allow captions to show fully */
-    .center-carousel-frame {
-      height: auto !important;
-      min-height: 550px !important;
-      overflow: visible !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-      box-sizing: border-box !important;
-      position: relative !important;
-      padding: 0 20px 20px 20px !important;
-    }
-    
-    .center-carousel-track {
-      position: relative !important;
-      height: auto !important;
-      min-height: 500px !important;
-      overflow: visible !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-      box-sizing: border-box !important;
-    }
-    
-    .center-carousel-item {
-      width: 85vw !important;
-      max-width: 350px !important;
-      overflow: visible !important;
-    }
-    
-    /* Keep captions visible on mobile for index.html - ensure they don't get cut */
-    .center-card {
-      overflow: visible !important;
-      height: auto !important;
-      display: flex !important;
-      flex-direction: column !important;
-    }
-    
-    .center-card img {
-      flex-shrink: 0 !important;
-    }
-    
-    .center-card-caption {
-      display: block !important;
-      background: #B7C6DA !important;
-      color: #333 !important;
-      padding: 16px 18px !important;
-      overflow: visible !important;
-      flex-shrink: 0 !important;
-    }
-    
-    .center-card-quote {
-      display: block !important;
-      margin: 0 !important;
-      font-size: 18px !important;
-      line-height: 1.6 !important;
-      font-weight: 400 !important;
-      word-wrap: break-word !important;
-      overflow-wrap: break-word !important;
-    }
-    
-    /* Fix arrow placement - center them properly */
-    .center-carousel-btn {
-      width: 48px !important;
-      height: 48px !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
-      position: absolute !important;
-    }
-    
-    .center-carousel-btn.prev {
-      left: 5px !important;
-      right: auto !important;
-    }
-    
-    .center-carousel-btn.next {
-      right: 5px !important;
-      left: auto !important;
-    }
-    
-    /* Make three cards in one row for recruitment-info section on mobile */
-    #recruitment-info .tn-wrap {
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      gap: 6px !important;
-      justify-content: space-between !important;
-      display: flex !important;
-      padding: 0 10px !important;
-      max-width: 100% !important;
-    }
-    
-    #recruitment-info .tn-wrap .fade_in {
-      flex: 1 1 0 !important;
-      min-width: 0 !important;
-      max-width: none !important;
-      width: auto !important;
-      margin-bottom: 0 !important;
-      padding: 20px 8px !important;
-      min-height: 180px !important;
-    }
-    
-    /* Override inline min-width styles */
-    #recruitment-info .tn-wrap .fade_in[style] {
-      min-width: 0 !important;
-    }
-    
-    #recruitment-info .tn-wrap .fade_in img {
-      width: 40px !important;
-      height: 40px !important;
-      margin-bottom: 10px !important;
-    }
-    
-    #recruitment-info .tn-wrap .fade_in p {
-      font-size: 12px !important;
-      line-height: 1.3 !important;
-    }
-    
-    /* Fix section padding and margins for mobile */
-    section {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-    
-    .cont-basic.ex {
-      padding-left: 10px !important;
-      padding-right: 10px !important;
-    }
-    
-    /* Ensure all text containers fit */
-    .center {
-      padding-left: 10px !important;
-      padding-right: 10px !important;
-    }
-    
-    /* Footer styling to match contact-2.html */
-    footer {
-      padding: 30px !important;
-    }
-    
-    footer .logo {
-      width: 300px !important;
-    }
-    
-    .nav-footer {
-      display: flex !important;
-      margin-top: 10px !important;
-    }
-    
-    .nav-footer li {
-      margin-right: 20px !important;
-    }
-    
-    .nav-footer a {
-      text-decoration: none !important;
-      font-weight: 700 !important;
-      color: #111 !important;
-    }
-    
-    .copyright {
-      display: block !important;
-      font-size: 12px !important;
-      margin-top: 30px !important;
-    }
-    
-    footer .center {
-      padding: 0 !important;
-      margin-top: 20px;
-    }
-    
-    footer .center img {
-      height: auto;
-      max-width: 100%;
-    }
-    
-    /* Fix card widths for "そうごう"を知る section cards on mobile */
-    .cont-basic.ex #philosophy-service {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      width: 100% !important;
-      max-width: 100vw !important;
-      box-sizing: border-box !important;
-    }
-    
-    #philosophy-service .tn-wrap {
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      padding: 0 15px !important;
-      gap: 20px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-    
-    #philosophy-service .tn-wrap .fade_in {
-      min-width: 0 !important;
-      max-width: calc(100% - 30px) !important;
-      width: calc(100% - 30px) !important;
-      flex: none !important;
-      box-sizing: border-box !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-    
-    #philosophy-service .tn-wrap .fade_in > div {
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      padding: 35px 25px !important;
-    }
-    
-    /* Fix card widths for "仕事内容・働く環境を知る" section cards on mobile */
-    .cont-basic.ex #work-environment {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      width: 100% !important;
-      max-width: 100vw !important;
-      box-sizing: border-box !important;
-    }
-    
-    #work-environment .tn-wrap {
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      padding: 0 15px !important;
-      gap: 20px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-    
-    #work-environment .tn-wrap .fade_in {
-      min-width: 0 !important;
-      max-width: calc(100% - 30px) !important;
-      width: calc(100% - 30px) !important;
-      flex: none !important;
-      box-sizing: border-box !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-    
-    #work-environment .tn-wrap .fade_in > div {
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      padding: 40px 25px !important;
-    }
-    }
-  </style>
-  
   <script>
     // Navigation menu functionality - Desktop dropdown and Mobile accordion
     (function() {

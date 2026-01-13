@@ -1,0 +1,280 @@
+/* ============================================
+   Common CSS for all pages
+   Extracted from inline styles in HTML files
+   ============================================ */
+
+/* Navigation and Entry Button - Common Styles */
+.nav li a {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: bold !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.nav li span,
+.recruit-site-text,
+.nav-ex span {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: bold !important;
+  font-size: 14px !important;
+  white-space: nowrap !important;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+/* Entry Rectangle - Base Styles */
+.entry-rectangle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  height: 100% !important;
+  width: 100% !important;
+  min-height: 60px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.entry-text {
+  line-height: 1.4 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+/* Responsive Entry Box - 1920px to 1100px */
+@media (max-width: 1920px) and (min-width: 1101px) {
+  header nav {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
+  }
+  
+  .entry-rectangle {
+    width: auto !important;
+    min-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+    max-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+    height: 80px !important;
+    padding: 0 clamp(8px, 0.6vw + 2px, 12px) 0 clamp(20px, 1.2vw + 10px, 28px) !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .entry-rectangle .entry-text {
+    font-size: 25px !important;
+    letter-spacing: 2px !important;
+  }
+  
+  .entry-rectangle .entry-icon {
+    height: 54px !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+  
+  /* Navigation menu text shrink */
+  .nav li a {
+    font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+    white-space: nowrap !important;
+  }
+  
+  .nav li span {
+    font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+    white-space: nowrap !important;
+  }
+  
+  .nav li {
+    margin-right: clamp(15px, 0.75vw + 15px, 30px) !important;
+  }
+  
+  .nav li:last-child {
+    margin-right: 0 !important;
+    margin-left: clamp(10px, 0.5vw + 10px, 20px) !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .nav {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
+  }
+  
+  header {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  header nav {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Mobile Navigation - 1100px and below */
+@media (max-width: 1100px) {
+  .nav {
+    display: none !important;
+  }
+  
+  .nav-ex {
+    display: block !important;
+  }
+  
+  /* Hamburger Menu Button */
+  .menu-under {
+    display: block !important;
+    position: fixed !important;
+    right: 20px !important;
+    top: 20px !important;
+    width: 30px !important;
+    height: 20px !important;
+    z-index: 9999999 !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Hamburger Menu Lines */
+  .menu-under .menu__line {
+    background: #111 !important;
+    background-color: #111 !important;
+    display: block !important;
+    height: 2px !important;
+    min-height: 2px !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-sizing: border-box !important;
+  }
+  
+  .menu-under .menu__line--top {
+    top: 0 !important;
+    bottom: auto !important;
+  }
+  
+  .menu-under .menu__line--center {
+    top: 9px !important;
+    bottom: auto !important;
+  }
+  
+  .menu-under .menu__line--bottom {
+    top: auto !important;
+    bottom: 0 !important;
+  }
+  
+  /* Active state for X button when menu is open */
+  .menu-under .menu__line--top.active {
+    top: 9px !important;
+    bottom: auto !important;
+    transform: rotate(45deg) !important;
+    transform-origin: center center !important;
+  }
+  
+  .menu-under .menu__line--center.active {
+    transform: scaleX(0) !important;
+    opacity: 0 !important;
+  }
+  
+  .menu-under .menu__line--bottom.active {
+    top: 9px !important;
+    bottom: auto !important;
+    transform: rotate(-45deg) !important;
+    transform-origin: center center !important;
+  }
+  
+  /* Hide "採用サイト" text in mobile navigation */
+  .nav-ex span {
+    display: none !important;
+  }
+  
+  .nav-ex > span[style*="採用サイト"],
+  .nav-ex > span:not(.menu-under):not(.menu__line) {
+    display: none !important;
+  }
+}
+
+/* Entry Rectangle - Desktop Base Styles */
+.entry-link {
+  text-decoration: none;
+  display: block;
+}
+
+.entry-rectangle {
+  width: auto;
+  min-width: 213px;
+  height: 80px;
+  background: #002F6B;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 12px 0 28px;
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.entry-link:hover .entry-rectangle {
+  background: #00408F;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 47, 107, 0.4);
+}
+
+.entry-rectangle .entry-text {
+  color: #FFD31B;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.entry-link:hover .entry-rectangle .entry-text {
+  color: #FFE066;
+}
+
+.entry-rectangle .entry-icon {
+  width: auto;
+  height: 54px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.entry-link:hover .entry-rectangle .entry-icon {
+  transform: translateX(3px);
+}
+
+/* Mobile Entry Button - 850px and below */
+@media (max-width: 850px) {
+  .entry-rectangle {
+    min-width: 150px;
+    padding: 0 12px 0 28px;
+  }
+  
+  .entry-rectangle .entry-text {
+    font-size: 22px !important;
+  }
+  
+  .entry-rectangle .entry-icon {
+    height: 48px;
+  }
+}
