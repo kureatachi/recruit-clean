@@ -2130,6 +2130,7 @@
       }
     }
     /* Footerのボタンのフォントサイズを小さく */
+    /* フッター部分のアイコンを大きく */
     .btn.ex {
       font-size: 16px !important;
       white-space: nowrap !important;
@@ -2140,7 +2141,6 @@
       font-size: 16px !important;
       font-style: normal !important;
     }
-    /* フッター部分のアイコンを大きく */
     /* JOIN USセクションのボタンレイアウト調整 */
     /* 1920pxのレイアウト・サイズを750pxまで維持 - tablet.cssの影響を完全にオーバーライド */
     @media screen and (max-width: 1100px) and (min-width: 751px) {
@@ -2468,20 +2468,6 @@
       }
     }
     
-    /* Shrink text for third button on very small screens (420px and below) */
-    @media (max-width: 420px) {
-      .contact-wrap .btn.ex.mail {
-        font-size: 12px !important;
-        padding: 0 15px !important;
-        white-space: normal !important;
-        line-height: 1.4 !important;
-      }
-      .contact-wrap .btn.ex.mail .btn-text-line1,
-      .contact-wrap .btn.ex.mail .btn-text-line2 {
-        line-height: 1.3 !important;
-      }
-      /* Keep icon and arrow sizes at original size - only shrink text */
-    }
     @media (max-width: 768px) {
       .welfare-content {
         width: 100%;
