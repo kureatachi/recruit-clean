@@ -233,7 +233,7 @@
 
         <!-- 募集地域・職種を知る -->
         <section id="career-areas" style="margin-bottom: 40px; position: relative; z-index: 10;">
-          <div class="title-border">
+          <div class="title-border" style="padding-bottom: 10px;">
             <h2 id="section-1" class="title" style="font-size: 45px;">募集地域・職種を知る</h2>
             <span></span>
           </div>
@@ -244,7 +244,7 @@
 
           <div class="center" style="margin-top: 30px;">
             <div style="max-width: 600px; margin: 0 auto; margin-left: auto; margin-right: auto; text-align: center; padding-left: 0;">
-              <p style="line-height: 1.8; margin: 0; font-size: 14px; color: #333; font-weight: 300;">
+              <p style="line-height: 1.8; margin: 0; color: #333;">
                 全国各地のまちで"地域密着"の事業活動を展開しています。<br>
                 特に私たちが仲間を熱く求めている地域・職種を紹介します。
               </p>
@@ -284,7 +284,7 @@
     <section id="company" style="margin-bottom: 0; margin-top: -80px; padding: 40px 0 220px 0; position: relative; overflow: visible; width: 100%; margin-left: 0;">
       <div class="company-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 150vh; background-image: url('img/wallpaper.webp'); background-size: cover; background-position: center top; background-repeat: no-repeat; z-index: 0;"></div>
       <div class="company-content" style="position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 20px; padding-top: 350px;">
-          <div class="title-border">
+          <div class="title-border" style="padding-bottom: 10px;">
           <h2 id="section-2" class="title" style="color: #fff; font-size: 45px;">"そうごう"を知る</h2>
           <span style="border-bottom: 6px solid #FFCE02;"></span>
           </div>
@@ -295,7 +295,7 @@
 
           <div class="center" style="margin-top: 30px;">
           <div style="max-width: 600px; margin: 0 auto; margin-left: auto; margin-right: auto; text-align: center; padding-left: 0;">
-            <p style="line-height: 1.8; margin: 0; font-size: 14px; color: #fff; font-weight: 300;">
+            <p style="line-height: 1.8; margin: 0; color: #fff;">
                 2026年に創業70周年を迎える当社は、"地域の喜ぶ顔を、ひとつでも多く。" <br>というビジョンを掲げ、地域経済活性化を目的に、<br>地域事業者のPRを支援する情報誌を発行しています。
               </p>
             </div>
@@ -351,7 +351,7 @@
 
         <!-- 仕事内容・働く環境を知る -->
         <section id="work-environment" style="margin-bottom: 80px; margin-top: 20px; padding-top: 100px;">
-          <div class="title-border">
+          <div class="title-border" style="padding-bottom: 10px;">
             <h2 id="section-3" class="title" style="font-size: 45px;">仕事内容・働く環境を知る</h2>
             <span></span>
           </div>
@@ -411,9 +411,9 @@
           <div class="center-carousel-bg"></div>
           <div class="center-carousel-inner">
             <div class="center-carousel-head">
-              <h2 id="section-4" class="center-carousel-title">実際の現場を知る</h2>
+              <h2 id="section-4" class="title" style="font-size: 45px; color: #000000;">実際の現場を知る</h2>
               <h3 class="center-carousel-subtitle">Interview</h3>
-              <p class="center-carousel-description">一人ひとりの社員に、地域との物語があります。<br>ここで働く仲間の声から、リアルな仕事の姿を感じていただけたら幸いです。</p>
+              <p class="center-carousel-description" style="font-size: 15px !important; font-weight: 400 !important;">一人ひとりの社員に、地域との物語があります。<br>ここで働く仲間の声から、リアルな仕事の姿を感じていただけたら幸いです。</p>
             </div>
             <div class="center-carousel-frame">
               <button class="center-carousel-btn prev" onclick="moveCenterCarousel(-1)">
@@ -478,7 +478,7 @@
 
         <!-- 求人・選考情報を調べる -->
         <section id="recruitment-info" style="margin-bottom: 80px; margin-top: 100px; padding-top: 50px;">
-          <div class="title-border">
+          <div class="title-border" style="padding-bottom: 10px;">
             <h2 id="section-5" class="title" style="font-size: 45px;">求人・選考情報を調べる</h2>
             <span></span>
           </div>
@@ -760,9 +760,17 @@
     /* 見出しの下の余白を縮める */
     .title-border {
       margin-bottom: 10px !important;
+      padding-bottom: 10px !important;
     }
     .title-set {
-      margin-top: 10px !important;
+      margin-top: 20px !important;
+      margin-bottom: 0 !important;
+    }
+    
+    /* Ensure consistent spacing between Japanese and English titles on mobile */
+    .title-border + .title-set.center {
+      margin-top: 20px !important;
+      margin-bottom: 0 !important;
     }
     /* JOIN USセクションのボタンレイアウト調整 */
     /* 1920pxのレイアウト・サイズを750pxまで維持 - tablet.cssの影響を完全にオーバーライド */
@@ -1131,6 +1139,18 @@
         box-sizing: border-box !important;
       }
       
+      /* Ensure consistent spacing between Japanese and English titles */
+      .title-border {
+        padding-bottom: 10px !important;
+        margin-bottom: 0 !important;
+      }
+      
+      .title-border + .title-set.center,
+      .title-border + .title-set.center[style*="margin-top"] {
+        margin-top: 20px !important;
+        margin-bottom: 0 !important;
+      }
+      
       /* Regular titles - fluid sizing from 45px (1920px) to 32px (390px) */
       /* Calculation: at 1920px = 45px, at 390px = 32px */
       .title-border .title,
@@ -1216,16 +1236,33 @@
         box-sizing: border-box !important;
       }
       
-      /* Regular titles - fixed at 32px below 390px */
+      /* Ensure consistent spacing between Japanese and English titles at 390px */
+      .title-border {
+        padding-bottom: 10px !important;
+        margin-bottom: 0 !important;
+      }
+      
+      .title-border + .title-set.center,
+      .title-border + .title-set.center[style*="margin-top"] {
+        margin-top: 20px !important;
+        margin-bottom: 0 !important;
+      }
+      
+      /* Regular titles - continue using clamp formula to match carousel */
       .title-border .title,
       .title-border h2.title,
       #career-areas .title,
+      #career-areas .title-border .title,
+      #career-areas h2.title,
       #company .title,
       #company h2.title,
       #company .title-border .title,
+      #job .title,
+      #job .title-border .title,
+      #job h2.title,
       .center-carousel-title,
       .title-large {
-        font-size: 32px !important;
+        font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
         white-space: nowrap !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
@@ -1259,17 +1296,21 @@
         padding: 0 !important;
       }
       
-      /* Longer titles - fixed at 28px below 390px */
+      /* Longer titles - continue using clamp formula to match carousel */
       #work-environment .title-border h2.title,
       #work-environment .title-border .title,
       #work-environment h2.title,
       #recruitment-info .title-border h2.title,
       #recruitment-info .title-border .title,
       #recruitment-info h2.title {
-        font-size: 28px !important;
+        font-size: clamp(28px, 0.78vw + 25.0px, 40px) !important;
         white-space: nowrap !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
+        font-weight: 900 !important;
+        font-family: 'Roboto', sans-serif !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
       }
     }
     
@@ -1289,34 +1330,45 @@
         padding: 0 20px !important;
       }
       
-      /* Regular titles - fixed at 32px below 390px */
+      /* Regular titles - continue using clamp formula to match carousel */
       .title-border .title,
       .title-border h2.title,
       #career-areas .title,
+      #career-areas .title-border .title,
+      #career-areas h2.title,
       #company .title,
       #company h2.title,
       #company .title-border .title,
+      #job .title,
+      #job .title-border .title,
+      #job h2.title,
       .center-carousel-title,
       .title-large {
-        font-size: 32px !important;
+        font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
         white-space: nowrap !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        font-weight: 700 !important;
+        font-weight: 900 !important;
         font-family: 'Roboto', sans-serif !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
       }
       
-      /* Longer titles - fixed at 28px below 390px */
+      /* Longer titles - continue using clamp formula to match carousel */
       #work-environment .title-border h2.title,
       #work-environment .title-border .title,
       #work-environment h2.title,
       #recruitment-info .title-border h2.title,
       #recruitment-info .title-border .title,
       #recruitment-info h2.title {
-        font-size: 28px !important;
+        font-size: clamp(28px, 0.78vw + 25.0px, 40px) !important;
         white-space: nowrap !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
+        font-weight: 900 !important;
+        font-family: 'Roboto', sans-serif !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
       }
     }
     /* ============================================
@@ -1726,12 +1778,13 @@
   }
   
   .center-carousel-head h2,
+  .center-carousel-head h2.title,
   .center-carousel-title {
     font-size: 45px;
     font-weight: 900;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 0;
-    color: #333;
+    color: #000000;
   }
   
   .center-carousel-head h3,
@@ -1851,7 +1904,7 @@
       font-weight: 900 !important;
       font-family: 'Roboto', sans-serif !important;
       margin-bottom: 0;
-      color: #333;
+      color: #000000;
     }
     
     .center-carousel-head h3,
@@ -1947,23 +2000,40 @@
       margin: 10px 0 20px 0 !important;
     }
     
+    /* Ensure consistent spacing between Japanese and English titles at 749px */
+    .title-border {
+      padding-bottom: 30px !important;
+      margin-bottom: 0 !important;
+    }
+    
+    .title-border + .title-set.center,
+    .title-border + .title-set.center[style*="margin-top"] {
+      margin-top: 20px !important;
+      margin-bottom: 0 !important;
+    }
+    
     /* Use fluid typography for section titles on mobile - matches the 1920px-390px range */
+    /* Regular titles - same as carousel */
+    .title-border .title,
+    .title-border h2.title,
     #career-areas .title,
     #career-areas .title-border .title,
     #career-areas h2.title,
     #company .title,
     #company .title-border .title,
     #company h2.title,
-    #work-environment .title,
-    #work-environment .title-border .title,
-    #work-environment h2.title,
     #job .title,
     #job .title-border .title,
     #job h2.title,
-    #recruitment-info .title,
-    #recruitment-info .title-border .title,
-    #recruitment-info h2.title {
+    .title-large {
       font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
+      font-weight: 900 !important;
+      font-family: 'Roboto', sans-serif !important;
+      white-space: nowrap !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
     }
     
     .center-carousel-title {
@@ -1975,11 +2045,20 @@
     /* Longer titles get smaller clamp */
     #work-environment .title,
     #work-environment .title-border .title,
+    #work-environment .title-border h2.title,
     #work-environment h2.title,
     #recruitment-info .title,
     #recruitment-info .title-border .title,
+    #recruitment-info .title-border h2.title,
     #recruitment-info h2.title {
       font-size: clamp(28px, 0.78vw + 25.0px, 40px) !important;
+      font-weight: 900 !important;
+      font-family: 'Roboto', sans-serif !important;
+      white-space: nowrap !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
     }
     
     /* Make buttons stack vertically on mobile */
@@ -2074,6 +2153,18 @@
       margin-bottom: 0 !important;
     }
     
+    /* Ensure consistent spacing between Japanese and English titles at 749px */
+    .title-border {
+      padding-bottom: 30px !important;
+      margin-bottom: 0 !important;
+    }
+    
+    .title-border + .title-set.center,
+    .title-border + .title-set.center[style*="margin-top"] {
+      margin-top: 20px !important;
+      margin-bottom: 0 !important;
+    }
+    
     /* Fix horizontal scrolling for carousel on mobile - centered, no scroll */
     .center-carousel-section {
       width: 100% !important;
@@ -2086,6 +2177,8 @@
       margin-bottom: 0 !important;
       box-sizing: border-box !important;
       position: relative !important;
+      left: 0 !important;
+      right: 0 !important;
     }
     
     .center-carousel-inner {
@@ -2096,15 +2189,23 @@
       margin: 0 auto !important;
       box-sizing: border-box !important;
       position: relative !important;
+      left: 0 !important;
+      right: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
     }
     
     /* Fix carousel head text visibility on mobile - centered */
     .center-carousel-head {
       position: relative !important;
       top: auto !important;
-      left: auto !important;
+      left: 0 !important;
+      right: 0 !important;
       transform: none !important;
       margin-bottom: 30px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
       padding: 0 20px !important;
       width: 100% !important;
       max-width: 100% !important;
@@ -2118,14 +2219,14 @@
       font-size: clamp(32px, 0.85vw + 28.7px, 45px) !important;
       font-weight: 900 !important;
       font-family: 'Roboto', sans-serif !important;
-      color: #333 !important;
+      color: #000000 !important;
     }
     
     .center-carousel-subtitle {
       margin-top: 30px !important;
       margin-bottom: 0 !important;
       font-size: 18px !important;
-      font-weight: 700 !important;
+      font-weight: 400 !important;
       font-family: 'Roboto', sans-serif !important;
       color: #003E8F !important;
       letter-spacing: 0.1em !important;
@@ -2168,6 +2269,7 @@
       font-weight: 900 !important;
       font-family: 'Roboto', sans-serif !important;
       margin-bottom: 0 !important;
+      color: #000000 !important;
     }
     
     .center-carousel-head h3,
@@ -2199,6 +2301,11 @@
       box-sizing: border-box !important;
       position: relative !important;
       padding: 0 20px 20px 20px !important;
+      left: 0 !important;
+      right: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
     
     .center-carousel-track {
@@ -2210,6 +2317,11 @@
       max-width: 100% !important;
       margin: 0 auto !important;
       box-sizing: border-box !important;
+      left: 0 !important;
+      right: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
     
     .center-carousel-item {
