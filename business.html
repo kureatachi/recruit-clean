@@ -680,6 +680,104 @@
         padding: 0 20px !important;
         box-sizing: border-box !important;
       }
+      
+      /* 事業全体の概要 cards - center icon, title, and text container (with left-aligned text) */
+      .service-card {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      
+      .service-card .service-icon {
+        margin: 0 auto 20px auto !important;
+      }
+      
+      .service-card .service-content {
+        width: 100% !important;
+        text-align: center !important;
+      }
+      
+      .service-card .service-title {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      
+      .service-card .service-description {
+        text-align: left !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      
+      /* Achievement card responsive styles */
+      .achievement-card {
+        padding: 30px 20px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+      
+      .achievement-card .service-icon {
+        margin-bottom: 20px !important;
+      }
+      
+      .achievement-card .service-content {
+        width: 100% !important;
+      }
+      
+      .achievement-card .service-title,
+      .achievement-card .service-subtitle {
+        text-align: left !important;
+      }
+      
+      .achievement-card .achievement-list {
+        padding-left: 0 !important;
+      }
+      
+      .achievement-card .achievement-row {
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 15px 0 !important;
+      }
+      
+      .achievement-card .achievement-divider {
+        background: linear-gradient(to right, #002f6b 0%, #002f6b 100%, #e0e0e0 100%, #e0e0e0 100%) !important;
+      }
+      
+      .achievement-card .achievement-row span:first-child {
+        margin-bottom: 5px;
+        min-width: 100% !important;
+      }
+      
+      .achievement-card .achievement-row span:last-child {
+        text-align: left !important;
+        white-space: normal !important;
+        margin-top: 0 !important;
+        min-width: 100% !important;
+      }
+      
+      /* Service cards responsive styles (exclude achievement-card) */
+      .service-card:not(.achievement-card) {
+        padding: 25px 20px !important;
+      }
+      
+      .services-container {
+        padding: 0 15px !important;
+      }
+      
+      /* Strategy cards responsive */
+      .vision-intro {
+        padding: 0 15px !important;
+        margin: 30px auto 40px auto !important;
+      }
+      
+      .strategy-cards-container {
+        padding: 0 15px !important;
+      }
+      
+      .strategy-card {
+        padding: 25px 20px !important;
+        margin-bottom: 20px !important;
+      }
     }
   </style>
 
@@ -1328,8 +1426,8 @@
             <span></span>
           </div>
 
-          <div class="welfare-content" style="max-width: 700px; margin: 0 auto; padding: 0; width: 100%; box-sizing: border-box;">
-          <p style="margin-top: 30px; line-height: 1.8; text-align: left; padding: 0; font-size: 15px;">
+          <div class="welfare-content" style="max-width: 700px; margin: 0 auto; padding: 25px; width: 100%; box-sizing: border-box;">
+          <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0; font-size: 15px;">
             私たちそうごうの事業は、<span style="font-weight: bold; color: #002f6b;">地域の声に耳を傾けることから始まります。</span><br>
             地域の事業者や行政、生活者の声を丁寧にヒアリングし、そこから見えてくる課題に対して、<span style="font-weight: bold; color: #002f6b;">知恵を絞り企画し、実行へとつなげること</span>を大切にしています。<br>
             そして、提案をただ形にするだけでなく、<span style="font-weight: bold; color: #002f6b;">汗をかきながら一つずつ具現化していくこと</span>──それこそが、私たちの事業活動の中心です。
