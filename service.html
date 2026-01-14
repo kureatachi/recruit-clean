@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/tablet.css">
   <link rel="stylesheet" href="css/sp.css">
-  <link rel="stylesheet" href="css/common.css">  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous">
@@ -60,9 +60,10 @@
     }
     
     .nav {
-      align-items: stretch !important;
+      display: flex;
+      align-items: center !important;
+      height: 100%;
       min-height: 60px !important;
-      height: 100% !important;
       padding: 0 !important;
       margin: 0 !important;
     }
@@ -77,7 +78,9 @@
     .nav li {
       display: flex !important;
       align-items: center !important;
+      height: 100%;
       min-height: 40px !important;
+      margin-right: 30px;
     }
     
     /* Ensure Entry button fills full height with no gaps at top/bottom */
@@ -101,29 +104,12 @@
     .entry-rectangle {
       display: flex !important;
       align-items: center !important;
-      justify-content: flex-end !important;
       height: 100% !important;
       width: 100% !important;
       min-height: 60px !important;
-      padding: 0 !important;
+      padding: 0 20px !important;
       margin: 0 !important;
       box-sizing: border-box !important;
-    }
-    
-    /* Remove any bottom margin/padding that could cause gap */
-    header nav ul.nav {
-      margin-bottom: 0 !important;
-      padding-bottom: 0 !important;
-    }
-    
-    header nav {
-      margin-bottom: 0 !important;
-      padding-bottom: 0 !important;
-    }
-    
-    header {
-      margin-bottom: 0 !important;
-      padding-bottom: 0 !important;
     }
     
     .entry-text {
@@ -251,7 +237,7 @@
       <nav>
         <ul class="nav">
           <li>
-            <a href="index.html">
+            <a href="#">
               <img src="img/logo.png" alt="株式会社そうごうロゴ" class="logo"></a>
           </li>
           <li style="margin-left: 5px;">
@@ -295,10 +281,10 @@
           </li>
           <li style="margin-left: 20px;">
             <a href="#" class="entry-link">
-              <div class="entry-rectangle">
-                <span class="entry-text">Entry</span>
+            <div class="entry-rectangle">
+              <span class="entry-text">Entry</span>
                 <img src="img/common/edit-icon.png" alt="Entry Icon" class="entry-icon">
-              </div>
+            </div>
             </a>
           </li>
         </ul>
@@ -307,7 +293,7 @@
 
       <div class="nav-ex">
 
-        <a href="index.html" class="logo"><img src="img/logo.png" alt="株式会社そうごう"></a>
+        <a href="#" class="logo"><img src="img/logo.png" alt="株式会社そうごう"></a>
         <span style="color: #333; margin-left: 5px;">採用サイト</span>
 
         <button type="button" class="menu-under">
@@ -977,7 +963,7 @@
   <script src="js/jquery.modal_scroll.js"></script>
   <script src="js/fade_in.js"></script>
   <script src="js/scroll_bar.js"></script>
-  <script src="js/toggle-nav.js"></script>
+  <script src="js/header.js"></script>
 
   <style>
     /* メニューと採用サイトテキストのフォント */
@@ -2471,23 +2457,24 @@
       color: #003E8F;
     }
     
-    /* Simple indicator (caret) - minimal styling with calm animation */
+    /* Simple indicator (caret) - positioned on the right, aligned with Japanese text line */
     .nav-cover__menu__toggle::after {
       content: '\f078'; /* Font Awesome chevron-down */
       font-family: 'Font Awesome 6 Free';
       font-weight: 900;
       position: absolute;
-      right: -20px;
+      right: 0;
+      top: 22px;
       font-size: 12px;
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.3s ease;
       line-height: 1;
-      color: #666;
+      color: #000;
     }
     
-    /* Rotate caret when active - smooth and calm */
+    /* Vertical flip: arrow points down initially, flips to point up when opened - simple */
     .nav-cover__menu__item--has-dropdown.active .nav-cover__menu__toggle::after {
-      transform: rotate(180deg);
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scaleY(-1);
+      transition: transform 0.3s ease;
     }
     
     /* Dropdown list - calm expansion animation */
@@ -2496,7 +2483,7 @@
       padding: 0;
       margin: 12px 0 0 0;
       overflow: hidden;
-      display: block !important;
+      display: none !important;
       max-height: 0;
       opacity: 0;
       transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, margin-top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2679,129 +2666,6 @@
     } else {
       initCenterCarousel();
     }
-  </script>
-  
-  <script>
-    // Navigation menu functionality - Desktop dropdown and Mobile accordion
-    (function() {
-      // Setup hamburger menu accordion (mobile only)
-      function setupMobileAccordion() {
-        if (window.innerWidth <= 1100) {
-          const toggleLinks = document.querySelectorAll('.nav-cover__menu__toggle');
-          
-          toggleLinks.forEach(function(toggle) {
-            if (toggle.dataset.accordionSetup === 'true') return;
-            toggle.dataset.accordionSetup = 'true';
-            
-            toggle.addEventListener('click', function(e) {
-              e.preventDefault();
-              e.stopPropagation();
-              
-              const parentItem = this.closest('.nav-cover__menu__item--has-dropdown');
-              if (!parentItem) return;
-              
-              const isActive = parentItem.classList.contains('active');
-              
-              // Close all other dropdowns
-              document.querySelectorAll('.nav-cover__menu__item--has-dropdown').forEach(function(item) {
-                item.classList.remove('active');
-              });
-              
-              // Toggle current dropdown
-              if (!isActive) {
-                parentItem.classList.add('active');
-              }
-            });
-          });
-        }
-      }
-      
-      // Setup desktop dropdown menu
-      function setupDesktopDropdown() {
-        if (window.innerWidth > 1100) {
-          const dropdownItems = document.querySelectorAll('.nav-item-has-dropdown');
-          
-          dropdownItems.forEach(function(item) {
-            const toggle = item.querySelector('.nav-toggle');
-            const dropdown = item.querySelector('.nav-dropdown');
-            
-            if (!toggle || !dropdown) return;
-            
-            // Click to toggle (for accessibility)
-            toggle.addEventListener('click', function(e) {
-              e.preventDefault();
-              const isVisible = dropdown.style.display === 'block';
-              
-              // Close all dropdowns
-              document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
-                dd.style.display = 'none';
-              });
-              
-              // Toggle current dropdown
-              if (!isVisible) {
-                dropdown.style.display = 'block';
-              }
-            });
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-              if (!item.contains(e.target)) {
-                dropdown.style.display = 'none';
-              }
-            });
-          });
-        }
-      }
-      
-      // Initialize functions
-      function initNavigation() {
-        setupMobileAccordion();
-        setupDesktopDropdown();
-      }
-      
-      // Initialize when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initNavigation);
-      } else {
-        initNavigation();
-      }
-      
-      // Re-setup when window resizes
-      let resizeTimer;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-          initNavigation();
-        }, 250);
-      });
-      
-      // Re-setup hamburger menu when it opens (jQuery fadeToggle)
-      if (typeof jQuery !== 'undefined') {
-        jQuery(document).ready(function($) {
-          const navCover = document.querySelector('.nav-cover');
-          if (navCover) {
-            const observer = new MutationObserver(function() {
-              const isVisible = navCover.style.display !== 'none' && 
-                               window.getComputedStyle(navCover).display !== 'none';
-              if (isVisible) {
-                setTimeout(setupMobileAccordion, 100);
-              }
-            });
-            
-            observer.observe(navCover, {
-              attributes: true,
-              attributeFilter: ['style'],
-              childList: false,
-              subtree: false
-            });
-            
-            $('.menu-under').on('click', function() {
-              setTimeout(setupMobileAccordion, 300);
-            });
-          }
-        });
-      }
-    })();
   </script>
 </body>
 

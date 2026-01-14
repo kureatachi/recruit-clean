@@ -2197,3 +2197,1479 @@ textarea {
 .kitei .indent-3 {
   padding-left: 3em;
 }
+  /* メニューと採用サイトテキストのフォント */
+  .nav li a {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+  .nav li span,
+  .recruit-site-text,
+  .nav-ex span {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+  
+  /* Make entry box fully responsive from 1920px to 1100px (before hamburger menu) */
+  @media (max-width: 1920px) and (min-width: 1101px) {
+    /* Fluid responsive entry box - smoothly scales from 1920px to 1100px */
+    header nav {
+      padding-right: 0 !important;
+      margin-right: 0 !important;
+      overflow: visible !important;
+    }
+    
+    .entry-rectangle {
+      width: auto !important;
+      min-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+      max-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+      height: 80px !important;
+      padding: 0 clamp(8px, 0.6vw + 2px, 12px) 0 clamp(20px, 1.2vw + 10px, 28px) !important;
+      gap: 10px !important;
+      flex-shrink: 0 !important;
+      margin-right: 0 !important;
+    }
+    
+    /* 採用サイトテキストの位置調整を維持 */
+    .nav li:nth-child(2) span {
+      transform: translateY(3px) !important;
+      display: inline-block !important;
+    }
+    
+    .entry-rectangle .entry-text {
+      font-size: 25px !important;
+      letter-spacing: 2px !important;
+    }
+    
+    .entry-rectangle .entry-icon {
+      height: 54px !important;
+      width: auto !important;
+      flex-shrink: 0 !important;
+    }
+    
+    /* Make navigation menu text (black text) shrink instead of wrapping from 1920px to 1100px */
+    /* At 1920px: 14px, at 1100px: 12px */
+    .nav li a {
+      font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+      white-space: nowrap !important;
+    }
+    
+    /* Also make "採用サイト" text shrink */
+    .nav li span {
+      font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+      white-space: nowrap !important;
+    }
+    
+    .nav li {
+      margin-right: clamp(15px, 0.75vw + 15px, 30px) !important;
+    }
+    
+    .nav li:last-child {
+      margin-right: 0 !important;
+      margin-left: clamp(10px, 0.5vw + 10px, 20px) !important;
+      flex-shrink: 0 !important;
+    }
+    
+    /* Ensure entry box doesn't get cut off and no gap on right */
+    .nav {
+      padding-right: 0 !important;
+      margin-right: 0 !important;
+      overflow: visible !important;
+    }
+    
+    header {
+      padding-right: 0 !important;
+      margin-right: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    header nav {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  }
+  
+  /* Hide desktop nav and show hamburger menu at 1100px and below */
+  @media (max-width: 1100px) {
+    .nav {
+      display: none !important;
+    }
+    
+    /* Show mobile navigation when hamburger menu is visible */
+    .nav-ex {
+      display: block !important;
+    }
+    /* Ensure hamburger menu button is visible */
+    .menu-under {
+      display: block !important;
+      position: fixed !important;
+      right: 20px !important;
+      top: 20px !important;
+      width: 30px !important;
+      height: 20px !important;
+      z-index: 9999999 !important;
+      cursor: pointer !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    /* Ensure hamburger menu lines are visible */
+    .menu-under .menu__line {
+      background: #111 !important;
+      background-color: #111 !important;
+      display: block !important;
+      height: 2px !important;
+      min-height: 2px !important;
+      position: absolute !important;
+      left: 0 !important;
+      right: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-sizing: border-box !important;
+    }
+    .menu-under .menu__line--top {
+      top: 0 !important;
+      bottom: auto !important;
+    }
+    .menu-under .menu__line--center {
+      top: 9px !important;
+      bottom: auto !important;
+    }
+    .menu-under .menu__line--bottom {
+      top: auto !important;
+      bottom: 0 !important;
+    }
+    /* Active state for X button when menu is open */
+    .menu-under .menu__line--top.active {
+      top: 9px !important;
+      bottom: auto !important;
+      transform: rotate(45deg) !important;
+      transform-origin: center center !important;
+    }
+    .menu-under .menu__line--center.active {
+      transform: scaleX(0) !important;
+      opacity: 0 !important;
+    }
+    .menu-under .menu__line--bottom.active {
+      top: 9px !important;
+      bottom: auto !important;
+      transform: rotate(-45deg) !important;
+      transform-origin: center center !important;
+    }
+    /* Hide "採用サイト" text in mobile navigation when hamburger menu is visible */
+    .nav-ex span {
+      display: none !important;
+    }
+  }
+  /* Entry Rectangle Styling */
+  .entry-rectangle {
+    width: 213px;
+    height: 80px;
+    background: #002F6B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0;
+    border: none;
+  }
+  .entry-rectangle .entry-text {
+    color: #FFD31B;
+    font-size: 25px !important;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+  }
+  .entry-rectangle .entry-icon {
+    width: auto;
+    height: 54px;
+    object-fit: contain;
+  }
+  .welfare-banner {
+    width: 100%;
+    background: #002F6B;
+    padding: 80px 0;
+    text-align: center;
+    margin: 0;
+  }
+  .welfare-banner h1 {
+    color: #FFCE02;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+    width: 700px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Align pankuzu with main content width - match h1 left position */
+  .pankuzu {
+    width: 700px;
+    max-width: 100%;
+    margin: 30px auto 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    padding-left: 0 !important;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure first span starts at the same position as h1 */
+  .pankuzu span:first-child {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  
+  /* Ensure wrap.under doesn't add extra padding */
+  section.wrap.under {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .btn-white {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 2px solid #333;
+    background: transparent;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  .btn-white:hover {
+    background: #333;
+    color: #fff;
+  }
+  .btn-white i {
+    margin-left: 10px;
+    transition: 0.3s;
+  }
+  .btn-white:hover i {
+    transform: translateX(5px);
+  }
+  .welfare-content {
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .welfare-content p,
+  .welfare-content h3,
+  .welfare-content h4 {
+    text-align: left;
+  }
+  
+  /* Job tags list styling */
+  .job-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.8;
+  }
+  
+  .job-tags li {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  .job-tags li:not(:first-child) {
+    margin-top: 0;
+  }
+  
+  .job-tags li:not(:last-child) {
+    margin-bottom: 0;
+  }
+  
+  /* Job tags with descriptions (培われる能力 sections) */
+  .job-tags li strong {
+    display: inline;
+    font-weight: 600;
+  }
+  
+  .job-tags li p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .job-tags.job-tags-with-bottom-padding {
+    padding-bottom: 30px;
+  }
+  .welfare-table {
+    width: 700px !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  .welfare-table th,
+  .welfare-table td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .welfare-table th:first-child,
+  .welfare-table td:first-child {
+    width: 60%;
+  }
+  .welfare-table th:not(:first-child),
+  .welfare-table td:not(:first-child) {
+    width: 20%;
+  }
+  .welfare-table th:nth-child(3),
+  .welfare-table td:nth-child(3) {
+    width: 20%;
+  }
+  /* 見出し行をバナーと同じ紺色に */
+  .welfare-table thead th {
+    background: #1a3a5f !important;
+    color: #fff !important;
+  }
+  /* 最初の一行のみ白、交互のグレー行を濃いグレーに */
+  .welfare-table tbody tr:nth-child(odd) {
+    background: #fff !important;
+  }
+  .welfare-table tbody tr:nth-child(even) {
+    background: #d0d0d0 !important;
+  }
+  /* 見出しのスタイル */
+  .title-border {
+    text-align: center;
+  }
+  .title-border .title {
+    width: auto;
+    min-width: 300px;
+    height: 30px;
+    text-align: center;
+    font: normal normal bold 30px/60px Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    display: block;
+    white-space: nowrap;
+  }
+  /* Footerのボタンのフォントサイズを小さく */
+  .btn.ex {
+    font-size: 16px !important;
+    white-space: nowrap !important;
+    padding: 12px 20px !important;
+    font-style: normal !important;
+  }
+  .btn.ex.mail {
+    font-size: 16px !important;
+    font-style: normal !important;
+  }
+  /* フッター部分のアイコンを大きく */
+  .contact-wrap .btn.ex i,
+  .contact-wrap .btn.ex .fa-solid,
+  .contact-wrap .btn.ex .fas {
+    font-size: 28px !important;
+    margin-right: 12px !important;
+    vertical-align: middle !important;
+  }
+  /* JOIN USセクションのボタンレイアウト調整 */
+  /* 1920pxのレイアウト・サイズを750pxまで維持 - tablet.cssの影響を完全にオーバーライド */
+  @media screen and (max-width: 1100px) and (min-width: 751px) {
+    /* Inner container padding */
+    .contact-wrap .inner {
+      padding: 40px 20px !important;
+    }
+    .contact-wrap .item {
+      margin: 0 !important;
+    }
+    .contact-wrap .item p {
+      margin-bottom: 20px !important;
+    }
+    
+    /* Override tablet.css .contact-wrap .link { width: 90%; } */
+    /* Maintain 700px width container */
+    section.contact-wrap .link,
+    .contact-wrap .inner .link,
+    .contact-wrap .link {
+      width: 700px !important;
+      max-width: 700px !important;
+      min-width: 700px !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: center !important;
+      gap: 15px !important;
+      flex-wrap: nowrap !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* First row: two buttons side by side */
+    /* CRITICAL: Explicitly set width for :first-of-type to override tablet.css */
+    section.contact-wrap .link:first-of-type,
+    .contact-wrap .link:first-of-type {
+      width: 700px !important;
+      max-width: 700px !important;
+      min-width: 700px !important;
+      margin: 0 auto 15px auto !important;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 15px !important;
+      flex-wrap: nowrap !important;
+      box-sizing: border-box !important;
+    }
+    section.contact-wrap .link:first-of-type .btn.ex,
+    .contact-wrap .link:first-of-type .btn.ex {
+      width: 342px !important;
+      max-width: 342px !important;
+      min-width: 342px !important;
+      margin: 0 !important;
+      flex: 0 0 342px !important;
+      flex-shrink: 0 !important;
+      flex-grow: 0 !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* Second row: single button (third button) */
+    /* CRITICAL: Explicitly set width for :last-of-type to override tablet.css */
+    section.contact-wrap .link:last-of-type,
+    .contact-wrap .link:last-of-type {
+      width: 700px !important;
+      max-width: 700px !important;
+      min-width: 700px !important;
+      margin: 0 auto !important;
+      margin-top: 0 !important;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: center !important;
+      gap: 15px !important;
+      flex-wrap: nowrap !important;
+      box-sizing: border-box !important;
+    }
+    section.contact-wrap .link:last-of-type .btn.ex.mail,
+    .contact-wrap .link:last-of-type .btn.ex.mail {
+      width: calc(100% - 1px) !important;
+      max-width: 699px !important;
+      min-width: 699px !important;
+      margin: 0 !important;
+    }
+    
+    /* CRITICAL: Override tablet.css button styles to maintain 1920px sizes */
+    /* tablet.css: .btn { width: 280px; height: 55px; } → maintain width: auto; height: 75px; */
+    /* CRITICAL: Override tablet.css .btn { width: 280px; height: 55px; } */
+    /* But only override base properties - individual button widths are set separately */
+    section.contact-wrap .btn,
+    section.contact-wrap .link .btn,
+    .contact-wrap .btn,
+    .contact-wrap .link .btn {
+      /* Override tablet.css width: 280px for base buttons */
+      /* Individual buttons have their own width settings below */
+      height: 75px !important;
+      line-height: 75px !important;
+      min-height: 75px !important;
+      padding: 0 20px !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* CRITICAL: Explicitly override tablet.css .btn { width: 280px; } for first two buttons */
+    /* This ensures buttons don't shrink */
+    section.contact-wrap .link:first-of-type .btn.ex,
+    .contact-wrap .link:first-of-type .btn.ex,
+    section.contact-wrap .link .btn.ex:first-child,
+    .contact-wrap .link .btn.ex:first-child,
+    section.contact-wrap .link .btn.ex:nth-child(1),
+    .contact-wrap .link .btn.ex:nth-child(1),
+    section.contact-wrap .link .btn.ex:nth-child(2),
+    .contact-wrap .link .btn.ex:nth-child(2) {
+      width: 342px !important;
+      max-width: 342px !important;
+      min-width: 342px !important;
+    }
+    
+    /* tablet.css: .btn.ex { font-size: 22px; } → maintain font-size: 16px (non-italic) */
+    section.contact-wrap .btn.ex,
+    section.contact-wrap .link .btn.ex,
+    .contact-wrap .btn.ex,
+    .contact-wrap .link .btn.ex {
+      font-size: 16px !important;
+      font-style: normal !important;
+      height: 75px !important;
+      line-height: 1.5 !important;
+      min-height: 75px !important;
+      padding: 0 20px !important;
+      white-space: normal !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* tablet.css: .btn.ex.mail { font-size: 18px; } → maintain 1920px default: font-size: 16px; */
+    section.contact-wrap .btn.ex.mail,
+    section.contact-wrap .link .btn.ex.mail,
+    .contact-wrap .btn.ex.mail,
+    .contact-wrap .link .btn.ex.mail {
+      font-size: 16px !important;
+      font-style: normal !important;
+      height: 75px !important;
+      line-height: 1.5 !important;
+      min-height: 75px !important;
+      padding: 0 20px !important;
+      white-space: normal !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      box-sizing: border-box !important;
+    }
+    
+  }
+  
+  /* Stack buttons vertically from 750px and below */
+
+  /* 1101px以上 - 同じスタイルを維持 */
+  @media screen and (min-width: 1101px) {
+    .contact-wrap .inner {
+      padding: 40px 20px !important;
+    }
+    .contact-wrap .item {
+      margin: 0 !important;
+    }
+    .contact-wrap .item p {
+      margin-bottom: 20px !important;
+    }
+    
+    .contact-wrap .link {
+      width: 700px !important;
+      max-width: 700px !important;
+      min-width: 700px !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: center !important;
+      gap: 15px !important;
+      flex-wrap: nowrap !important;
+      box-sizing: border-box !important;
+    }
+    
+    .contact-wrap .link:first-of-type {
+      margin-bottom: 15px !important;
+      align-items: center !important;
+    }
+    section.contact-wrap .link:first-of-type .btn.ex,
+    .contact-wrap .link:first-of-type .btn.ex {
+      width: 342px !important;
+      max-width: 342px !important;
+      min-width: 342px !important;
+      margin: 0 !important;
+      flex: 0 0 342px !important;
+      flex-shrink: 0 !important;
+      flex-grow: 0 !important;
+      box-sizing: border-box !important;
+    }
+    
+    .contact-wrap .link:last-of-type {
+      margin-top: 0 !important;
+    }
+    section.contact-wrap .link:last-of-type .btn.ex.mail,
+    .contact-wrap .link:last-of-type .btn.ex.mail {
+      width: calc(100% - 1px) !important;
+      max-width: 699px !important;
+      min-width: 699px !important;
+      margin: 0 !important;
+    }
+    
+    /* Ensure consistent button font styles at 1101px+ */
+    section.contact-wrap .btn.ex,
+    section.contact-wrap .link .btn.ex,
+    .contact-wrap .btn.ex,
+    .contact-wrap .link .btn.ex {
+      font-size: 16px !important;
+      font-style: normal !important;
+      height: 75px !important;
+      line-height: 75px !important;
+      min-height: 75px !important;
+    }
+    
+    section.contact-wrap .btn.ex.mail,
+    section.contact-wrap .link .btn.ex.mail,
+    .contact-wrap .btn.ex.mail,
+    .contact-wrap .link .btn.ex.mail {
+      font-size: 16px !important;
+      font-style: normal !important;
+      height: 75px !important;
+      line-height: 75px !important;
+      min-height: 75px !important;
+    }
+  }
+  @media (max-width: 750px) {
+    .contact-wrap .inner {
+      padding: 40px 20px !important;
+    }
+    .contact-wrap .item {
+      margin: 0 !important;
+    }
+    .contact-wrap .item p {
+      margin-bottom: 20px !important;
+    }
+    .contact-wrap .link {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 0 !important;
+    }
+    .contact-wrap .link:first-of-type {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    .contact-wrap .link:last-of-type {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    /* Override ALL base button styles to ensure uniform sizing and spacing */
+    .contact-wrap .btn,
+    .contact-wrap .btn.ex,
+    .contact-wrap .btn.ex.mail,
+    .contact-wrap .link .btn,
+    .contact-wrap .link:first-of-type .btn,
+    .contact-wrap .link:last-of-type .btn {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 75px !important;
+      min-height: 75px !important;
+      margin: 0 auto 30px auto !important;
+      padding: 0 20px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+      font-size: 16px !important;
+      font-style: normal !important;
+      line-height: 1.5 !important;
+    }
+    /* Remove margin from the very last button (third button) */
+    .contact-wrap .link:last-of-type .btn:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+  
+  /* Third button text spans - desktop: one line, mobile: two lines */
+  .contact-wrap .btn.ex.mail .btn-text-wrapper {
+    display: inline;
+    white-space: nowrap;
+  }
+  .contact-wrap .btn.ex.mail .btn-text-line1,
+  .contact-wrap .btn.ex.mail .btn-text-line2 {
+    display: inline;
+    white-space: nowrap;
+  }
+  
+  /* Mobile: split into two lines */
+  @media (max-width: 750px) {
+    .contact-wrap .btn.ex.mail .btn-text-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      white-space: normal;
+      line-height: 1.2;
+    }
+    .contact-wrap .btn.ex.mail .btn-text-line1 {
+      display: block;
+      white-space: normal;
+      line-height: 1.2;
+      margin: 0;
+      padding: 0;
+    }
+    .contact-wrap .btn.ex.mail .btn-text-line2 {
+      display: block;
+      white-space: normal;
+      line-height: 1.2;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  /* Shrink text for third button on very small screens (420px and below) */
+  @media (max-width: 420px) {
+    .contact-wrap .btn.ex.mail {
+      font-size: 12px !important;
+      padding: 0 15px !important;
+      white-space: normal !important;
+      line-height: 1.4 !important;
+    }
+    .contact-wrap .btn.ex.mail .btn-text-line1,
+    .contact-wrap .btn.ex.mail .btn-text-line2 {
+      line-height: 1.3 !important;
+    }
+    /* Keep icon and arrow sizes at original size - only shrink text */
+  }
+  @media (max-width: 768px) {
+    .welfare-content {
+      width: 100%;
+      padding: 0 20px;
+    }
+    .welfare-table {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .welfare-banner h1 {
+      font-size: 32px !important;
+      padding: 0 20px !important;
+      text-align: left !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .welfare-banner {
+      padding: 60px 0 !important;
+    }
+    .pankuzu {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-top: 30px !important;
+      padding: 0 20px !important;
+      box-sizing: border-box !important;
+    }
+  }
+
+/* Center carousel */
+.center-carousel-section {
+  position: relative;
+  margin: -120px 0 0 0 !important;
+  padding: 80px 0 !important;
+  overflow: hidden;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+}
+.center-carousel-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('img/interview/interview-main-image.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  transform: scale(1.05);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.center-carousel-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px !important;
+  margin: 0 auto;
+  padding: 0 60px !important;
+  width: 100% !important;
+}
+.center-carousel-head {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+.center-carousel-title-bg {
+  font-size: 150px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin: 0;
+  color: rgba(100, 100, 100, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 1;
+}
+.center-carousel-title-text {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #333;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 0;
+}
+.center-carousel-frame {
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.center-carousel-item {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 340px;
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, z-index 0s;
+  opacity: 0;
+}
+.center-card {
+  background: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+.center-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.center-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.center-carousel-btn.prev {
+  left: 10px;
+}
+.center-carousel-btn.next {
+  right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .center-carousel-section {
+    padding: 80px 0 0 0;
+  }
+  .center-carousel-inner {
+    padding: 0 30px;
+  }
+  .center-carousel-item {
+    width: 280px;
+  }
+  .center-carousel-frame {
+    height: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  .center-carousel-section {
+    padding: 40px 0 !important;
+    margin-top: -60px !important;
+  }
+  
+  /* Hide carousel background image on mobile */
+  .center-carousel-bg {
+    display: none !important;
+  }
+  
+  /* Make MESSAGE text larger on mobile */
+  .center-carousel-head .center-carousel-title-bg,
+  .center-carousel-title-bg {
+    font-size: 70px !important;
+    padding-top: 15px !important;
+    padding-bottom: 20px !important;
+    margin-top: -20px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .center-carousel-title-text {
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    position: relative !important;
+  }
+  
+  .center-carousel-head {
+    margin-bottom: 20px !important;
+  }
+  
+  .center-carousel-head h2 {
+    font-size: 28px !important;
+  }
+  
+  .center-carousel-head p {
+    font-size: 16px !important;
+  }
+  
+  .center-carousel-item {
+    width: 85vw !important;
+    max-width: 350px !important;
+  }
+  
+  .center-carousel-frame {
+    height: 500px !important;
+  }
+  
+  .center-carousel-btn {
+    width: 48px;
+    height: 48px;
+    top: 30% !important;
+  }
+  
+  .center-carousel-inner {
+    padding: 0 5px !important;
+  }
+}
+
+/* ============================================
+   Desktop Navigation Dropdown Menu
+   ============================================ */
+
+/* Desktop dropdown menu for 社員の声 */
+.nav-item-has-dropdown {
+  position: relative;
+}
+
+.nav-dropdown {
+  list-style: none !important;
+  padding: 10px 0 !important;
+  margin: 5px 0 0 0 !important;
+  background: #fff !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  min-width: 200px !important;
+  width: auto !important;
+  box-sizing: border-box !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  z-index: 1000 !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Override any parent nav styles that might affect dropdown */
+.nav-item-has-dropdown .nav-dropdown,
+.nav .nav-dropdown,
+ul.nav-dropdown {
+  list-style: none !important;
+  padding: 10px 0 !important;
+  margin: 5px 0 0 0 !important;
+}
+
+.nav-dropdown li {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  align-items: stretch !important;
+  height: auto !important;
+  flex: none !important;
+}
+
+/* Override any flexbox styles from parent nav */
+.nav-item-has-dropdown .nav-dropdown li,
+.nav .nav-dropdown li,
+ul.nav-dropdown li {
+  display: block !important;
+  align-items: stretch !important;
+  height: auto !important;
+  flex: none !important;
+}
+
+/* Ensure all items have identical styling */
+.nav-dropdown li:nth-child(1),
+.nav-dropdown li:nth-child(2),
+.nav-dropdown li:nth-child(3),
+.nav-dropdown li:nth-child(4) {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+.nav-dropdown li:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  display: block !important;
+}
+
+.nav-dropdown li a {
+  display: block !important;
+  padding: 8px 20px !important;
+  margin: 0 !important;
+  color: #333 !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  transition: background-color 0.2s ease;
+  line-height: 1.5 !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  text-align: left !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+
+/* Override any parent nav link styles */
+.nav-item-has-dropdown .nav-dropdown li a,
+.nav .nav-dropdown li a,
+ul.nav-dropdown li a {
+  display: block !important;
+  padding: 8px 20px !important;
+  margin: 0 !important;
+  text-align: left !important;
+  font-weight: 400 !important;
+}
+
+/* Ensure all links have identical padding - explicit for each with left alignment */
+.nav-dropdown li:nth-child(1) a {
+  padding: 8px 20px !important;
+  margin: 0 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  font-weight: 400 !important;
+}
+.nav-dropdown li:nth-child(2) a {
+  padding: 8px 20px !important;
+  margin: 0 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  font-weight: 400 !important;
+}
+.nav-dropdown li:nth-child(3) a {
+  padding: 8px 20px !important;
+  margin: 0 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  font-weight: 400 !important;
+}
+.nav-dropdown li:nth-child(4) a {
+  padding: 8px 20px !important;
+  margin: 0 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  font-weight: 400 !important;
+}
+
+.nav-dropdown li:first-child a {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  text-indent: 0 !important;
+  font-weight: 400 !important;
+}
+
+/* Explicitly ensure last child has exact same left padding and alignment */
+.nav-dropdown li:last-child a {
+  padding: 8px 20px !important;
+  margin: 0 !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  text-align: left !important;
+  text-indent: 0 !important;
+  margin-left: 0 !important;
+  font-weight: 400 !important;
+}
+
+/* Force alignment for last child - ensure no extra spacing */
+.nav-dropdown li:last-child {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Ensure all list items have no left margin/padding that could affect alignment */
+.nav-dropdown li {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.nav-dropdown li a:hover {
+  background-color: #f5f5f5;
+  color: #003E8F;
+}
+
+/* Ensure last item hover maintains alignment */
+.nav-dropdown li:last-child a:hover {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  text-align: left !important;
+}
+
+/* Additional rules to ensure last item alignment - override any parent nav styles */
+.nav .nav-item-has-dropdown .nav-dropdown li:last-child,
+.nav .nav-dropdown li:last-child,
+ul.nav .nav-dropdown li:last-child {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+  text-indent: 0 !important;
+}
+
+.nav .nav-item-has-dropdown .nav-dropdown li:last-child a,
+.nav .nav-dropdown li:last-child a,
+ul.nav .nav-dropdown li:last-child a {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  margin-left: 0 !important;
+  text-indent: 0 !important;
+  text-align: left !important;
+  font-weight: 400 !important;
+}
+
+/* Desktop hover behavior - smooth animation */
+@media (min-width: 1101px) {
+  .nav-item-has-dropdown:hover .nav-dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    display: block !important;
+    pointer-events: auto !important;
+  }
+  
+  /* Ensure dropdown stays visible when hovering over it */
+  .nav-item-has-dropdown:hover .nav-dropdown,
+  .nav-dropdown:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    display: block !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ============================================
+   Hamburger Menu - Calm Accordion Design
+   ============================================ */
+
+@media (max-width: 1100px) {
+  /* Simple white background hamburger menu - no overlay, no animations, clean design */
+  /* Note: display property is controlled by tablet.css (display: none) and jQuery fadeToggle() - don't override */
+  .nav-cover {
+    background: #fff !important;
+    background-image: none !important;
+    background-size: auto !important;
+    background-position: 0 0 !important;
+    box-shadow: none !important;
+    height: 100vh !important;
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+    top: 0 !important;
+    left: 0 !important;
+    overflow-y: auto !important;
+    /* Don't set display here - let tablet.css (display: none) and jQuery fadeToggle() control it */
+  }
+  
+  .nav-cover__wrap {
+    background: #fff !important;
+    background-image: none !important;
+    transition: none !important;
+    display: flex !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    position: relative !important;
+    padding: 0 !important;
+  }
+  
+  /* Simple menu list - clean and minimal, positioned lower for balance */
+  .nav-cover__menu {
+    width: 100% !important;
+    text-align: left !important;
+    padding: 80px 30px 40px 30px !important;
+    box-sizing: border-box !important;
+  }
+  
+  .nav-cover__menu__item {
+    margin-bottom: 35px !important;
+    text-align: left !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  
+  /* Copyright item - different styling */
+  .nav-cover__menu__item:last-child {
+    margin-top: 60px !important;
+    padding-top: 40px !important;
+    border-top: 1px solid #e0e0e0 !important;
+    font-size: 11px !important;
+    color: #999 !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Override tablet.css styles for menu item links - ensure flex layout works */
+  .nav-cover__menu__item a,
+  .nav-cover__menu__toggle {
+    text-decoration: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    transition: color 0.2s ease !important;
+    cursor: pointer !important;
+    position: relative !important;
+    text-align: left !important;
+    letter-spacing: 0 !important;
+  }
+  
+  /* Override tablet.css .nav-cover__menu__item span styles - remove margin-left: 10px and font-size: 15px */
+  .nav-cover__menu__item a > span.menu-label-en,
+  .nav-cover__menu__item a > span.menu-label-ja,
+  .nav-cover__menu__toggle > span.menu-label-en,
+  .nav-cover__menu__toggle > span.menu-label-ja {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: block !important;
+  }
+  
+  /* English label - small, light gray, above - override tablet.css span styles */
+  .nav-cover__menu__item a .menu-label-en,
+  .nav-cover__menu__toggle .menu-label-en {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: #999 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    letter-spacing: 0 !important;
+    width: auto !important;
+  }
+  
+  /* Japanese label - larger, bold, black, below - override tablet.css span styles */
+  .nav-cover__menu__item a .menu-label-ja,
+  .nav-cover__menu__toggle .menu-label-ja {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+    line-height: 1.4 !important;
+    display: block !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    letter-spacing: 0 !important;
+    width: auto !important;
+  }
+  
+  .nav-cover__menu__item a:hover .menu-label-en,
+  .nav-cover__menu__toggle:hover .menu-label-en {
+    color: #999 !important;
+  }
+  
+  .nav-cover__menu__item a:hover .menu-label-ja,
+  .nav-cover__menu__toggle:hover .menu-label-ja {
+    color: #003E8F !important;
+  }
+  
+  /* Accordion dropdown container */
+  .nav-cover__menu__item--has-dropdown {
+    position: relative;
+  }
+  
+  /* Simple indicator (caret) - positioned on the right, aligned with Japanese text line */
+  .nav-cover__menu__toggle {
+    position: relative;
+    padding-right: 25px !important;
+  }
+  
+  .nav-cover__menu__toggle::after {
+    content: '\f078'; /* Font Awesome chevron-down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 22px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    line-height: 1;
+    color: #000;
+  }
+  
+  /* Vertical flip: arrow points down initially, flips to point up when opened - simple */
+  .nav-cover__menu__item--has-dropdown.active .nav-cover__menu__toggle::after {
+    transform: scaleY(-1);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Dropdown list - simple show/hide, no complex animations */
+  .nav-cover__menu__dropdown {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 8px 0 0 0 !important;
+    overflow: hidden !important;
+    display: none !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+  
+  /* Show dropdown when active - simple display */
+  .nav-cover__menu__item--has-dropdown.active .nav-cover__menu__dropdown {
+    display: block !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    margin-top: 8px !important;
+    transition: none !important;
+  }
+  
+  /* Dropdown items - simple, no animations */
+  .nav-cover__menu__dropdown li {
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+    list-style: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure last item has no extra margin */
+  .nav-cover__menu__dropdown li:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* Dropdown links - simple clean style */
+  .nav-cover__menu__dropdown li a {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #666 !important;
+    text-decoration: none !important;
+    display: block !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: color 0.25s ease-out, padding-left 0.25s ease-out !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Ensure last link has consistent padding */
+  .nav-cover__menu__dropdown li:last-child a {
+    padding-bottom: 10px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Hover effect - subtle and calm */
+  .nav-cover__menu__dropdown li a:hover {
+    color: #003E8F !important;
+    padding-left: 4px !important;
+  }
+  
+  /* Ensure last item hover doesn't break alignment */
+  .nav-cover__menu__dropdown li:last-child a:hover {
+    padding-left: 4px !important;
+  }
+}
+
+/* Stats Grid - Semantic HTML Support */
+.stats-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-grid li {
+  list-style: none;
+  margin: 0;
+}
+
+/* Full width JOIN US banner */
+.contact-wrap {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  box-sizing: border-box !important;
+}
+
+/* Full width footer */
+footer {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  box-sizing: border-box !important;
+}
+

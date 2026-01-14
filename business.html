@@ -50,7 +50,7 @@
     
     /* Fix for menu text being cut off at the top - ensure proper spacing */
     header {
-      padding: 5px 0 !important;
+      padding: 0 !important;
       margin: 0 !important;
       overflow: visible !important;
     }
@@ -61,7 +61,9 @@
     }
     
     .nav {
+      display: flex;
       align-items: center !important;
+      height: 100%;
       min-height: 60px !important;
       padding: 0 !important;
       margin: 0 !important;
@@ -77,15 +79,17 @@
     .nav li {
       display: flex !important;
       align-items: center !important;
+      height: 100%;
       min-height: 40px !important;
+      margin-right: 30px;
     }
     
     /* Ensure Entry button fills full height with no gaps at top/bottom */
     .nav li:last-child {
       display: flex !important;
       align-items: stretch !important;
-      height: calc(100% + 10px) !important;
-      margin: -5px 0 !important;
+      height: 100% !important;
+      margin-right: 0 !important;
       padding: 0 !important;
     }
     
@@ -101,11 +105,11 @@
     .entry-rectangle {
       display: flex !important;
       align-items: center !important;
-      justify-content: flex-end !important;
+      justify-content: center !important;
       height: 100% !important;
       width: 100% !important;
       min-height: 60px !important;
-      padding: 0 !important;
+      padding: 0 20px !important;
       margin: 0 !important;
       box-sizing: border-box !important;
     }
@@ -313,7 +317,6 @@
         gap: 10px !important;
         flex-shrink: 0 !important;
         margin-right: 0 !important;
-        justify-content: flex-end !important;
       }
       
       /* 採用サイトテキストの位置調整を維持 */
@@ -397,9 +400,6 @@
       padding-right: 0 !important;
     }
     
-    .entry-rectangle {
-      margin-right: 0 !important;
-    }
     .nav li {
       display: flex;
       align-items: center;
@@ -1425,9 +1425,9 @@
         gap: 10px !important;
         flex-shrink: 0 !important;
         margin-right: 0 !important;
-        justify-content: flex-end !important;
       }
       
+      /* 採用サイトテキストの位置調整を維持 */
       .nav li:nth-child(2) span {
         transform: translateY(3px) !important;
         display: inline-block !important;
@@ -1740,10 +1740,10 @@
           </li>
           <li style="margin-left: 20px;">
             <a href="#" class="entry-link">
-              <div class="entry-rectangle">
-                <span class="entry-text">Entry</span>
+            <div class="entry-rectangle">
+              <span class="entry-text">Entry</span>
                 <img src="img/common/edit-icon.png" alt="Entry Icon" class="entry-icon">
-              </div>
+            </div>
             </a>
           </li>
         </ul>
@@ -2163,7 +2163,7 @@
   <script src="js/jquery.modal_scroll.js"></script>
   <script src="js/fade_in.js"></script>
   <script src="js/scroll_bar.js"></script>
-  <script src="js/toggle-nav.js"></script>
+  <script src="js/header.js"></script>
 
   <script>
     // Center carousel functionality
@@ -2259,128 +2259,6 @@
     }
   </script>
   
-  <script>
-    // Navigation menu functionality - Desktop dropdown and Mobile accordion
-    (function() {
-      // Setup hamburger menu accordion (mobile only)
-      function setupMobileAccordion() {
-        if (window.innerWidth <= 1100) {
-          const toggleLinks = document.querySelectorAll('.nav-cover__menu__toggle');
-          
-          toggleLinks.forEach(function(toggle) {
-            if (toggle.dataset.accordionSetup === 'true') return;
-            toggle.dataset.accordionSetup = 'true';
-            
-            toggle.addEventListener('click', function(e) {
-              e.preventDefault();
-              e.stopPropagation();
-              
-              const parentItem = this.closest('.nav-cover__menu__item--has-dropdown');
-              if (!parentItem) return;
-              
-              const isActive = parentItem.classList.contains('active');
-              
-              // Close all other dropdowns
-              document.querySelectorAll('.nav-cover__menu__item--has-dropdown').forEach(function(item) {
-                item.classList.remove('active');
-              });
-              
-              // Toggle current dropdown
-              if (!isActive) {
-                parentItem.classList.add('active');
-              }
-            });
-          });
-        }
-      }
-      
-      // Setup desktop dropdown menu
-      function setupDesktopDropdown() {
-        if (window.innerWidth > 1100) {
-          const dropdownItems = document.querySelectorAll('.nav-item-has-dropdown');
-          
-          dropdownItems.forEach(function(item) {
-            const toggle = item.querySelector('.nav-toggle');
-            const dropdown = item.querySelector('.nav-dropdown');
-            
-            if (!toggle || !dropdown) return;
-            
-            // Click to toggle (for accessibility)
-            toggle.addEventListener('click', function(e) {
-              e.preventDefault();
-              const isVisible = dropdown.style.display === 'block';
-              
-              // Close all dropdowns
-              document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
-                dd.style.display = 'none';
-              });
-              
-              // Toggle current dropdown
-              if (!isVisible) {
-                dropdown.style.display = 'block';
-              }
-            });
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-              if (!item.contains(e.target)) {
-                dropdown.style.display = 'none';
-              }
-            });
-          });
-        }
-      }
-      
-      // Initialize functions
-      function initNavigation() {
-        setupMobileAccordion();
-        setupDesktopDropdown();
-      }
-      
-      // Initialize when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initNavigation);
-      } else {
-        initNavigation();
-      }
-      
-      // Re-setup when window resizes
-      let resizeTimer;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-          initNavigation();
-        }, 250);
-      });
-      
-      // Re-setup hamburger menu when it opens (jQuery fadeToggle)
-      if (typeof jQuery !== 'undefined') {
-        jQuery(document).ready(function($) {
-          const navCover = document.querySelector('.nav-cover');
-          if (navCover) {
-            const observer = new MutationObserver(function() {
-              const isVisible = navCover.style.display !== 'none' && 
-                               window.getComputedStyle(navCover).display !== 'none';
-              if (isVisible) {
-                setTimeout(setupMobileAccordion, 100);
-              }
-            });
-            
-            observer.observe(navCover, {
-              attributes: true,
-              attributeFilter: ['style'],
-              childList: false,
-              subtree: false
-            });
-            
-            $('.menu-under').on('click', function() {
-              setTimeout(setupMobileAccordion, 300);
-            });
-          }
-        });
-      }
-    })();
-  </script>
 </body>
 
 </html>

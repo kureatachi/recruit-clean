@@ -61,9 +61,10 @@
     }
     
     .nav {
-      align-items: stretch !important;
+      display: flex;
+      align-items: center !important;
+      height: 100%;
       min-height: 60px !important;
-      height: 100% !important;
       padding: 0 !important;
       margin: 0 !important;
     }
@@ -78,7 +79,9 @@
     .nav li {
       display: flex !important;
       align-items: center !important;
+      height: 100%;
       min-height: 40px !important;
+      margin-right: 30px;
     }
     
     /* Ensure Entry button fills full height with no gaps at top/bottom */
@@ -86,7 +89,7 @@
       display: flex !important;
       align-items: stretch !important;
       height: 100% !important;
-      margin: 0 !important;
+      margin-right: 0 !important;
       padding: 0 !important;
     }
     
@@ -102,6 +105,7 @@
     .entry-rectangle {
       display: flex !important;
       align-items: center !important;
+      justify-content: center !important;
       height: 100% !important;
       width: 100% !important;
       min-height: 60px !important;
@@ -262,7 +266,7 @@
       <nav>
         <ul class="nav">
           <li>
-            <a href="index.html">
+            <a href="#">
               <img src="img/logo.png" alt="株式会社そうごうロゴ" class="logo"></a>
           </li>
           <li style="margin-left: 5px;">
@@ -306,10 +310,10 @@
           </li>
           <li style="margin-left: 20px;">
             <a href="#" class="entry-link">
-              <div class="entry-rectangle">
-                <span class="entry-text">Entry</span>
+            <div class="entry-rectangle">
+              <span class="entry-text">Entry</span>
                 <img src="img/common/edit-icon.png" alt="Entry Icon" class="entry-icon">
-              </div>
+            </div>
             </a>
           </li>
         </ul>
@@ -318,7 +322,7 @@
 
       <div class="nav-ex">
 
-        <a href="index.html" class="logo"><img src="img/logo.png" alt="株式会社そうごう"></a>
+        <a href="#" class="logo"><img src="img/logo.png" alt="株式会社そうごう"></a>
         <span style="color: #333; margin-left: 5px;">採用サイト</span>
 
         <button type="button" class="menu-under">
@@ -879,7 +883,7 @@
   <script src="js/jquery.modal_scroll.js"></script>
   <script src="js/fade_in.js"></script>
   <script src="js/scroll_bar.js"></script>
-  <script src="js/toggle-nav.js"></script>
+  <script src="js/header.js"></script>
 
   <style>
     /* メニューと採用サイトテキストのフォント */
@@ -1308,52 +1312,6 @@
       .nav-cover__menu__dropdown li:last-child a:hover {
         padding-left: 0 !important;
       }
-    }
-    /* Entry Rectangle Styling */
-    .entry-link {
-      text-decoration: none;
-      display: block;
-    }
-    .entry-rectangle {
-      width: auto;
-      min-width: 213px;
-      height: 80px;
-      background: #002F6B;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 12px 0 28px;
-      box-sizing: border-box;
-      margin: 0;
-      border: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .entry-link:hover .entry-rectangle {
-      background: #00408F;
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 47, 107, 0.4);
-    }
-    .entry-rectangle .entry-text {
-      color: #FFD31B;
-      font-size: 25px;
-      font-weight: 700;
-      font-family: 'Roboto', sans-serif;
-      letter-spacing: 2px;
-      transition: color 0.3s ease;
-    }
-    .entry-link:hover .entry-rectangle .entry-text {
-      color: #FFE066;
-    }
-    .entry-rectangle .entry-icon {
-      width: auto;
-      height: 54px;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-    .entry-link:hover .entry-rectangle .entry-icon {
-      transform: translateX(3px);
     }
     .welfare-banner {
       width: 100%;
@@ -2191,128 +2149,6 @@
     }
   </style>
   
-  <script>
-    // Navigation menu functionality - Desktop dropdown and Mobile accordion
-    (function() {
-      // Setup hamburger menu accordion (mobile only)
-      function setupMobileAccordion() {
-        if (window.innerWidth <= 1100) {
-          const toggleLinks = document.querySelectorAll('.nav-cover__menu__toggle');
-          
-          toggleLinks.forEach(function(toggle) {
-            if (toggle.dataset.accordionSetup === 'true') return;
-            toggle.dataset.accordionSetup = 'true';
-            
-            toggle.addEventListener('click', function(e) {
-              e.preventDefault();
-              e.stopPropagation();
-              
-              const parentItem = this.closest('.nav-cover__menu__item--has-dropdown');
-              if (!parentItem) return;
-              
-              const isActive = parentItem.classList.contains('active');
-              
-              // Close all other dropdowns
-              document.querySelectorAll('.nav-cover__menu__item--has-dropdown').forEach(function(item) {
-                item.classList.remove('active');
-              });
-              
-              // Toggle current dropdown
-              if (!isActive) {
-                parentItem.classList.add('active');
-              }
-            });
-          });
-        }
-      }
-      
-      // Setup desktop dropdown menu
-      function setupDesktopDropdown() {
-        if (window.innerWidth > 1100) {
-          const dropdownItems = document.querySelectorAll('.nav-item-has-dropdown');
-          
-          dropdownItems.forEach(function(item) {
-            const toggle = item.querySelector('.nav-toggle');
-            const dropdown = item.querySelector('.nav-dropdown');
-            
-            if (!toggle || !dropdown) return;
-            
-            // Click to toggle (for accessibility)
-            toggle.addEventListener('click', function(e) {
-              e.preventDefault();
-              const isVisible = dropdown.style.display === 'block';
-              
-              // Close all dropdowns
-              document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
-                dd.style.display = 'none';
-              });
-              
-              // Toggle current dropdown
-              if (!isVisible) {
-                dropdown.style.display = 'block';
-              }
-            });
-            
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-              if (!item.contains(e.target)) {
-                dropdown.style.display = 'none';
-              }
-            });
-          });
-        }
-      }
-      
-      // Initialize functions
-      function initNavigation() {
-        setupMobileAccordion();
-        setupDesktopDropdown();
-      }
-      
-      // Initialize when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initNavigation);
-      } else {
-        initNavigation();
-      }
-      
-      // Re-setup when window resizes
-      let resizeTimer;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-          initNavigation();
-        }, 250);
-      });
-      
-      // Re-setup hamburger menu when it opens (jQuery fadeToggle)
-      if (typeof jQuery !== 'undefined') {
-        jQuery(document).ready(function($) {
-          const navCover = document.querySelector('.nav-cover');
-          if (navCover) {
-            const observer = new MutationObserver(function() {
-              const isVisible = navCover.style.display !== 'none' && 
-                               window.getComputedStyle(navCover).display !== 'none';
-              if (isVisible) {
-                setTimeout(setupMobileAccordion, 100);
-              }
-            });
-            
-            observer.observe(navCover, {
-              attributes: true,
-              attributeFilter: ['style'],
-              childList: false,
-              subtree: false
-            });
-            
-            $('.menu-under').on('click', function() {
-              setTimeout(setupMobileAccordion, 300);
-            });
-          }
-        });
-      }
-    })();
-  </script>
 </body>
 
 </html>
