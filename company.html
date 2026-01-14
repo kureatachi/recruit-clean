@@ -3005,6 +3005,33 @@
       .welfare-banner {
         padding: 60px 0 !important;
       }
+      
+      /* 働く環境 section - Reduce padding and remove extra spacing at 768px */
+      /* Target the inner container div with padding: 0 40px (line 2309) */
+      div[style*="padding: 0 40px"][style*="box-sizing: border-box"] {
+        padding: 0 10px !important;
+      }
+      
+      /* Reduce card internal padding on mobile - Yellow cards */
+      div[style*="background: #FFF0B0"][style*="padding: 50px 60px"] {
+        padding: 30px 20px !important;
+      }
+      
+      /* Reduce container top margin on mobile - Yellow Cards Container */
+      div[style*="max-width: 1200px"][style*="margin: 50px auto 0 auto"][style*="position: relative"] {
+        margin-top: 30px !important;
+      }
+      
+      /* Reduce section margin-top - 働く環境 section wrapper */
+      div[style*="margin-top: 50px"] {
+        margin-top: 30px !important;
+      }
+      
+      /* Reduce h3 margin-bottom in 働く環境 section */
+      h3[style*="margin-bottom: 40px"][style*="text-align: center"] {
+        margin-bottom: 30px !important;
+      }
+      
       .pankuzu {
         width: 100% !important;
         max-width: 100% !important;
