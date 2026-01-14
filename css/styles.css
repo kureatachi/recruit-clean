@@ -699,15 +699,6 @@ header {}
 /*----------------------------*/
 
 
-.visual {
-  background-image: url(../img/visual.jpg);
-  background-size: cover;
-  background-position: 50% 20%;
-  width: 100%;
-  height: 650px;
-  position: relative;
-}
-
 .visual.under {
   height: 350px;
 }
