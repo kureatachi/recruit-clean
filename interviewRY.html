@@ -130,7 +130,7 @@
 
 </head>
 
-<body>
+<body class="breadcrumb-legacy">
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5N2W4KJV"
@@ -3928,6 +3928,29 @@
       window.addEventListener('hashchange', handleHashNavigation);
     })();
   </script>
+
+  <!-- Breadcrumb legacy layout override - must load after all CSS -->
+  <style>
+    /* Restore original breadcrumb layout - full width with left padding (not 700px) */
+    body.breadcrumb-legacy .pankuzu {
+      width: auto !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      margin-bottom: 30px !important;
+      padding: 0 !important;
+      padding-top: 30px !important;
+      padding-left: 30px !important;
+      padding-right: 0 !important;
+      padding-bottom: 0 !important;
+      box-sizing: border-box !important;
+    }
+    @media screen and (max-width: 750px) {
+      body.breadcrumb-legacy .pankuzu {
+        padding-top: 20px !important;
+        padding-left: 20px !important;
+      }
+    }
+  </style>
   
 </body>
 

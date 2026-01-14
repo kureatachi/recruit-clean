@@ -854,3 +854,44 @@ footer .center img {
   height: auto;
   max-width: 100%;
 }
+
+/* ============================================
+   BREADCRUMB LEGACY LAYOUT - Restore original position/width
+   For: index.html, interviewHS.html, interviewNK.html, interviewRY.html, interviewYO.html
+   ============================================ */
+
+/* Restore original breadcrumb layout to match sogo-kappa.vercel.app/recruit/ */
+body.breadcrumb-legacy .pankuzu {
+  width: 700px !important;
+  max-width: 100% !important;
+  margin: 30px auto 0 auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+  padding-top: 30px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure first span starts at the same position as h1 */
+body.breadcrumb-legacy .pankuzu span:first-child {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Override mobile styles from sp.css - must come after sp.css loads */
+@media screen and (max-width: 750px) {
+  body.breadcrumb-legacy .pankuzu {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 30px auto 0 auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 20px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
