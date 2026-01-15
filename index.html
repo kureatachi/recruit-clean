@@ -1942,7 +1942,13 @@
     }
   }
     
-    /* Fix title overflow at 375px and below - allow natural line breaks */
+    /* Hide <br> tags in titles by default - only show when screen is small enough */
+    #work-environment .title br,
+    #recruitment-info .title br {
+      display: none !important;
+    }
+    
+    /* Fix title overflow at 375px and below - allow natural line breaks and show <br> tags */
     @media (max-width: 375px) {
       .title-border {
         padding: 0 20px !important;
@@ -1950,6 +1956,12 @@
         width: 100% !important;
         max-width: 100% !important;
         overflow: visible !important;
+      }
+      
+      /* Show <br> tags in titles when screen is small enough */
+      #work-environment .title br,
+      #recruitment-info .title br {
+        display: inline !important;
       }
       
       /* Override all title styles including inline styles */
