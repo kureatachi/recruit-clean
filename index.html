@@ -233,7 +233,7 @@
 
         <!-- 募集地域・職種を知る -->
         <section id="career-areas" style="margin-bottom: 40px; position: relative; z-index: 10;">
-          <div class="title-border" style="padding-bottom: 10px;">
+          <div class="title-border" style="padding-bottom: 5px;">
             <h2 id="section-1" class="title" style="font-size: 45px;">募集地域・職種を知る</h2>
             <span></span>
           </div>
@@ -284,7 +284,7 @@
     <section id="company" style="margin-bottom: 0; margin-top: -80px; padding: 40px 0 220px 0; position: relative; overflow: visible; width: 100%; margin-left: 0;">
       <div class="company-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 150vh; background-image: url('img/wallpaper.webp'); background-size: cover; background-position: center top; background-repeat: no-repeat; z-index: 0;"></div>
       <div class="company-content" style="position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 20px; padding-top: 350px;">
-          <div class="title-border" style="padding-bottom: 10px;">
+          <div class="title-border" style="padding-bottom: 5px;">
           <h2 id="section-2" class="title" style="color: #fff; font-size: 45px;">"そうごう"を知る</h2>
           <span style="border-bottom: 6px solid #FFCE02;"></span>
           </div>
@@ -351,7 +351,7 @@
 
         <!-- 仕事内容・働く環境を知る -->
         <section id="work-environment" style="margin-bottom: 80px; margin-top: 20px; padding-top: 100px;">
-          <div class="title-border" style="padding-bottom: 10px;">
+          <div class="title-border" style="padding-bottom: 5px;">
             <h2 id="section-3" class="title" style="font-size: 45px;">仕事内容・働く環境を知る</h2>
             <span></span>
           </div>
@@ -478,7 +478,7 @@
 
         <!-- 求人・選考情報を調べる -->
         <section id="recruitment-info" style="margin-bottom: 80px; margin-top: 100px; padding-top: 50px;">
-          <div class="title-border" style="padding-bottom: 10px;">
+          <div class="title-border" style="padding-bottom: 5px;">
             <h2 id="section-5" class="title" style="font-size: 45px;">求人・選考情報を調べる</h2>
             <span></span>
           </div>
@@ -760,7 +760,7 @@
     /* 見出しの下の余白を縮める */
     .title-border {
       margin-bottom: 10px !important;
-      padding-bottom: 10px !important;
+      padding-bottom: 5px !important;
     }
     .title-set {
       margin-top: 20px !important;
@@ -1141,7 +1141,7 @@
       
       /* Ensure consistent spacing between Japanese and English titles */
       .title-border {
-        padding-bottom: 10px !important;
+        padding-bottom: 5px !important;
         margin-bottom: 0 !important;
       }
       
@@ -1188,7 +1188,7 @@
         line-height: 1.8 !important;
         font-weight: 300 !important;
         font-family: 'Roboto', sans-serif !important;
-        color: #333 !important;
+        color: inherit !important;
         max-width: 600px !important;
         margin-left: auto !important;
         margin-right: auto !important;
@@ -1238,7 +1238,7 @@
       
       /* Ensure consistent spacing between Japanese and English titles at 390px */
       .title-border {
-        padding-bottom: 10px !important;
+        padding-bottom: 5px !important;
         margin-bottom: 0 !important;
       }
       
@@ -1289,7 +1289,7 @@
         line-height: 1.8 !important;
         font-weight: 300 !important;
         font-family: 'Roboto', sans-serif !important;
-        color: #333 !important;
+        color: inherit !important;
         max-width: 600px !important;
         margin-left: auto !important;
         margin-right: auto !important;
@@ -1747,21 +1747,24 @@
     margin: -120px 0 0 0;
     padding: 120px 0 80px 0;
     overflow-x: hidden;
-    overflow-y: visible;
+    overflow-y: hidden;
+    z-index: 1;
   }
   .center-carousel-bg {
     position: absolute;
     background-image: url('img/interview/interview-main-image.png');
     background-size: cover;
-    background-position: center 35%;
+    background-position: center -70px;
     background-repeat: no-repeat;
     filter: blur(2px);
     transform: scale(1.05);
-    top: -40px;
+    top: 90px;
     left: 0;
     right: 0;
-    bottom: 80px;
-    height: calc(100% - 40px);
+    bottom: 50px;
+    height: calc(100% - 90px - 10px);
+    overflow: hidden;
+    z-index: 0;
   }
   .center-carousel-inner {
     position: relative;
@@ -1806,7 +1809,7 @@
     line-height: 1.8;
     font-weight: 300;
     font-family: 'Roboto', sans-serif;
-    color: #333;
+    color: inherit;
   }
   .center-carousel-frame {
     position: relative;
@@ -1925,7 +1928,7 @@
       font-weight: 300;
       margin-top: 30px;
       margin-bottom: 0;
-      color: #333;
+      color: inherit;
     }
     .center-carousel-item {
       width: 240px;
@@ -2239,7 +2242,7 @@
       line-height: 1.8 !important;
       font-weight: 300 !important;
       font-family: 'Roboto', sans-serif !important;
-      color: #333 !important;
+      color: inherit !important;
       max-width: 600px !important;
       margin-left: auto !important;
       margin-right: auto !important;
@@ -2288,6 +2291,7 @@
       font-weight: 300 !important;
       margin-top: 30px !important;
       margin-bottom: 0 !important;
+      color: inherit !important;
     }
     
     /* Fix carousel frame and track for mobile - allow captions to show fully */
