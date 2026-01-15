@@ -1082,6 +1082,25 @@
       
       /* Responsive styles for Company Profile Table */
       @media (max-width: 768px) {
+        /* Title border padding for 企業概要 */
+        #company-profile-section .title-border {
+          padding: 0 20px !important;
+          text-align: center !important;
+        }
+        
+        /* Ensure 企業概要 title stays centered */
+        #company-profile-section .title-border .title {
+          text-align: center !important;
+          margin: 0 auto !important;
+          display: block !important;
+        }
+        
+        /* Ensure all table containers have consistent padding */
+        #company-profile-section div[style*="max-width: 1000px"][style*="padding: 0 40px"],
+        #company-profile-section div[style*="max-width: 1000px"][style*="margin: 0 auto"][style*="padding: 0 40px"] {
+          padding: 0 20px !important;
+        }
+        
         #company-profile-section > div:last-child > div:last-child,
         #company-profile-section > div:nth-child(3) > div:last-child {
           padding: 0 20px !important;
@@ -1101,27 +1120,6 @@
         
         #company-profile-section dl > div dd {
           flex: 0 0 100% !important;
-          font-size: 14px !important;
-        }
-      }
-      
-      /* Responsive styles for Working Environment Cards */
-      @media (max-width: 768px) {
-        #company-profile-section > div:last-child > div:last-child {
-          padding: 0 20px !important;
-        }
-        
-        #company-profile-section > div:last-child > div:last-child > div > div {
-          padding: 35px 25px !important;
-          border-radius: 12px !important;
-        }
-        
-        #company-profile-section > div:last-child > div:last-child > div > div h4 {
-          font-size: 16px !important;
-          margin-bottom: 20px !important;
-        }
-        
-        #company-profile-section > div:last-child > div:last-child > div > div p {
           font-size: 14px !important;
         }
       }
@@ -1236,6 +1234,21 @@
         .title-border .title {
           font-size: 22px !important;
           margin-bottom: 20px !important;
+        }
+        
+        /* Fix 企業概要 title centering at small screens (around 420px) */
+        #company-profile-section .title-border {
+          text-align: center !important;
+          padding: 0 20px !important;
+        }
+        
+        #company-profile-section .title-border .title {
+          text-align: center !important;
+          margin: 0 auto !important;
+          display: block !important;
+          min-width: auto !important;
+          width: fit-content !important;
+          max-width: 100% !important;
         }
         
         #application-method h3[style*="font-size: 20px"] {
@@ -1832,6 +1845,11 @@
       }
       
       @media (max-width: 768px) {
+        /* Title border padding for 社長メッセージ */
+        #president-message-section .title-border {
+          padding: 0 20px !important;
+        }
+        
         #president-message-section > div:last-child {
           flex-direction: column !important;
           gap: 30px !important;
@@ -2330,6 +2348,24 @@
 
               </div>
             </div>
+            
+            <!-- Internal Links CTA Block - Under 働く環境 Cards -->
+            <div style="max-width: 700px; margin: 60px auto 0 auto; padding: 0 20px; box-sizing: border-box;">
+              <div style="border-top: 2px solid #e0e0e0; padding-top: 40px;">
+                <p style="text-align: center; font-size: 16px; color: #666; margin: 0 0 30px 0; font-weight: 500;">関連情報</p>
+                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                  <a href="business.html" style="display: inline-flex; align-items: center; gap: 8px; color: #002f6b; text-decoration: none; font-size: 16px; font-weight: 600; transition: opacity 0.3s;">
+                    <i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i>
+                    <span>事業・サービス</span>
+                  </a>
+                  <span style="color: #e0e0e0;">|</span>
+                  <a href="service.html" style="display: inline-flex; align-items: center; gap: 8px; color: #002f6b; text-decoration: none; font-size: 16px; font-weight: 600; transition: opacity 0.3s;">
+                    <i class="fa-solid fa-arrow-right" style="font-size: 14px;"></i>
+                    <span>職種・仕事</span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -2646,6 +2682,17 @@
       display: block;
       white-space: nowrap;
     }
+    
+    /* Fix 企業概要 title centering at small screens */
+    @media (max-width: 450px) {
+      #company-profile-section .title-border .title {
+        min-width: auto !important;
+        width: fit-content !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+      }
+    }
+    
     /* Footerのボタンのフォントサイズを小さく */
     .btn.ex {
       font-size: 16px !important;
@@ -3030,6 +3077,30 @@
       /* Reduce h3 margin-bottom in 働く環境 section */
       h3[style*="margin-bottom: 40px"][style*="text-align: center"] {
         margin-bottom: 30px !important;
+      }
+      
+      /* Internal Links CTA Block - Responsive (under 働く環境) */
+      div[style*="max-width: 700px"][style*="margin: 60px auto"] {
+        padding: 0 20px !important;
+        margin-top: 40px !important;
+      }
+      
+      div[style*="border-top: 2px solid #e0e0e0"] {
+        padding-top: 30px !important;
+      }
+      
+      div[style*="display: flex"][style*="justify-content: center"][style*="gap: 30px"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        align-items: center !important;
+      }
+      
+      div[style*="display: flex"][style*="justify-content: center"] span[style*="color: #e0e0e0"] {
+        display: none !important;
+      }
+      
+      div[style*="display: flex"][style*="justify-content: center"] a {
+        font-size: 15px !important;
       }
       
       .pankuzu {
