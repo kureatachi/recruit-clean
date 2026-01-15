@@ -352,7 +352,7 @@
         <!-- 仕事内容・働く環境を知る -->
         <section id="work-environment" style="margin-bottom: 80px; margin-top: 20px; padding-top: 100px;">
           <div class="title-border" style="padding-bottom: 5px;">
-            <h2 id="section-3" class="title" style="font-size: 45px;">仕事内容・働く環境を知る</h2>
+            <h2 id="section-3" class="title" style="font-size: 45px;">仕事内容・働く環境<br>を知る</h2>
             <span></span>
           </div>
           
@@ -479,7 +479,7 @@
         <!-- 求人・選考情報を調べる -->
         <section id="recruitment-info" style="margin-bottom: 80px; margin-top: 100px; padding-top: 50px;">
           <div class="title-border" style="padding-bottom: 5px;">
-            <h2 id="section-5" class="title" style="font-size: 45px;">求人・選考情報を調べる</h2>
+            <h2 id="section-5" class="title" style="font-size: 45px;">求人・選考情報<br>を調べる</h2>
             <span></span>
           </div>
           
@@ -1941,6 +1941,97 @@
       height: 420px;
     }
   }
+    
+    /* Fix title overflow at 375px and below - allow natural line breaks */
+    @media (max-width: 375px) {
+      .title-border {
+        padding: 0 20px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+      }
+      
+      /* Override all title styles including inline styles */
+      .title-border .title,
+      .title-border h2.title,
+      h2.title,
+      h2.title[style*="font-size"],
+      #career-areas .title,
+      #career-areas .title-border .title,
+      #career-areas h2.title,
+      #career-areas h2#section-1.title,
+      #career-areas h2.title[style*="font-size: 45px"],
+      #company .title,
+      #company h2.title,
+      #company h2#section-2.title,
+      #company h2.title[style*="font-size: 45px"],
+      #company .title-border .title,
+      #work-environment .title-border h2.title,
+      #work-environment .title-border h2#section-3.title,
+      #work-environment .title-border .title,
+      #work-environment h2.title,
+      #work-environment h2#section-3.title,
+      #work-environment h2.title[style*="font-size: 45px"],
+      #recruitment-info .title-border h2.title,
+      #recruitment-info .title-border h2#section-5.title,
+      #recruitment-info .title-border .title,
+      #recruitment-info h2.title,
+      #recruitment-info h2#section-5.title,
+      #recruitment-info h2.title[style*="font-size: 45px"],
+      .center-carousel-title,
+      .title-large {
+        font-size: 22px !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        line-height: 1.15 !important;
+        text-align: center !important;
+        padding: 0 !important;
+        margin: 0 auto 0 auto !important;
+        margin-bottom: 0 !important;
+        display: block !important;
+        min-width: 0 !important;
+        overflow: visible !important;
+      }
+      
+      .title-border {
+        padding-bottom: 5px !important;
+        margin-bottom: 0 !important;
+      }
+      
+      #work-environment .title-border h2.title,
+      #work-environment .title-border h2#section-3.title,
+      #work-environment .title-border h2.title[style*="font-size: 45px"],
+      #work-environment .title-border .title,
+      #work-environment h2.title,
+      #work-environment h2#section-3.title,
+      #work-environment h2.title[style*="font-size: 45px"],
+      #recruitment-info .title-border h2.title,
+      #recruitment-info .title-border h2#section-5.title,
+      #recruitment-info .title-border h2.title[style*="font-size: 45px"],
+      #recruitment-info .title-border .title,
+      #recruitment-info h2.title,
+      #recruitment-info h2#section-5.title,
+      #recruitment-info h2.title[style*="font-size: 45px"] {
+        font-size: 20px !important;
+      }
+      
+      #company .title-border,
+      #company .company-content {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+      }
+      
+      .center-carousel-head {
+        padding: 0 20px !important;
+        box-sizing: border-box !important;
+      }
+    }
     
     /* Hero section mobile responsive styles */
     @media screen and (max-width: 749px) {
