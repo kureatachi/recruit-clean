@@ -1227,6 +1227,51 @@
       }
     }
     
+    /* Add padding for screens between 1101px and 1140px to prevent text from touching edges and overlapping scrollbar */
+    @media (min-width: 1101px) and (max-width: 1140px) {
+      /* Main content container */
+      .cont-basic.ex {
+        padding-left: 30px !important;
+        padding-right: calc(30px + env(scrollbar-width, 15px)) !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Text content containers */
+      .welfare-content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Title borders */
+      .title-border {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Table of contents */
+      .table-of-contents-grid {
+        padding-left: 30px !important;
+        padding-right: calc(30px + env(scrollbar-width, 15px)) !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Profile card */
+      .profile-card {
+        margin-left: 30px !important;
+        margin-right: calc(30px + env(scrollbar-width, 15px)) !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Interview sections */
+      section.interview-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+    }
+    
     
     .nav {
       display: flex;
@@ -2958,7 +3003,14 @@
       #interview-section-4 h2.title[style*="font-size"],
       #interview-section-5 .title-border .title,
       #interview-section-5 .title-border h2.title,
+      #interview-section-5 h2.title,
       #interview-section-5 h2.title[style*="font-size"],
+      #interview-section-5 h2.title[style*="font-size: 22px"],
+      #interview-section-5 h2.title[style*="font-size:22px"],
+      #interview-section-5 h2.title[style*="font-size: 22px !important"],
+      #interview-section-5 h2.title[style*="text-align: left"],
+      #interview-section-5 h2#section-5.title,
+      #interview-section-5 h2#section-5.title[style*="font-size: 22px !important"],
       #interview-section-2 .title-border .title,
       #interview-section-2 .title-border h2.title,
       #interview-section-2 h2.title[style*="font-size"],
@@ -2969,6 +3021,10 @@
       .title-border h2.title[style*="font-size: 22px !important"],
       #interview-section-2 h2.title {
         font-size: 16px !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        text-align: center !important;
       }
       
       /* Override inline styles for titles */
@@ -3402,6 +3458,27 @@
         margin-bottom: 0 !important;
       }
     }
+    
+    /* Reset section-5 title styles for screens between 469px and 768px */
+    @media (min-width: 469px) and (max-width: 768px) {
+      #interview-section-5 .title-border .title,
+      #interview-section-5 .title-border h2.title,
+      #interview-section-5 h2.title,
+      #interview-section-5 h2.title[style*="font-size"],
+      #interview-section-5 h2.title[style*="font-size: 22px"],
+      #interview-section-5 h2.title[style*="font-size:22px"],
+      #interview-section-5 h2.title[style*="font-size: 22px !important"],
+      #interview-section-5 h2.title[style*="text-align: left"],
+      #interview-section-5 h2#section-5.title,
+      #interview-section-5 h2#section-5.title[style*="font-size: 22px !important"] {
+        font-size: 16px !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        text-align: center !important;
+        line-height: 1.4 !important;
+      }
+    }
 
   /* Center carousel */
   .center-carousel-section {
@@ -3675,10 +3752,11 @@
   <script>
     (function() {
       function adjustTitleFontSizes() {
+        const changeTitle = document.querySelector('#interview-section-4 .title-border .title');
+        const messageTitle = document.querySelector('#interview-section-5 .title-border .title');
+        const interviewSection2Title = document.querySelector('#interview-section-2 h2.title');
+        
         if (window.innerWidth <= 750) {
-          const changeTitle = document.querySelector('#interview-section-4 .title-border .title');
-          const messageTitle = document.querySelector('#interview-section-5 .title-border .title');
-          
           if (changeTitle) {
             // Override inline font-size
             changeTitle.style.setProperty('font-size', '16px', 'important');
@@ -3689,10 +3767,21 @@
             messageTitle.style.setProperty('font-size', '16px', 'important');
           }
           
-          // Override font-size for #interview-section-2 title
-          const interviewSection2Title = document.querySelector('#interview-section-2 h2.title');
           if (interviewSection2Title) {
             interviewSection2Title.style.setProperty('font-size', '16px', 'important');
+          }
+        } else {
+          // Remove inline font-size styles when screen is larger to let CSS take over
+          if (changeTitle) {
+            changeTitle.style.removeProperty('font-size');
+          }
+          
+          if (messageTitle) {
+            messageTitle.style.removeProperty('font-size');
+          }
+          
+          if (interviewSection2Title) {
+            interviewSection2Title.style.removeProperty('font-size');
           }
         }
       }

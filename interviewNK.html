@@ -1295,6 +1295,51 @@
       }
     }
     
+    /* Add padding for screens between 1101px and 1140px to prevent text from touching edges and overlapping scrollbar */
+    @media (min-width: 1101px) and (max-width: 1140px) {
+      /* Main content container */
+      .cont-basic.ex {
+        padding-left: 30px !important;
+        padding-right: calc(30px + env(scrollbar-width, 15px)) !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Text content containers */
+      .welfare-content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Title borders */
+      .title-border {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Table of contents */
+      .table-of-contents-grid {
+        padding-left: 30px !important;
+        padding-right: calc(30px + env(scrollbar-width, 15px)) !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Profile card */
+      .profile-card {
+        margin-left: 30px !important;
+        margin-right: calc(30px + env(scrollbar-width, 15px)) !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Interview sections */
+      section.interview-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+    }
+    
     
     .nav {
       display: flex;
