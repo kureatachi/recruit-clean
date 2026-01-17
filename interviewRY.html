@@ -481,7 +481,7 @@
          
 
         <!-- 一つひとつの経験が、"できること"を増やしてくれる -->
-        <section class="interview-section" id="interview-section-4" style="margin-bottom: 80px; margin-top: 320px;">
+        <section class="interview-section" id="interview-section-4" style="margin-bottom: 80px; margin-top: 280px;">
           <section class="interview-item">
           <div class="title-border" style="text-align: left; padding-left: 0;">
             <h2 id="section-4" class="title" style="text-align: left; font-size: 22px !important;">「一つひとつの経験が、"できること"を増やしてくれる」</h2>
@@ -2643,9 +2643,30 @@
       }
     }
     
-    /* Hide mobile title bars on desktop */
+    /* Hide mobile title bars and SP-only text elements on desktop */
     .mobile-title-bar {
       display: none !important;
+    }
+    
+    .image-text-below {
+      display: none !important;
+    }
+    
+    .leader-text-sp {
+      display: none !important;
+    }
+    
+    /* Ensure SP-only elements stay hidden on desktop (above 750px) */
+    @media screen and (min-width: 751px) {
+      .mobile-title-bar,
+      .image-text-below,
+      .leader-text-sp {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+      }
     }
     
     @media screen and (max-width: 750px) {
@@ -3699,9 +3720,10 @@
   <script>
     (function() {
       function adjustLeaderSection() {
-        if (window.innerWidth <= 750) {
+        if (window.innerWidth <= 768) {
           const leaderOverlay = document.querySelector('#interview-section-3 .leader-overlay');
           const leaderImage = document.querySelector('#interview-section-3 .leader-image');
+          const leaderTitle = document.querySelector('#interview-section-3 .leader-overlay h2');
           
           if (leaderOverlay) {
             // Get current style attribute and modify it
@@ -3721,10 +3743,29 @@
             leaderOverlay.style.setProperty('padding-right', '20px', 'important');
           }
           
+          // Hide the h2 title in leader-overlay at 768px and below
+          if (leaderTitle) {
+            leaderTitle.style.setProperty('display', 'none', 'important');
+            leaderTitle.style.setProperty('visibility', 'hidden', 'important');
+            leaderTitle.style.setProperty('opacity', '0', 'important');
+            leaderTitle.style.setProperty('height', '0', 'important');
+            leaderTitle.style.setProperty('margin', '0', 'important');
+            leaderTitle.style.setProperty('padding', '0', 'important');
+          }
+          
           if (leaderImage) {
             // Set image container padding to match text
             leaderImage.style.setProperty('padding-left', '20px', 'important');
             leaderImage.style.setProperty('padding-right', '20px', 'important');
+          }
+        } else {
+          // Show the h2 title above 768px
+          const leaderTitle = document.querySelector('#interview-section-3 .leader-overlay h2');
+          if (leaderTitle) {
+            leaderTitle.style.removeProperty('display');
+            leaderTitle.style.removeProperty('visibility');
+            leaderTitle.style.removeProperty('opacity');
+            leaderTitle.style.removeProperty('height');
           }
         }
       }
@@ -3742,6 +3783,94 @@
       setTimeout(adjustLeaderSection, 500);
       
       window.addEventListener('resize', adjustLeaderSection);
+    })();
+  </script>
+  
+  <!-- JavaScript to apply responsive font sizing to ALL titles -->
+  <script>
+    (function() {
+      function applyResponsiveFontSizing() {
+        const width = window.innerWidth;
+        
+        // Get all title elements
+        const allTitles = document.querySelectorAll('.title-border .title, h2.title, .title-border h2.title, #interview-section-4 .title-border .title, #interview-section-4 .title-border h2.title, #interview-section-4 h2.title, #interview-section-5 .title-border .title, #interview-section-5 .title-border h2.title, #interview-section-5 h2.title, #interview-section-2 .title-border .title, #interview-section-2 .title-border h2.title, #interview-section-2 h2.title, .white-text-card h2, .leader-overlay h2, #interview-section .white-text-card h2, #interview-section-3 .leader-overlay h2');
+        
+        // Only apply below 768px - set to 16px
+        if (width <= 768) {
+          // Apply to white-text-card h2 - use multiple selectors to ensure we catch it
+          const whiteCardTitle = document.querySelector('#interview-section .white-text-card h2') || 
+                                  document.querySelector('.white-text-card h2');
+          if (whiteCardTitle) {
+            whiteCardTitle.style.setProperty('font-size', '16px', 'important');
+          }
+          
+          // Apply to leader-overlay h2 - use specific selector
+          const leaderTitle = document.querySelector('#interview-section-3 .leader-overlay h2') || 
+                              document.querySelector('.leader-overlay h2');
+          if (leaderTitle) {
+            leaderTitle.style.setProperty('font-size', '16px', 'important');
+          }
+          
+          // Also apply to mobile title bar h2 elements
+          const mobileInterviewTitle = document.querySelector('.mobile-title-bar.interview-mobile-title h2');
+          if (mobileInterviewTitle) {
+            mobileInterviewTitle.style.setProperty('font-size', '16px', 'important');
+          }
+          
+          const mobileLeaderTitle = document.querySelector('.mobile-title-bar.leader-mobile-title h2');
+          if (mobileLeaderTitle) {
+            mobileLeaderTitle.style.setProperty('font-size', '16px', 'important');
+          }
+          
+          // Set all other titles to 16px
+          allTitles.forEach(function(title) {
+            // Skip card titles as they're handled above
+            if (!title.closest('.white-text-card') && !title.closest('.leader-overlay')) {
+              title.style.setProperty('font-size', '16px', 'important');
+            }
+          });
+        } else if (width > 768) {
+          // Above 768px, explicitly set ALL titles to 22px
+          const whiteCardTitle = document.querySelector('#interview-section .white-text-card h2') || 
+                                  document.querySelector('.white-text-card h2');
+          if (whiteCardTitle) {
+            whiteCardTitle.style.setProperty('font-size', '22px', 'important');
+          }
+          
+          const leaderTitle = document.querySelector('#interview-section-3 .leader-overlay h2') || 
+                              document.querySelector('.leader-overlay h2');
+          if (leaderTitle) {
+            leaderTitle.style.setProperty('font-size', '22px', 'important');
+          }
+          
+          // Reset ALL other titles to 22px
+          allTitles.forEach(function(title) {
+            // Skip card titles as they're handled above
+            if (!title.closest('.white-text-card') && !title.closest('.leader-overlay')) {
+              title.style.setProperty('font-size', '22px', 'important');
+            }
+          });
+        }
+      }
+      
+      // Run on DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyResponsiveFontSizing);
+      } else {
+        applyResponsiveFontSizing();
+      }
+      
+      // Run on resize
+      window.addEventListener('resize', applyResponsiveFontSizing);
+      
+      // Run multiple times to ensure it applies
+      setTimeout(applyResponsiveFontSizing, 100);
+      setTimeout(applyResponsiveFontSizing, 300);
+      setTimeout(applyResponsiveFontSizing, 500);
+      setTimeout(applyResponsiveFontSizing, 1000);
+      
+      // Also run on load to ensure it applies after all CSS loads
+      window.addEventListener('load', applyResponsiveFontSizing);
     })();
   </script>
   
