@@ -749,6 +749,29 @@
       }
     }
     
+    /* Responsive menu font size for desktop - match other pages */
+    @media (max-width: 1920px) and (min-width: 1101px) {
+      .nav li a {
+        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+        white-space: nowrap !important;
+      }
+      
+      .nav li span {
+        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+        white-space: nowrap !important;
+      }
+      
+      .nav li {
+        margin-right: clamp(15px, 0.75vw + 15px, 30px) !important;
+      }
+      
+      .nav li:last-child {
+        margin-right: 0 !important;
+        margin-left: clamp(10px, 0.5vw + 10px, 20px) !important;
+        flex-shrink: 0 !important;
+      }
+    }
+    
     /* 見出しのスタイル */
     .title-border .title {
       text-align: center;

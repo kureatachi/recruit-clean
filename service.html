@@ -34,6 +34,74 @@
       display: none;
     }
     
+    /* 採用サイトテキストの位置調整 - ロゴ内「SOU-GOU Inc.」の下側に揃える（デフォルト位置から3px下） */
+    .nav li:nth-child(2) span {
+      transform: translateY(3px) !important;
+      display: inline-block !important;
+    }
+    
+    /* モバイル版（1100px以下）では採用サイトテキストを非表示 */
+    @media (max-width: 1100px) {
+      .nav-ex > span[style*="採用サイト"],
+      .nav-ex > span:not(.menu-under):not(.menu__line) {
+        display: none !important;
+      }
+    }
+    
+    /* Fix for menu text being cut off at the top - ensure proper spacing */
+    header {
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: visible !important;
+    }
+    
+    nav {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    .nav {
+      display: flex;
+      align-items: center !important;
+      height: 100%;
+      min-height: 60px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    .nav li a.gradation {
+      line-height: 1.4 !important;
+      padding: 8px 0 !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+    }
+    
+    .nav li {
+      display: flex !important;
+      align-items: center !important;
+      height: 100%;
+      min-height: 40px !important;
+      margin-right: 30px;
+    }
+    
+    /* Ensure Entry button fills full height with no gaps at top/bottom */
+    .nav li:last-child {
+      display: flex !important;
+      align-items: stretch !important;
+      height: 100% !important;
+      margin-right: 0 !important;
+      padding: 0 !important;
+    }
+    
+    .entry-link {
+      display: flex !important;
+      align-items: stretch !important;
+      height: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
     /* Prevent horizontal scroll */
     html, body {
       overflow-x: hidden !important;
@@ -906,6 +974,46 @@
       display: block;
     }
     
+    /* Responsive menu font size adjustments - match other pages */
+    @media (max-width: 950px) {
+      /* Long nav items: 福利厚生・制度 (6th), 募集要項・応募方法 (8th) */
+      .nav li:nth-child(6) a,  /* 福利厚生・制度 */
+      .nav li:nth-child(8) a { /* 募集要項・応募方法 */
+        white-space: normal;
+        word-break: keep-all;
+        max-width: 90px;
+        line-height: 1.3;
+        text-align: center;
+        font-size: 12px !important;
+      }
+      
+      /* Further reduce spacing */
+      .nav li {
+        margin-right: 4px;
+      }
+    }
+    
+    @media (max-width: 850px) {
+      /* Further adjustments for very small screens */
+      .nav li:nth-child(2) {
+        margin-right: 8px;
+      }
+      
+      .nav .logo {
+        max-width: 180px;
+      }
+      
+      .nav li a {
+        font-size: 12px !important;
+      }
+      
+      .nav li:nth-child(6) a,  /* 福利厚生・制度 */
+      .nav li:nth-child(8) a { /* 募集要項・応募方法 */
+        font-size: 11px !important;
+        max-width: 80px;
+      }
+    }
+    
     /* Entry Rectangle Styling */
     .entry-rectangle {
       width: 213px;
@@ -1006,6 +1114,83 @@
     .welfare-content h3,
     .welfare-content h4 {
       text-align: left;
+    }
+    
+    /* Responsive menu font size for desktop - match other pages */
+    @media (max-width: 1920px) and (min-width: 1101px) {
+      header nav {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        overflow: visible !important;
+      }
+      
+      .entry-rectangle {
+        width: auto !important;
+        min-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+        max-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+        height: 80px !important;
+        padding: 0 clamp(8px, 0.6vw + 2px, 12px) 0 clamp(20px, 1.2vw + 10px, 28px) !important;
+        gap: 10px !important;
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+      }
+      
+      /* 採用サイトテキストの位置調整を維持 */
+      .nav li:nth-child(2) span {
+        transform: translateY(3px) !important;
+        display: inline-block !important;
+      }
+      
+      .entry-rectangle .entry-text {
+        font-size: 25px !important;
+        letter-spacing: 2px !important;
+      }
+      
+      .entry-rectangle .entry-icon {
+        height: 54px !important;
+        width: auto !important;
+        flex-shrink: 0 !important;
+      }
+      
+      .nav li a {
+        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+        white-space: nowrap !important;
+      }
+      
+      .nav li span {
+        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+        white-space: nowrap !important;
+      }
+      
+      .nav li {
+        margin-right: clamp(15px, 0.75vw + 15px, 30px) !important;
+      }
+      
+      .nav li:last-child {
+        margin-right: 0 !important;
+        margin-left: clamp(10px, 0.5vw + 10px, 20px) !important;
+        flex-shrink: 0 !important;
+      }
+      
+      .nav {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        overflow: visible !important;
+      }
+      
+      header {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      header nav {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
     }
     
     /* Job tags list styling */
