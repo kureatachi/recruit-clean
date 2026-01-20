@@ -783,7 +783,8 @@
 
   <style>
     
-    /* Override inline !important styles for section titles on mobile */
+    @media (max-width: 768px) {
+      /* Override inline !important styles for section titles on mobile */
       #section-2,
       #section-2.title,
       #section-4,
@@ -798,10 +799,7 @@
       #section-3 {
         white-space: normal !important;
       }
-    }
-    
-    
-    @media (max-width: 768px) {
+      
       .table-of-contents-grid {
         padding: 15px 20px !important;
       }
