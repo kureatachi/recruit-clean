@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>社員の声 Y.O.｜採用情報｜株式会社そうごう</title>
+  <title>社員の声 R.Y.｜採用情報｜株式会社そうごう</title>
   <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no" />
   <meta content="株式会社そうごうの社員の声をご紹介します。実際に働く社員の声を通じて、そうごうでの働き方や魅力をお伝えします。" name="description">
   <meta content="社員の声,採用,そうごう" name="keywords">
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="社員の声 Y.O.｜採用情報｜株式会社そうごう" />
+  <meta property="og:title" content="社員の声 R.Y.｜採用情報｜株式会社そうごう" />
   <meta property="og:description" content="株式会社そうごうの社員の声をご紹介します。実際に働く社員の声を通じて、そうごうでの働き方や魅力をお伝えします。" />
-  <meta property="og:url" content="https://www.sougou.co.jp/recruit/interviewYO.html" />
+  <meta property="og:url" content="https://www.sougou.co.jp/recruit/interviewRY.html" />
   <meta property="og:site_name" content="採用情報｜株式会社そうごう" />
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:image" content="img/tn.jpg" />
@@ -28,6 +28,97 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous">
 
   <!-- Prevent flash of unstyled content -->
+  <style>
+    #fade {
+      display: none;
+    }
+    
+    /* 採用サイトテキストの位置調整 - ロゴ内「SOU-GOU Inc.」の下側に揃える（デフォルト位置から3px下） */
+    .nav li:nth-child(2) span {
+      transform: translateY(3px) !important;
+      display: inline-block !important;
+    }
+    
+    /* モバイル版（1100px以下）では採用サイトテキストを非表示 */
+    @media (max-width: 1100px) {
+      .nav-ex > span[style*="採用サイト"],
+      .nav-ex > span:not(.menu-under):not(.menu__line) {
+        display: none !important;
+      }
+    }
+    
+    /* Fix for menu text being cut off at the top - ensure proper spacing */
+    header {
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: visible !important;
+    }
+    
+    nav {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    .nav {
+      display: flex;
+      align-items: center !important;
+      height: 100%;
+      min-height: 60px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    .nav li a.gradation {
+      line-height: 1.4 !important;
+      padding: 8px 0 !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+    }
+    
+    .nav li {
+      display: flex !important;
+      align-items: center !important;
+      height: 100%;
+      min-height: 40px !important;
+      margin-right: 30px;
+    }
+    
+    /* Ensure Entry button fills full height with no gaps at top/bottom */
+    .nav li:last-child {
+      display: flex !important;
+      align-items: stretch !important;
+      height: 100% !important;
+      margin-right: 0 !important;
+      padding: 0 !important;
+    }
+    
+    .entry-link {
+      display: flex !important;
+      align-items: stretch !important;
+      height: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    .entry-rectangle {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 100% !important;
+      width: 100% !important;
+      min-height: 60px !important;
+      padding: 0 20px !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    
+    .entry-text {
+      line-height: 1.4 !important;
+      display: inline-block !important;
+      vertical-align: middle !important;
+    }
+  </style>
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -191,11 +282,11 @@
           
           <!-- Blue Container with Text -->
           <div class="interview-blue-container">
-            <h2 class="interview-title-text">積み重ねてきた経験を、地域の未来に活かしたい。</h2>
-            <p class="interview-subtext">前職で培った営業経験を活かし、36歳で転職。<br>丁寧な対応と堅実な仕事ぶりで、地域の事業者に寄り添う広告提案を行っている。</p>
+            <h2 class="interview-title-text">地域の声を聴き、自分の手で課題を希望に変える。</h2>
+            <p class="interview-subtext">地域経済を学んだ学生時代の経験をきっかけに、地元に根ざした出版・広告分野へ。<br>静かながら強い意志で、地域課題に営業×企画の多方面からチャレンジ。</p>
             <div class="interview-employee-section">
-              <p class="interview-employee-name">Y.O.さん</p>
-              <p class="interview-employee-info">2024年度　中途入社　／　営業職　／　東日本営業部 静岡支店</p>
+              <p class="interview-employee-name">R.Y.さん</p>
+              <p class="interview-employee-info">2023年度　新卒入社　/　営業職　/　西日本営業部 関西支店</p>
             </div>
           </div>
         </div>
@@ -214,18 +305,18 @@
         <span><i class="fa-solid fa-chevron-right"></i></span>
         <span>社員の声</span>
         <span><i class="fa-solid fa-chevron-right"></i></span>
-        <span>Y.O.さん / 東日本営業部 静岡支店</span>
+        <span>R.Y.さん / 西日本営業部 関西支店</span>
       </div>
 
       <!-- 目次 - 2カラムグリッド形式 -->
       <div class="table-of-contents-grid" style="max-width: 1200px; margin: 30px auto; padding: 20px 0; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;">
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px 40px; align-items: start;">
           <span style="font-size: 13px; font-weight: 600; color: #666; letter-spacing: 0.1em; grid-column: 1 / -1; margin-bottom: 5px;">目次</span>
-          <a href="#section-1" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「経験を活かし、地元で新しい挑戦を。」</a>
-          <a href="#section-2" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「誠実に向き合うことで信頼が生まれる。」</a>
-          <a href="#section-3" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「相手の立場に立ち、動く。」</a>
-          <a href="#section-4" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「自分を成長させてくれる環境。」</a>
-          <a href="#section-5" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「誠実さが実を結び、実感としてストレートに返ってくる。」</a>
+          <a href="#section-1" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「"地域と関わる仕事"を、自分の手でやってみたかった」</a>
+          <a href="#section-2" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「大切なのは、"話すこと"よりも"聴くこと"」</a>
+          <a href="#section-3" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「自分らしさは、"柔らかさ"の中にあると思う」</a>
+          <a href="#section-4" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「一つひとつの経験が、"できること"を増やしてくれる」</a>
+          <a href="#section-5" style="color: #003E8F; text-decoration: none; font-size: 14px; padding: 8px 0; transition: color 0.2s; line-height: 1.6;">「地域と自分の成長が、一緒に広がっていくように」</a>
         </div>
       </div>
 
@@ -235,121 +326,129 @@
           <div class="profile-card">              
             <ul>
               <li>
-                前職では法人向けの広告営業を担当。提案型の営業スタイルで実績を積む
+                大学では地域経済を専攻し、地元企業との関わりから地域活性化に関心を深める
               </li>
               <li>
-                現在は東日本営業部 静岡支店で、地域密着型の広告営業として活動
+                新卒でそうごうに入社し、西日本営業部 関西支店にて広告営業を担当
               </li>
               <li>
-                顧客との信頼関係を第一に、成果を通じて地域に貢献することを目指している
+                紙・Web媒体の企画提案にも挑戦しながら、地域の課題を解決する新しい営業スタイルを模索中
               </li>
             </ul>
           </div>
         </div>
 
-        <!-- 経験を活かし、地元で新しい挑戦を -->
+        <!-- "地域と関わる仕事"を、自分の手でやってみたかった -->
         <section class="interview-section" id="interview-section" style="margin-bottom: 180px; margin-top: 80px; position: relative;">
           <section class="interview-item" style="position: relative; width: 100%; min-height: 500px; padding-top: 30px;">
             <!-- 背景画像（少し大きく） -->
             <div style="position: absolute; top: 30px; left: 0; width: 700px; z-index: 1; margin-bottom: 40px; transform: translateX(-20px);">
-              <img src="img/interview/yo-1.png" alt="営業マン" style="width: 100%; height: auto; display: block; object-fit: cover;">
+              <img src="img/interview/ry-header.png" alt="営業マン" style="width: 100%; height: auto; display: block; object-fit: cover;">
             </div>
             
             <!-- Text below image (SP only) -->
             <div class="image-text-below" style="display: none;">
               <p style="margin-top: 30px; line-height: 1.75; text-align: left; color: #333; font-size: 14px;">
-                前職でも営業職としてさまざまな業界のお客様と関わってきましたが、年齢を重ねる中で「もっと地域に根ざした仕事をしたい」と考えるようになりました。大都市圏のスピード感や成果主義も刺激的でしたが、それ以上に、人との関係をじっくり築ける環境を求めていたんです。そうごうの仕事は、まさに地域に寄り添う営業。電話帳や情報誌といった媒体を通して、お客様の想いを形にし、それが地域で目に見える形で残る。そこに強く惹かれました。
+                大学では地域経済を専攻していて、ゼミでも地域経済や地域の暮らし・生活にまつわるジャンルを選んでいました。地域の企業やお店の成り立ちを調べていくうちに、暮らしや仕事が"人のつながり"で支えられていることを強く感じたんです。その思いを胸に、地域の課題解決に関われる仕事がしたいと考えながら就職活動をしている時、そうごうに出会いました。
               </p>
-              <p style="margin-top: 12px; line-height: 1.75; text-align: left; color: #333; font-size: 14px;">
-                入社当初は、地域密着のスタイルに慣れるまで少し時間がかかりました。最初は「もっとスピード感を持たないと」と焦る気持ちもありましたが、先輩から「焦らなくていい、信頼を築くのが一番の近道」と言われてから考えが変わりました。時間をかけて関係を深める営業こそが、この会社らしさだと今では感じています。
+              <p style="margin-top: 20px; line-height: 1.75; text-align: left; color: #333; font-size: 14px;">
+                "地域の喜ぶ顔をひとつでも多く"という経営理念、広告を通して企業やお店の魅力を伝えるという点に、まさに自分が学んできた世界の延長線を感じました。
               </p>
             </div>
             
             <!-- SP only title with bar -->
             <div class="mobile-title-bar interview-mobile-title">
-              <h2 class="section-1-mobile-title" style="font-size: 22px; font-weight: 700; line-height: 1.45; margin: 0; color: #333; text-align: center;">「経験を活かし、地元で新しい挑戦を。」</h2>
+              <h2 class="section-1-mobile-title" style="font-size: 22px; font-weight: 700; line-height: 1.45; margin: 0; color: #333; text-align: center;">「"地域と関わる仕事"を、自分の手でやってみたかった」</h2>
               <span style="display: block; width: 100px; height: 6px; background: #FFCE02; margin: 0 auto;"></span>
             </div>
 
             <!-- 白いカード（画像の上に重なる） -->
             <div class="white-text-card" style="position: absolute; top: 80%; right: -60px; transform: translateY(-25%); background: #fff; padding: 50px; width: 750px; max-width: 95%; z-index: 2;">
               <h2 id="section-1" style="font-size: 22px; font-weight: 700; line-height: 1.45; margin: 0 0 18px 0; color: #333;">
-                「経験を活かし、地元で新しい挑戦を。」
+                「"地域と関わる仕事"を、自分の手でやってみたかった」
               </h2>
               <span style="display: block; width: 100px; border-bottom: 6px solid #FFCE02; margin: 20px 0 0 0;"></span>
               
               <p style="margin-top: 30px; line-height: 1.75; text-align: left; color: #333; font-size: 14px;">
-                前職でも営業職としてさまざまな業界のお客様と関わってきましたが、年齢を重ねる中で「もっと地域に根ざした仕事をしたい」と考えるようになりました。大都市圏のスピード感や成果主義も刺激的でしたが、それ以上に、人との関係をじっくり築ける環境を求めていたんです。そうごうの仕事は、まさに地域に寄り添う営業。電話帳や情報誌といった媒体を通して、お客様の想いを形にし、それが地域で目に見える形で残る。そこに強く惹かれました。
+                大学では地域経済を専攻していて、ゼミでも地域経済や地域の暮らし・生活にまつわるジャンルを選んでいました。地域の企業やお店の成り立ちを調べていくうちに、暮らしや仕事が"人のつながり"で支えられていることを強く感じたんです。その思いを胸に、地域の課題解決に関われる仕事がしたいと考えながら就職活動をしている時、そうごうに出会いました。
               </p>
                 
-              <p style="margin-top: 12px; line-height: 1.75; text-align: left; color: #333; font-size: 14px;">
-                入社当初は、地域密着のスタイルに慣れるまで少し時間がかかりました。最初は「もっとスピード感を持たないと」と焦る気持ちもありましたが、先輩から「焦らなくていい、信頼を築くのが一番の近道」と言われてから考えが変わりました。時間をかけて関係を深める営業こそが、この会社らしさだと今では感じています。
+              <p style="margin-top: 20px; line-height: 1.75; text-align: left; color: #333; font-size: 14px;">
+                "地域の喜ぶ顔をひとつでも多く"という経営理念、広告を通して企業やお店の魅力を伝えるという点に、まさに自分が学んできた世界の延長線を感じました。
               </p>
             </div>
           </section>
 
-        <!-- 誠実に向き合うことで信頼が生まれる -->
+        <!-- 大切なのは、"話すこと"よりも"聴くこと" -->
         <section class="interview-section" id="interview-section-2" style="margin-bottom: 60px; margin-top: 260px;">
           <section class="interview-item">
           <div class="title-border" style="text-align: left; padding-left: 0;">
-            <h2 id="section-2" class="title" style="text-align: left; font-size: 22px !important;">「誠実に向き合うことで信頼が生まれる。」</h2>
+            <h2 id="section-2" class="title" style="text-align: left; font-size: 22px !important;">「大切なのは、"話すこと"よりも"聴くこと"」</h2>
             <span style="display: block; width: 100px; border-bottom: 6px solid #FFCE02; margin: 20px 0 0 0 !important; margin-left: 0 !important;"></span>
           </div>
 
           <div class="welfare-content" style="width: 100%; max-width: 100%; padding: 0; margin: 0;">
-            <p style="margin-top: 30px; line-height: 1.8; text-align: left; padding: 0; margin: 0 0 12px 0; width: 100%;">
-              私が大切にしているのは、「お客様の声を理解・解釈して社内に届けること」です。
-            </p>
-
-            <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0; margin: 0 0 12px 0; width: 100%;">
-              広告の提案といっても、単に枠を販売するだけではなく、実際にお客様の現場で感じている課題や要望に向き合い、しっかりと拾い上げ、制作担当者やチームに伝える役割も担っています。
+            <p style="margin-top: 30px; line-height: 1.8; text-align: left; padding: 0; margin: 0 0 24px 0; width: 100%;">
+              入社してすぐは、緊張の連続でした。お客様との会話の中で何をどう提案すればいいのか、最初は全く分からず…でも、先輩に「まずは話を聞くことから始めればいい」と言われてから、少し肩の力が抜けました。相手の言葉を"整理しながら聞く"ことで、求められていることや気づきを見つけられるようになったんです。話し上手ではなくても、聴く姿勢があればお客様との距離は少しずつ縮まる。今はそう実感しています。
             </p>
 
             <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0 0 40px 0; margin: 0; width: 100%;">
-              たとえば、季節や商圏の変化でお店の集客状況が変わるような場合もあります。そうした"現場の変化"を正確に把握するため、こまめな連絡とフォローを欠かさないようにしています。小さな気づきの積み重ねが、信頼と成果につながると考えています。
+              また、電話帳や情報誌はどうしても"古い"・"読まない"・"ネットがある"とマイナスのイメージを持たれがちです。特に広報の予算や資金力が都心部の大手企業とは全然違う地域の事業者様は、その感覚を常に肌で感じられています。そうしたお客様の"本音ベース"の意見をしっかり"聴き"、丁寧なコミュニケーションで誠実に対応し、電話帳も情報誌も、"地域の方々の日常生活に欠かせない情報源"であること、特に高齢者層にも幅広く利用されていることを説明し、納得いただき、契約をいただけた時は、売上も大事ですが、一人の営業としてしっかり役目を果たせたという思い、地域に少しでも貢献でるという思いで、嬉しさが湧き出てきます。
             </p>
           </div>
           </section>
         </section>
 
-        <!-- 相手の立場に立ち、動く -->
+        <!-- 自分らしさは、"柔らかさ"の中にあると思う -->
         <section class="interview-section" id="interview-section-3" style="margin-bottom: 80px; margin-top: 40px; position: relative; min-height: 520px;">
           <section class="interview-item" style="position: relative; width: 100%; min-height: 440px; margin-top: 30px;">
             <!-- 右側：画像（少し大きく） -->
             <div class="leader-image" style="position: absolute; top: 0; right: -40px; width: 650px; z-index: 1;">
-              <img src="img/interview/yo-2.png" alt="営業チーム" style="width: 100%; height: auto; display: block; object-fit: cover;">
+              <img src="img/interview/ry-2.png" alt="営業チーム" style="width: 100%; height: auto; display: block; object-fit: cover;">
             </div>
             
             <!-- SP only text content - appears after image -->
             <div class="leader-text-sp" style="display: none;">
               <p style="margin-top: 30px; line-height: 1.8; text-align: left; padding: 0; margin-bottom: 24px; font-size: 14px; color: #333;">
-                営業という仕事は、人と人の関係づくりがすべてだと思っています。だからこそ、どんなに忙しくても「話を聞く姿勢」だけは崩さないようにしています。お客様の話を最後まで聞くことで、思いがけないヒントや提案の糸口が見えてくることがあるからです。また、提案内容をできる限り具体的にイメージしてもらえるよう、原稿やデザインの方向性まで一緒に考えることもあります。前職でのクリエイティブ業務の経験が、こうした場面で活きていると感じます。
+                営業という仕事は、押すばかりでも、引くばかりでもうまくいかない。
+              </p>
+
+              <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0; margin-bottom: 24px; font-size: 14px; color: #333;">
+                私が意識しているのは、相手の温度感に合わせて動くことです。時には提案をぐっとこらえて考え直すこともありますし、逆に少し背中を押すような言葉を選ぶこともあります。
+              </p>
+
+              <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0; margin-bottom: 24px; font-size: 14px; color: #333;">
+                焦らず、自分のリズムで進めることが、私らしい営業スタイルなのかもしれません。
+              </p>
+
+              <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0; margin-bottom: 24px; font-size: 14px; color: #333;">
+                それと、私は営業ですが、"１つのモノを生み出す・送り出す"観点で俯瞰的に見ることも大事だと体感しています。
               </p>
 
               <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0; margin-bottom: 0; font-size: 14px; color: #333;">
-                年齢を重ねる中で、相手の立場や背景により深く共感できるようになりました。「営業」ではなく「相談相手」として見てもらえる関係を築けたときに、この仕事のやりがいを強く感じます。経験を活かした"丁寧な営業"と"誠実な仕事"――それが今の自分らしいスタイルです。
+                今は、前後の仕事をしている仲間や周囲への気配り、柔軟に対応するための"マルチタスク力"も頑張って鍛えています。そして、"チームの潤滑油"的な働きが出来て、チーム・仕事に貢献できるといいなと思います。そういう"柔らかさ"は、特に自分らしいポイントかなと。
               </p>
             </div>
 
             <!-- SP only title with bar -->
             <div class="mobile-title-bar leader-mobile-title">
-              <h2 class="section-3-mobile-title" style="font-size: 22px; font-weight: 700; line-height: 1.45; margin: 0; color: #333; text-align: center;">「相手の立場に立ち、動く。」</h2>
+              <h2 class="section-3-mobile-title" style="font-size: 22px; font-weight: 700; line-height: 1.45; margin: 0; color: #333; text-align: center;">「自分らしさは、"柔らかさ"の中にあると思う」</h2>
               <span style="display: block; width: 100px; height: 6px; background: #FFCE02; margin: 10px auto 0 auto;"></span>
             </div>
 
             <!-- 左側：テキストカード（画像に重ねる） -->
-            <div class="leader-overlay" style="position: absolute; top: 90%; left: 0; transform: translate(-40px, -35%); background: #fff; padding: 40px; width: 700px; max-width: 95%; z-index: 2;">
-              <h2 id="section-3" style="font-size: 22px; font-weight: 700; line-height: 1.45; margin: 0 0 18px 0; color: #333; text-align: left;">
-                「相手の立場に立ち、動く。」
+            <div class="leader-overlay" style="position: absolute; top: 110%; left: 0; transform: translate(-40px, -35%); background: #fff; padding: 40px; width: 700px; max-width: 95%; z-index: 2;">
+              <h2 id="section-3" style="font-size: 22px; font-weight: 700; line-height: 1.45; margin: 0 0 18px 0; color: #333; text-align: left; white-space: nowrap;">
+                「自分らしさは、"柔らかさ"の中にあると思う」
               </h2>
-              <span style="display: block; width: 100px; border-bottom: 6px solid #FFCE02; margin: 20px 0 40px 0;"></span>
+              <span style="display: block; width: 100px; border-bottom: 6px solid #FFCE02; margin: 20px 0 0 0;"></span>
               
-              <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0; margin: 0 0 12px 0; font-size: 14px; color: #333;">
-                営業という仕事は、人と人の関係づくりがすべてだと思っています。だからこそ、どんなに忙しくても「話を聞く姿勢」だけは崩さないようにしています。お客様の話を最後まで聞くことで、思いがけないヒントや提案の糸口が見えてくることがあるからです。また、提案内容をできる限り具体的にイメージしてもらえるよう、原稿やデザインの方向性まで一緒に考えることもあります。前職でのクリエイティブ業務の経験が、こうした場面で活きていると感じます。
+              <p style="margin-top: 30px; line-height: 1.75; text-align: left; color: #333; font-size: 14px;">
+                営業という仕事は、押すばかりでも、引くばかりでもうまくいかない。私が意識しているのは、相手の温度感に合わせて動くことです。時には提案をぐっとこらえて考え直すこともありますし、逆に少し背中を押すような言葉を選ぶこともあります。焦らず、自分のリズムで進めることが、私らしい営業スタイルなのかもしれません。
               </p>
-
-              <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0; margin: 0 0 0; font-size: 14px; color: #333;">
-                年齢を重ねる中で、相手の立場や背景により深く共感できるようになりました。「営業」ではなく「相談相手」として見てもらえる関係を築けたときに、この仕事のやりがいを強く感じます。経験を活かした"丁寧な営業"と"誠実な仕事"――それが今の自分らしいスタイルです。
+              
+              <p style="margin-top: 20px; line-height: 1.75; text-align: left; color: #333; font-size: 14px;">
+                それと、私は営業ですが、"１つのモノを生み出す・送り出す"観点で俯瞰的に見ることも大事だと体感しています。今は、前後の仕事をしている仲間や周囲への気配り、柔軟に対応するための"マルチタスク力"も頑張って鍛えています。そして、"チームの潤滑油"的な働きが出来て、チーム・仕事に貢献できるといいなと思います。そういう"柔らかさ"は、特に自分らしいポイントかなと。
               </p>
           </div>
           </section>
@@ -357,41 +456,41 @@
 
          
 
-        <!-- 自分を成長させてくれる環境 -->
-        <section class="interview-section" id="interview-section-4" style="margin-bottom: 80px; margin-top: 200px;">
+        <!-- 一つひとつの経験が、"できること"を増やしてくれる -->
+        <section class="interview-section" id="interview-section-4" style="margin-bottom: 160px; margin-top: 320px;">
           <section class="interview-item">
           <div class="title-border" style="text-align: left; padding-left: 0;">
-            <h2 id="section-4" class="title" style="text-align: left; font-size: 22px !important;">「自分を成長させてくれる環境。」</h2>
+            <h2 id="section-4" class="title" style="text-align: left; font-size: 22px !important;">「一つひとつの経験が、"できること"を増やしてくれる」</h2>
             <span style="display: block; width: 140px; border-bottom: 6px solid #FFCE02; margin: 20px 0 0 0 !important; margin-left: 0 !important;"></span>
           </div>
 
           <div class="welfare-content" style="width: 100%; max-width: 100%; padding: 0; margin: 0;">
-            <p style="margin-top: 30px; line-height: 1.8; text-align: left; padding: 0; margin: 0 0 12px 0; width: 100%;">
-              地域密着の営業は、数字だけでは測れない部分が多い仕事です。そのぶん、地元企業の社長さんや店舗の方々との関係づくりを通して、営業としてだけでなく、人としての学びを得る機会が多いと感じます。地域の特性を理解し、より効果的な広告を企画する――そんな挑戦の余地がある点も、この会社の魅力ですね。
+            <p style="margin-top: 30px; line-height: 1.8; text-align: left; padding: 0; margin: 0 0 24px 0; width: 100%;">
+              営業活動の中で学んだのは、"どんな場面にも正解は一つではない"ということ。お客様によって状況も目的も違うので、一つひとつを常に考え、試し、修正しながら進む毎日です。この仕事の面白さは、単に広告を売るだけではなく、"お客様の課題を聞き出して、一緒に解決策を考える"ところにあります。
             </p>
 
-            <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0; margin: 0; width: 100%;">
-              また、社内が思っていた以上にフラットで、経験に関係なく意見を出し合えることでした。自分の提案が採用されたり、同僚の営業手法から学んだりと、日々の仕事がそのまま成長の糧になっています。経験を積むほどに、会社とともに自分自身の成長も感じられる、そんな職場です。
+            <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0 0 40px 0; margin: 0; width: 100%;">
+              そのためには、紙媒体にとどまらず、デジタル・ネット媒体や新しい企画の提案を社内に持ちかけることもあります。実際にこの数年で新しい媒体が増えていますし、事業の柱である電話帳も、時代にあわせた"進化"が、まさに今、社内で進んでいる最中です。私も、新しい媒体や企画をどんどん考え、提案していきたいです。昔ながらの会社ですが、こういった新しい発想を受け止めてくれて、それを実際に皆で形にできる環境があるからこそ、挑戦する意欲も自然と高まるんです。一件一件の商談が、自分の引き出しを増やしてくれる。そしてその積み重ねが、広告の枠を超えた"まちづくり"につながっていく――そう感じられる瞬間が、この仕事のいちばんのやりがいです。
             </p>
           </div>
           </section>
         </section>
 
-        <!-- 誠実さが実を結び、実感としてストレートに返ってくる -->
-        <section class="interview-section" id="interview-section-5" style="margin-bottom: 0; margin-top: 80px;">
+        <!-- 地域と自分の成長が、一緒に広がっていくように -->
+        <section class="interview-section" id="interview-section-5" style="margin-bottom: 0; margin-top: 160px;">
           <section class="interview-item">
           <div class="title-border" style="text-align: left; padding-left: 0;">
-            <h2 id="section-5" class="title" style="text-align: left; font-size: 22px !important;">「誠実さが実を結び、実感としてストレートに返ってくる。」</h2>
+            <h2 id="section-5" class="title" style="text-align: left; font-size: 22px !important;">「地域と自分の成長が、一緒に広がっていくように」</h2>
             <span style="display: block; width: 100px; border-bottom: 6px solid #FFCE02; margin: 20px 0 0 0 !important; margin-left: 0 !important;"></span>
           </div>
 
-          <div class="welfare-content" style="padding-left: 0; margin-left: 0 !important; width: 100%; max-width: 100%;">
-            <p style="margin-top: 30px; line-height: 1.8; text-align: left; padding-left: 0 !important; margin: 0 0 12px 0 !important; width: 100%;">
-              営業という仕事は、決して派手ではありませんが、地域に貢献できる実感がある仕事です。お客様の課題を理解し、形にしていく。その積み重ねの先に「地域の喜ぶ顔」が見えたとき、自分の努力が確かに役立っていると感じます。
+          <div class="welfare-content" style="width: 100%; max-width: 100%; padding: 0; margin: 0;">
+            <p style="margin-top: 30px; line-height: 1.8; text-align: left; padding: 0; margin: 0 0 24px 0; width: 100%;">
+              私たちの仕事は、地域にあるお店や企業を支えること。でも、その中で自分自身もたくさんの人に支えられていると感じます。うまくいかない時もありますが、地域と関わる仕事だからこそ、努力が目に見える形で返ってくるんです。
             </p>
 
-            <p style="margin-top: 0; line-height: 1.8; text-align: left; padding-left: 0 !important; margin: 0 !important; width: 100%;">
-              これまでの経験を活かしながら、落ち着いた環境で腰を据えて働きたい方にとって、そうごうはとても良い会社だと思います。焦らず、誠実に向き合える人ほど、この仕事を楽しめるはずです。
+            <p style="margin-top: 0; line-height: 1.8; text-align: left; padding: 0 0 40px 0; margin: 0; width: 100%;">
+              そんな想いに共感してくれる方と、一緒に働けたら嬉しいです。
             </p>
           </div>
           
@@ -406,15 +505,18 @@
               <div style="margin-top: 25px;">
                 <ol style="margin: 0; padding-left: 25px; color: #333; line-height: 1.8; list-style: decimal; list-style-position: outside;">
                   <li style="margin-bottom: 20px; font-size: 16px; text-align: left; padding-left: 5px;">
-                    課題の本質を見極めるヒアリング力
+                    <strong style="font-size: 18px;">ヒアリング力：</strong>
+                  相手の思いを丁寧に聞き取り、言葉にしづらい課題を整理する力
                   </li>
                 
                   <li style="margin-bottom: 20px; font-size: 16px; text-align: left; padding-left: 5px;">
-                    長期的な信頼関係を築くコミュニケーション力
+                    <strong style="font-size: 18px;">企画発想力：</strong>
+                  紙・デジタル両面から広告企画を考え、課題解決につなげる力
                   </li>
                 
                   <li style="margin-bottom: 0; font-size: 16px; text-align: left; padding-left: 5px;">
-                    地域特性を踏まえた柔軟な営業戦略の立案力
+                    <strong style="font-size: 18px;">リサーチ力：</strong>
+                  日々の取材や営業活動を通じて、地域の動きを捉える感度
                   </li>
                 </ol>
               </div>
@@ -717,33 +819,43 @@
   </script>
 
   <style>
-    /* Interview pages: Restore wider table of contents width (1200px instead of 700px) */
+    /* Prevent horizontal scroll */
+    html, body {
+      overflow-x: hidden !important;
+      width: 100%;
+      max-width: 100vw;
+    }
+    
+    /* Smooth scroll behavior for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Table of contents grid styling */
     .table-of-contents-grid {
-      width: 1200px !important;
-      max-width: 1200px !important;
+      scroll-margin-top: 20px;
+    }
+    
+    .table-of-contents-grid a:hover {
+      color: #002F6B !important;
+      text-decoration: underline !important;
     }
     
     /* Responsive adjustments for table of contents */
     @media (max-width: 1400px) {
       .table-of-contents-grid {
-        width: 1200px !important;
-        max-width: 1200px !important;
         padding: 20px 50px !important;
       }
     }
     
     @media (max-width: 1200px) {
       .table-of-contents-grid {
-        width: 1200px !important;
-        max-width: 100% !important;
         padding: 20px 60px !important;
       }
     }
     
     @media (max-width: 1024px) {
       .table-of-contents-grid {
-        width: 100% !important;
-        max-width: 100% !important;
         padding: 20px 30px !important;
       }
     }
@@ -809,6 +921,258 @@
       }
     }
     
+    /* ============================================
+       Desktop Navigation Dropdown Menu
+       ============================================ */
+    
+    /* Desktop dropdown menu for 社員の声 */
+    .nav-item-has-dropdown {
+      position: relative;
+    }
+    
+    .nav-dropdown {
+      list-style: none !important;
+      padding: 10px 0 !important;
+      margin: 5px 0 0 0 !important;
+      background: #fff !important;
+      border-radius: 4px !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+      min-width: 200px !important;
+      width: auto !important;
+      box-sizing: border-box !important;
+      position: absolute !important;
+      top: 100% !important;
+      left: 0 !important;
+      z-index: 1000 !important;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+    
+    /* Override any parent nav styles that might affect dropdown */
+    .nav-item-has-dropdown .nav-dropdown,
+    .nav .nav-dropdown,
+    ul.nav-dropdown {
+      list-style: none !important;
+      padding: 10px 0 !important;
+      margin: 5px 0 0 0 !important;
+    }
+    
+    .nav-dropdown li {
+      margin: 0 !important;
+      padding: 0 !important;
+      list-style: none !important;
+      display: block !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      position: relative !important;
+      align-items: stretch !important;
+      height: auto !important;
+      flex: none !important;
+    }
+    
+    /* Override any flexbox styles from parent nav */
+    .nav-item-has-dropdown .nav-dropdown li,
+    .nav .nav-dropdown li,
+    ul.nav-dropdown li {
+      display: block !important;
+      align-items: stretch !important;
+      height: auto !important;
+      flex: none !important;
+    }
+    
+    /* Ensure all items have identical styling */
+    .nav-dropdown li:nth-child(1),
+    .nav-dropdown li:nth-child(2),
+    .nav-dropdown li:nth-child(3),
+    .nav-dropdown li:nth-child(4) {
+      margin: 0 !important;
+      padding: 0 !important;
+      display: block !important;
+    }
+    
+    .nav-dropdown li:last-child {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      display: block !important;
+    }
+    
+    .nav-dropdown li a {
+      display: block !important;
+      padding: 8px 20px !important;
+      margin: 0 !important;
+      color: #333 !important;
+      text-decoration: none !important;
+      font-size: 14px !important;
+      transition: background-color 0.2s ease;
+      line-height: 1.5 !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+      text-align: left !important;
+      font-family: 'Roboto', sans-serif !important;
+      font-weight: 400 !important;
+      white-space: nowrap !important;
+    }
+    
+    /* Override any parent nav link styles */
+    .nav-item-has-dropdown .nav-dropdown li a,
+    .nav .nav-dropdown li a,
+    ul.nav-dropdown li a {
+      display: block !important;
+      padding: 8px 20px !important;
+      margin: 0 !important;
+      text-align: left !important;
+      font-weight: 400 !important;
+    }
+    
+    /* Ensure all links have identical padding - explicit for each with left alignment */
+    .nav-dropdown li:nth-child(1) a {
+      padding: 8px 20px !important;
+      margin: 0 !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+      font-weight: 400 !important;
+    }
+    .nav-dropdown li:nth-child(2) a {
+      padding: 8px 20px !important;
+      margin: 0 !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+      font-weight: 400 !important;
+    }
+    .nav-dropdown li:nth-child(3) a {
+      padding: 8px 20px !important;
+      margin: 0 !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+      font-weight: 400 !important;
+    }
+    .nav-dropdown li:nth-child(4) a {
+      padding: 8px 20px !important;
+      margin: 0 !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+      font-weight: 400 !important;
+    }
+    
+    .nav-dropdown li:first-child a {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      text-indent: 0 !important;
+      font-weight: 400 !important;
+    }
+    
+    /* Explicitly ensure last child has exact same left padding and alignment */
+    .nav-dropdown li:last-child a {
+      padding: 8px 20px !important;
+      margin: 0 !important;
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+      margin-left: 0 !important;
+      font-weight: 400 !important;
+    }
+    
+    /* Force alignment for last child - ensure no extra spacing */
+    .nav-dropdown li:last-child {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+      padding-right: 0 !important;
+      margin-right: 0 !important;
+    }
+    
+    /* Ensure all list items have no left margin/padding that could affect alignment */
+    .nav-dropdown li {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
+    
+    .nav-dropdown li a:hover {
+      background-color: #f5f5f5;
+      color: #003E8F;
+    }
+    
+    /* Ensure last item hover maintains alignment */
+    .nav-dropdown li:last-child a:hover {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+      text-align: left !important;
+    }
+    
+    /* Additional rules to ensure last item alignment - override any parent nav styles */
+    .nav .nav-item-has-dropdown .nav-dropdown li:last-child,
+    .nav .nav-dropdown li:last-child,
+    ul.nav .nav-dropdown li:last-child {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+      padding-right: 0 !important;
+      margin-right: 0 !important;
+      text-indent: 0 !important;
+    }
+    
+    .nav .nav-item-has-dropdown .nav-dropdown li:last-child a,
+    .nav .nav-dropdown li:last-child a,
+    ul.nav .nav-dropdown li:last-child a {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      margin-left: 0 !important;
+      text-indent: 0 !important;
+      text-align: left !important;
+      font-weight: 400 !important;
+    }
+    
+    /* Desktop hover behavior - smooth animation */
+    @media (min-width: 1101px) {
+      /* Invisible hover buffer bridge between parent link and dropdown */
+      .nav-item-has-dropdown::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 16px;
+        background: transparent;
+        pointer-events: auto;
+        z-index: 999;
+      }
+      
+      .nav-item-has-dropdown:hover .nav-dropdown {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        display: block !important;
+        pointer-events: auto !important;
+      }
+      
+      /* Ensure dropdown stays visible when hovering over it or the buffer area */
+      .nav-item-has-dropdown:hover .nav-dropdown,
+      .nav-dropdown:hover {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        display: block !important;
+        pointer-events: auto !important;
+      }
+    }
     
     
     
@@ -857,6 +1221,16 @@
       transition: none !important;
     }
     
+    .welfare-content {
+      width: 700px;
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .welfare-content p {
+      text-align: left;
+    }
+    /* メニューと採用サイトテキストのフォント */
     /* Hide mobile navigation above 1100px - let tablet.css handle 1100px and below */
     @media (min-width: 1101px) {
       .nav-ex {
@@ -936,8 +1310,229 @@
     .nav li:last-child {
       margin-right: 0;
     }
+    /* メニューと採用サイトテキストのフォント */
+    .nav li a {
+      font-family: 'Roboto', sans-serif !important;
+      font-weight: bold !important;
+      font-size: 14px !important;
+      white-space: nowrap !important;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      display: block;
+    }
+    .nav li span,
+    .recruit-site-text,
+    .nav-ex span {
+      font-family: 'Roboto', sans-serif !important;
+      font-weight: bold !important;
+      font-size: 14px !important;
+      white-space: nowrap !important;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      display: block;
+    }
+    
     /* Make entry box fully responsive from 1920px to 1100px (before hamburger menu) */
+    @media (max-width: 1920px) and (min-width: 1101px) {
+      /* Fluid responsive entry box - smoothly scales from 1920px to 1100px */
+      header nav {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        overflow: visible !important;
+      }
+      
+      .entry-rectangle {
+        width: auto !important;
+        min-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+        max-width: clamp(160px, 1.24vw + 89px, 213px) !important;
+        height: 80px !important;
+        padding: 0 clamp(8px, 0.6vw + 2px, 12px) 0 clamp(20px, 1.2vw + 10px, 28px) !important;
+        gap: 10px !important;
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+      }
+      
+      /* 採用サイトテキストの位置調整を維持 */
+      .nav li:nth-child(2) span {
+        transform: translateY(3px) !important;
+        display: inline-block !important;
+      }
+      
+      .entry-rectangle .entry-text {
+        font-size: 25px !important;
+        letter-spacing: 2px !important;
+      }
+      
+      .entry-rectangle .entry-icon {
+        height: 54px !important;
+        width: auto !important;
+        flex-shrink: 0 !important;
+      }
+      
+      /* Make navigation menu text (black text) shrink instead of wrapping from 1920px to 1100px */
+      /* At 1920px: 14px, at 1100px: 12px */
+      .nav li a {
+        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+        white-space: nowrap !important;
+      }
+      
+      /* Also make "採用サイト" text shrink */
+      .nav li span {
+        font-size: clamp(12px, 0.244vw + 9.32px, 14px) !important;
+        white-space: nowrap !important;
+      }
+      
+      .nav li {
+        margin-right: clamp(15px, 0.75vw + 15px, 30px) !important;
+      }
+      
+      .nav li:last-child {
+        margin-right: 0 !important;
+        margin-left: clamp(10px, 0.5vw + 10px, 20px) !important;
+        flex-shrink: 0 !important;
+      }
+      
+      /* Ensure entry box doesn't get cut off and no gap on right */
+      .nav {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        overflow: visible !important;
+      }
+      
+      header {
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      header nav {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+    }
+    
+    /* Hide mobile-only elements on desktop (1101px and above) */
+    @media (min-width: 1101px) {
+      .mobile-title-bar,
+      .interview-mobile-title,
+      .leader-mobile-title,
+      .image-text-below,
+      .leader-text-sp {
+        display: none !important;
+      }
+      
+      /* Fix second image size - make it smaller to match other pages */
+      .leader-image {
+        width: 500px !important;
+        max-width: 500px !important;
+      }
+    }
+    
+    /* Let tablet.css handle everything at 1100px and below - just ensure nav is hidden */
     @media (max-width: 1100px) {
+      .nav {
+        display: none !important;
+      }
+      /* Show mobile navigation when hamburger menu is visible */
+      .nav-ex {
+        display: block !important;
+      }
+      /* Ensure hamburger menu button is visible */
+      .menu-under {
+        display: block !important;
+        position: fixed !important;
+        right: 20px !important;
+        top: 20px !important;
+        width: 30px !important;
+        height: 20px !important;
+        z-index: 9999999 !important;
+        cursor: pointer !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      /* Ensure hamburger menu lines are visible */
+      .menu-under .menu__line {
+        background: #111 !important;
+        background-color: #111 !important;
+        display: block !important;
+        height: 2px !important;
+        min-height: 2px !important;
+        position: absolute !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-sizing: border-box !important;
+      }
+      .menu-under .menu__line--top {
+        top: 0 !important;
+        bottom: auto !important;
+      }
+      .menu-under .menu__line--center {
+        top: 9px !important;
+        bottom: auto !important;
+      }
+      .menu-under .menu__line--bottom {
+        top: auto !important;
+        bottom: 0 !important;
+      }
+      /* Active state for X button when menu is open */
+      .menu-under .menu__line--top.active {
+        top: 9px !important;
+        bottom: auto !important;
+        transform: rotate(45deg) !important;
+        transform-origin: center center !important;
+      }
+      .menu-under .menu__line--center.active {
+        transform: scaleX(0) !important;
+        opacity: 0 !important;
+      }
+      .menu-under .menu__line--bottom.active {
+        top: 9px !important;
+        bottom: auto !important;
+        transform: rotate(-45deg) !important;
+        transform-origin: center center !important;
+      }
+      /* Hide "採用サイト" text in mobile navigation when hamburger menu is visible */
+      .nav-ex span {
+        display: none !important;
+      }
+      
+      /* Fix header spacing on SP version - align with content */
+      header {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      
+      .nav-ex {
+        padding: 15px 20px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .nav-ex .logo {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      .nav-ex .logo img {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
       /* ============================================
          Hamburger Menu - Simple White Background Design
          ============================================ */
@@ -1184,6 +1779,62 @@
       }
     }
     
+    @media (max-width: 950px) {
+      /* ④ Long nav items can wrap, short ones stay on one line */
+      /* Short items stay on one line */
+      .nav li:nth-child(3) a, /* 企業情報 */
+      .nav li:nth-child(4) a, /* 事業・サービス */
+      .nav li:nth-child(5) a, /* 職種・仕事 */
+      .nav li:nth-child(7) a { /* 社員の声 */
+        white-space: nowrap;
+      }
+      
+      /* Long items: 福利厚生・制度 (6th), 募集要項・応募方法 (8th) */
+      .nav li:nth-child(6) a,  /* 福利厚生・制度 */
+      .nav li:nth-child(8) a { /* 募集要項・応募方法 */
+        white-space: normal;
+        word-break: keep-all;
+        max-width: 90px;
+        line-height: 1.3;
+        text-align: center;
+      }
+      
+      /* Further reduce spacing */
+      .nav li {
+        margin-right: 4px;
+      }
+      
+      .nav li:nth-child(6) a,  /* 福利厚生・制度 */
+      .nav li:nth-child(8) a { /* 募集要項・応募方法 */
+        font-size: 12px !important;
+      }
+      
+      .nav li:last-child {
+        margin-right: 0 !important;
+      }
+    }
+    
+    @media (max-width: 850px) {
+      /* Further adjustments for very small screens */
+      .nav li:nth-child(2) {
+        margin-right: 8px;
+      }
+      
+      .nav .logo {
+        max-width: 180px;
+      }
+      
+      .nav li a {
+        font-size: 12px !important;
+      }
+      
+      .nav li:nth-child(6) a,  /* 福利厚生・制度 */
+      .nav li:nth-child(8) a { /* 募集要項・応募方法 */
+        font-size: 11px !important;
+        max-width: 80px;
+      }
+    }
+    
     /* Profile Card Styling - Desktop */
     .profile-card {
       width: 1500px !important;
@@ -1320,6 +1971,116 @@
       }
     }
     
+    /* Hide mobile navigation above 1100px */
+    @media (min-width: 1101px) {
+      .nav-ex {
+        display: none !important;
+      }
+    }
+    /* Profile Card Styling - Desktop */
+    .profile-card {
+      width: 1500px !important;
+      max-width: calc(100% - 40px) !important;
+      height: auto !important;
+      min-height: 275px !important;
+      background: #FFF0B0 !important;
+      padding: 42px 60px 42px 60px !important;
+      border-radius: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Profile card list styling - Desktop */
+    .profile-card ul {
+      margin: 0 !important;
+      padding: 0 0 0 20px !important;
+      list-style: disc !important;
+      width: 100%;
+    }
+    
+    .profile-card ul li {
+      color: #333 !important;
+      font-size: 17px !important;
+      line-height: 1.6 !important;
+      margin-bottom: 18px !important;
+      margin-top: 0 !important;
+      text-align: left !important;
+      padding-left: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    
+    .profile-card ul li:first-child {
+      margin-top: 0 !important;
+    }
+    
+    .profile-card ul li:last-child {
+      margin-bottom: 0 !important;
+    }
+    
+    /* Profile card responsive breakpoints - maintain consistent spacing */
+    @media (max-width: 1200px) {
+      .profile-card {
+        padding: 37px 50px 37px 50px !important;
+        max-width: calc(100% - 40px) !important;
+      }
+    }
+    
+    /* Adjust profile card width for screens around 1100px to prevent horizontal scroll */
+    @media (max-width: 1150px) {
+      .profile-card {
+        width: auto !important;
+        max-width: calc(100% - 40px) !important;
+        padding: 37px 40px 37px 40px !important;
+      }
+      
+      .profile-card ul li {
+        font-size: 16px !important;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .profile-card {
+        padding: 30px 35px 30px 35px !important;
+      }
+    }
+    
+    /* Adjust skill card width for tablet sizes (751px - 1100px) to prevent edge-to-edge */
+    @media (min-width: 751px) and (max-width: 1100px) {
+      #skill-section .welfare-content > div[style*="background: #FFE680"],
+      #skill-section .welfare-content > div[style*="padding: 60px 40px"],
+      #interview-section-5 .welfare-content > div[style*="background: #FFE680"] {
+        width: calc(100% - 40px) !important;
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+        box-sizing: border-box !important;
+      }
+    }
+    
+    /* Ensure spacing between skills card and message section on desktop */
+    #interview-section-4 {
+      margin-bottom: 160px !important;
+    }
+    
+    #interview-section-5 {
+      margin-top: 160px !important;
+    }
+    
+    /* Add margin-bottom to skills card wrapper - target the one containing the yellow card */
+    #interview-section-4 .welfare-content:has(div[style*="background: #FFE680"]) {
+      margin-bottom: 80px !important;
+      margin-top: 80px !important;
+    }
+    
+    /* Fallback for browsers that don't support :has() */
+    #interview-section-4 .welfare-content {
+      margin-bottom: 80px !important;
+      margin-top: 80px !important;
+    }
+    
     /* White Text Card Styling */
     .white-text-card {
       border-radius: 0;
@@ -1348,31 +2109,362 @@
       border-bottom: none !important;
       padding-bottom: 0 !important;
     }
+    /* Footerのボタンのフォントサイズを小さく */
+    .btn.ex {
+      font-size: 16px !important;
+      white-space: nowrap !important;
+      padding: 12px 20px !important;
+    }
+    .btn.ex.mail {
+      font-size: 16px !important;
+    }
+    /* JOIN USセクションのボタンレイアウト調整 */
+    /* 1920pxのレイアウト・サイズを750pxまで維持 - tablet.cssの影響を完全にオーバーライド */
+    @media screen and (max-width: 1100px) and (min-width: 751px) {
+      /* Inner container padding */
+      .contact-wrap .inner {
+        padding: 40px 20px !important;
+      }
+      .contact-wrap .item {
+        margin: 0 !important;
+      }
+      .contact-wrap .item p {
+        margin-bottom: 20px !important;
+      }
+      
+      /* Override tablet.css .contact-wrap .link { width: 90%; } */
+      /* Maintain 700px width container */
+      section.contact-wrap .link,
+      .contact-wrap .inner .link,
+      .contact-wrap .link {
+        width: 700px !important;
+        max-width: 700px !important;
+        min-width: 700px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        flex-wrap: nowrap !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* First row: two buttons side by side */
+      /* CRITICAL: Explicitly set width for :first-of-type to override tablet.css */
+      section.contact-wrap .link:first-of-type,
+      .contact-wrap .link:first-of-type {
+        width: 700px !important;
+        max-width: 700px !important;
+        min-width: 700px !important;
+        margin: 0 auto 15px auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 15px !important;
+        flex-wrap: nowrap !important;
+        box-sizing: border-box !important;
+      }
+      section.contact-wrap .link:first-of-type .btn.ex,
+      .contact-wrap .link:first-of-type .btn.ex {
+        width: 342px !important;
+        max-width: 342px !important;
+        min-width: 342px !important;
+        margin: 0 !important;
+        flex: 0 0 342px !important;
+        flex-shrink: 0 !important;
+        flex-grow: 0 !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* Second row: single button (third button) */
+      /* CRITICAL: Explicitly set width for :last-of-type to override tablet.css */
+      section.contact-wrap .link:last-of-type,
+      .contact-wrap .link:last-of-type {
+        width: 700px !important;
+        max-width: 700px !important;
+        min-width: 700px !important;
+        margin: 0 auto !important;
+        margin-top: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        flex-wrap: nowrap !important;
+        box-sizing: border-box !important;
+      }
+      section.contact-wrap .link:last-of-type .btn.ex.mail,
+      .contact-wrap .link:last-of-type .btn.ex.mail {
+        width: calc(100% - 1px) !important;
+        max-width: 699px !important;
+        min-width: 699px !important;
+        margin: 0 !important;
+      }
+      
+      /* CRITICAL: Override tablet.css button styles to maintain 1920px sizes */
+      /* tablet.css: .btn { width: 280px; height: 55px; } → maintain width: auto; height: 75px; */
+      /* CRITICAL: Override tablet.css .btn { width: 280px; height: 55px; } */
+      /* But only override base properties - individual button widths are set separately */
+      section.contact-wrap .btn,
+      section.contact-wrap .link .btn,
+      .contact-wrap .btn,
+      .contact-wrap .link .btn {
+        /* Override tablet.css width: 280px for base buttons */
+        /* Individual buttons have their own width settings below */
+        height: 75px !important;
+        line-height: 75px !important;
+        min-height: 75px !important;
+        padding: 0 20px !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* CRITICAL: Explicitly override tablet.css .btn { width: 280px; } for first two buttons */
+      /* This ensures buttons don't shrink */
+      section.contact-wrap .link:first-of-type .btn.ex,
+      .contact-wrap .link:first-of-type .btn.ex,
+      section.contact-wrap .link .btn.ex:first-child,
+      .contact-wrap .link .btn.ex:first-child,
+      section.contact-wrap .link .btn.ex:nth-child(1),
+      .contact-wrap .link .btn.ex:nth-child(1),
+      section.contact-wrap .link .btn.ex:nth-child(2),
+      .contact-wrap .link .btn.ex:nth-child(2) {
+        width: 342px !important;
+        max-width: 342px !important;
+        min-width: 342px !important;
+      }
+      
+      /* tablet.css: .btn.ex { font-size: 22px; } → maintain font-size: 16px (non-italic) */
+      section.contact-wrap .btn.ex,
+      section.contact-wrap .link .btn.ex,
+      .contact-wrap .btn.ex,
+      .contact-wrap .link .btn.ex {
+        font-size: 16px !important;
+        font-style: normal !important;
+        height: 75px !important;
+        line-height: 1.5 !important;
+        min-height: 75px !important;
+        padding: 0 20px !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+      }
+      
+      /* tablet.css: .btn.ex.mail { font-size: 18px; } → maintain 1920px default: font-size: 16px; */
+      section.contact-wrap .btn.ex.mail,
+      section.contact-wrap .link .btn.ex.mail,
+      .contact-wrap .btn.ex.mail,
+      .contact-wrap .link .btn.ex.mail {
+        font-size: 16px !important;
+        font-style: normal !important;
+        height: 75px !important;
+        line-height: 1.5 !important;
+        min-height: 75px !important;
+        padding: 0 20px !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+      }
+      
+    }
+    
+    /* Stack buttons vertically from 750px and below */
+
+    /* 1101px以上 - 同じスタイルを維持 */
+    @media screen and (min-width: 1101px) {
+      .contact-wrap .inner {
+        padding: 40px 20px !important;
+      }
+      .contact-wrap .item {
+        margin: 0 !important;
+      }
+      .contact-wrap .item p {
+        margin-bottom: 20px !important;
+      }
+      
+      .contact-wrap .link {
+        width: 700px !important;
+        max-width: 700px !important;
+        min-width: 700px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        flex-wrap: nowrap !important;
+        box-sizing: border-box !important;
+      }
+      
+      .contact-wrap .link:first-of-type {
+        margin-bottom: 15px !important;
+        align-items: center !important;
+      }
+      section.contact-wrap .link:first-of-type .btn.ex,
+      .contact-wrap .link:first-of-type .btn.ex {
+        width: 342px !important;
+        max-width: 342px !important;
+        min-width: 342px !important;
+        margin: 0 !important;
+        flex: 0 0 342px !important;
+        flex-shrink: 0 !important;
+        flex-grow: 0 !important;
+        box-sizing: border-box !important;
+      }
+      
+      .contact-wrap .link:last-of-type {
+        margin-top: 0 !important;
+      }
+      section.contact-wrap .link:last-of-type .btn.ex.mail,
+      .contact-wrap .link:last-of-type .btn.ex.mail {
+        width: calc(100% - 1px) !important;
+        max-width: 699px !important;
+        min-width: 699px !important;
+        margin: 0 !important;
+      }
+      
+      /* Ensure consistent button font styles at 1101px+ */
+      section.contact-wrap .btn.ex,
+      section.contact-wrap .link .btn.ex,
+      .contact-wrap .btn.ex,
+      .contact-wrap .link .btn.ex {
+        font-size: 16px !important;
+        font-style: normal !important;
+        height: 75px !important;
+        line-height: 75px !important;
+        min-height: 75px !important;
+      }
+      
+      section.contact-wrap .btn.ex.mail,
+      section.contact-wrap .link .btn.ex.mail,
+      .contact-wrap .btn.ex.mail,
+      .contact-wrap .link .btn.ex.mail {
+        font-size: 16px !important;
+        font-style: normal !important;
+        height: 75px !important;
+        line-height: 75px !important;
+        min-height: 75px !important;
+      }
+    }
+    @media (max-width: 750px) {
+      .contact-wrap .inner {
+        padding: 40px 20px !important;
+      }
+      .contact-wrap .item {
+        margin: 0 !important;
+      }
+      .contact-wrap .item p {
+        margin-bottom: 20px !important;
+      }
+      .contact-wrap .link {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0 !important;
+      }
+      .contact-wrap .link:first-of-type {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      .contact-wrap .link:last-of-type {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+      /* Override ALL base button styles to ensure uniform sizing and spacing */
+      .contact-wrap .btn,
+      .contact-wrap .btn.ex,
+      .contact-wrap .btn.ex.mail,
+      .contact-wrap .link .btn,
+      .contact-wrap .link:first-of-type .btn,
+      .contact-wrap .link:last-of-type .btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 75px !important;
+        min-height: 75px !important;
+        margin: 0 auto 30px auto !important;
+        padding: 0 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        font-size: 16px !important;
+        font-style: normal !important;
+        line-height: 1.5 !important;
+      }
+      /* Remove margin from the very last button (third button) */
+      .contact-wrap .link:last-of-type .btn:last-child {
+        margin-bottom: 0 !important;
+      }
+      
+      /* Change banner image for mobile */
+      .visual.under.recruit {
+        background-image: url(img/interview/sp-ry.png) !important;
+      }
+    }
+    
+    /* Third button text spans - desktop: one line, mobile: two lines */
+    .contact-wrap .btn.ex.mail .btn-text-wrapper {
+      display: inline;
+      white-space: nowrap;
+    }
+    .contact-wrap .btn.ex.mail .btn-text-line1,
+    .contact-wrap .btn.ex.mail .btn-text-line2 {
+      display: inline;
+      white-space: nowrap;
+    }
+    
+    /* Mobile: split into two lines */
+    @media (max-width: 750px) {
+      .contact-wrap .btn.ex.mail .btn-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        white-space: normal;
+        line-height: 1.2;
+      }
+      .contact-wrap .btn.ex.mail .btn-text-line1 {
+        display: block;
+        white-space: normal;
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+      }
+      .contact-wrap .btn.ex.mail .btn-text-line2 {
+        display: block;
+        white-space: normal;
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    
+    
     /* フッター部分のアイコンを大きく */
     /* 見出しのフォントサイズを22pxに統一（768px以上） */
     .title-border .title {
       font-size: 22px !important;
     }
-    /* Hero画像を設定 - PC_YO.pngを使用 */
+    /* Heroセクションの高さを倍にする */
     .visual.under.recruit {
-      background-image: url(img/interview/pc-yo.png) !important;
+      background-image: url(img/interview/untitled-design-5.png) !important;
       height: 600px !important;
       background-size: cover !important;
       background-position: 95% 25% !important;
       background-repeat: no-repeat !important;
-      margin: 0 !important;
       margin-bottom: 0 !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
       position: relative !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      left: 0 !important;
-      right: 0 !important;
-      box-sizing: border-box !important;
     }
     
     /* 青いオーバーレーを削除 */
@@ -1383,21 +2475,6 @@
     /* Override .inner margin-left to allow left positioning */
     .visual.under.recruit .inner {
         margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    
-    /* Ensure section breaks out of any container padding */
-    body > #fade > section.visual.under.recruit,
-    #fade > section.visual.under.recruit {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
     }
     
     /* Interview Header Overlay Styling */
@@ -1447,7 +2524,7 @@
     /* Blue Container - Clean Responsive Design */
     .interview-blue-container {
       position: absolute;
-      left: 60px !important; /* Aligned with h1 and h2 left edge */
+      left: 60px !important;
       width: fit-content;
       /* Ensure it stays within banner: 100% - left(60px) - right padding(60px) - right gap */
       max-width: calc(100% - 120px - 450px); /* Accounts for overlay padding (60px each side) */
@@ -1457,7 +2534,7 @@
       border-radius: 20px;
       box-sizing: border-box;
       z-index: 10;
-      /* Position to maintain equal spacing (40px) from "社員の声" text - aligned with title section */
+      /* Position to maintain equal spacing (40px) from "社員の声" text */
       top: 160px;
       /* Prevent overflow */
       overflow-wrap: break-word;
@@ -1511,7 +2588,6 @@
       
       .interview-blue-container {
         padding-bottom: 20px !important; /* Reduce bottom padding */
-        top: 160px !important; /* Aligned with title section (INTERVIEW + 社員の声 + 40px margin) */
       }
     }
     
@@ -1638,30 +2714,38 @@
       }
     }
     
-    /* Hide mobile title bars on desktop */
+    /* Hide mobile title bars and SP-only text elements on desktop */
     .mobile-title-bar {
       display: none !important;
     }
     
+    .image-text-below {
+      display: none !important;
+    }
+    
+    .leader-text-sp {
+      display: none !important;
+    }
+    
+    /* Ensure SP-only elements stay hidden on desktop (above 750px) */
+    @media screen and (min-width: 751px) {
+      .mobile-title-bar,
+      .image-text-below,
+      .leader-text-sp {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+      }
+    }
+    
     @media screen and (max-width: 750px) {
-      /* Prevent horizontal scrolling on mobile */
-      body {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        max-width: 100vw !important;
-      }
-      
-      * {
-        max-width: 100% !important;
-      }
-      
       /* Adjust hero section height and padding - maintain aspect ratio */
       .visual.under.recruit {
-        background-image: url(img/interview/sp-yo.png) !important;
+        background-image: url(img/interview/sp-ry.png) !important;
         width: 100% !important;
         height: 0 !important;
-        padding: 0 !important;
-        padding-top: 133.33% !important; /* Maintain aspect ratio */
         padding-bottom: 0 !important;
         margin-top: 0 !important;
         background-size: 100% auto !important;
@@ -1670,6 +2754,9 @@
         position: relative !important;
         top: 0 !important;
         left: 0 !important;
+        /* Maintain aspect ratio - adjust percentage based on image dimensions */
+        /* Formula: (image height / image width) * 100 */
+        padding-top: 133.33%; /* Example: if 1080x1440px, use 133.33% */
       }
       
       .visual.under.recruit .inner {
@@ -1715,6 +2802,15 @@
         padding: 30px 25px 30px 20px !important; /* Left padding matches overlay padding */
       }
       
+      /* Remove any margin-top on content below banner */
+      .visual.under.recruit + section.wrap.under {
+        margin-top: 0 !important;
+      }
+      
+      section.wrap.under {
+        margin-top: 0 !important;
+      }
+      
       .interview-title-text {
         font-size: clamp(20px, 3.5vw + 6px, 25px) !important;
         margin-bottom: 20px !important;
@@ -1737,15 +2833,6 @@
       
       .interview-employee-info {
         font-size: 17px !important;
-      }
-      
-      /* Remove any margin-top on content below banner */
-      .visual.under.recruit + section.wrap.under {
-        margin-top: 0 !important;
-      }
-      
-      section.wrap.under {
-        margin-top: 0 !important;
       }
       
       /* Responsive breadcrumb styling */
@@ -1784,20 +2871,21 @@
         color: #666 !important;
       }
       
-      /* Make long breadcrumb text wrap on mobile */
       .pankuzu span:last-child {
         display: inline !important;
         word-break: break-all !important;
         overflow-wrap: break-word !important;
       }
       
-      /* Profile card mobile styling */
+      /* Profile card mobile styling - 750px */
       .profile-card {
         width: 100% !important;
         max-width: 90% !important;
         height: auto !important;
-        padding: 30px 20px !important;
+        padding: 25px 25px 25px 25px !important;
         margin: 20px auto !important;
+        display: flex;
+        align-items: center;
       }
       
       /* Profile card list styling - 750px */
@@ -2044,14 +3132,7 @@
       #interview-section-4 h2.title[style*="font-size"],
       #interview-section-5 .title-border .title,
       #interview-section-5 .title-border h2.title,
-      #interview-section-5 h2.title,
       #interview-section-5 h2.title[style*="font-size"],
-      #interview-section-5 h2.title[style*="font-size: 22px"],
-      #interview-section-5 h2.title[style*="font-size:22px"],
-      #interview-section-5 h2.title[style*="font-size: 22px !important"],
-      #interview-section-5 h2.title[style*="text-align: left"],
-      #interview-section-5 h2#section-5.title,
-      #interview-section-5 h2#section-5.title[style*="font-size: 22px !important"],
       #interview-section-2 .title-border .title,
       #interview-section-2 .title-border h2.title,
       #interview-section-2 h2.title[style*="font-size"],
@@ -2062,9 +3143,22 @@
       .title-border h2.title[style*="font-size: 22px !important"],
       #interview-section-2 h2.title {
         font-size: 16px !important;
-        white-space: normal !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
+      }
+      
+      .white-text-card h2,
+      .leader-overlay h2,
+      .mobile-title-bar h2,
+      #interview-section .white-text-card h2,
+      #interview-section-3 .leader-overlay h2,
+      .white-text-card h2[style*="font-size: 22px"],
+      .white-text-card h2[style*="font-size:22px"],
+      .leader-overlay h2[style*="font-size: 22px"],
+      .leader-overlay h2[style*="font-size:22px"],
+      #interview-section .white-text-card h2[style*="font-size: 22px"],
+      #interview-section .white-text-card h2[style*="font-size:22px"],
+      #interview-section-3 .leader-overlay h2[style*="font-size: 22px"],
+      #interview-section-3 .leader-overlay h2[style*="font-size:22px"] {
+        font-size: 16px !important;
         text-align: center !important;
       }
       
@@ -2072,6 +3166,18 @@
       [style*="text-align: left"] .title,
       [style*="text-align: left"] h2.title {
         text-align: center !important;
+      }
+      
+      /* Override all inline font-size styles for titles on mobile */
+      h2[style*="font-size: 22px"],
+      h2[style*="font-size:22px"],
+      h2[style*="font-size: 18px"],
+      h2[style*="font-size:18px"],
+      h2[style*="font-size: 20px"],
+      h2[style*="font-size:20px"],
+      #interview-section-2 .title-border h2.title,
+      #interview-section-2 h2.title[style*="font-size: 22px"] {
+        font-size: 16px !important;
       }
       
       .title-border span {
@@ -2119,19 +3225,119 @@
 
       .leader-overlay {
         order: 1 !important;
-        display: contents !important;
+        display: none !important;
+        visibility: hidden !important;
       }
 
-      .leader-overlay h2 {
-        order: 1 !important;
-        margin: 0 0 20px 0 !important;
+      .leader-overlay h2,
+      #interview-section-3 .leader-overlay h2 {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .leader-overlay p,
+      #interview-section-3 .leader-overlay p {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+    
+    /* Fix title overflow on very small screens (468px and below) */
+    @media (max-width: 468px) {
+      /* Target section-4 and section-5 titles specifically */
+      #interview-section-4 .title-border,
+      #interview-section-5 .title-border {
+        padding: 0 20px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+      }
+      
+      /* Override inline styles for section-4 and section-5 titles */
+      #interview-section-4 .title-border .title,
+      #interview-section-4 .title-border h2.title,
+      #interview-section-4 h2.title,
+      #interview-section-4 h2.title[style*="font-size"],
+      #interview-section-4 h2.title[style*="font-size: 22px"],
+      #interview-section-4 h2.title[style*="font-size:22px"],
+      #interview-section-4 h2.title[style*="font-size: 22px !important"],
+      #interview-section-4 h2.title[style*="text-align: left"],
+      #interview-section-5 .title-border .title,
+      #interview-section-5 .title-border h2.title,
+      #interview-section-5 h2.title,
+      #interview-section-5 h2.title[style*="font-size"],
+      #interview-section-5 h2.title[style*="font-size: 22px"],
+      #interview-section-5 h2.title[style*="font-size:22px"],
+      #interview-section-5 h2.title[style*="font-size: 22px !important"],
+      #interview-section-5 h2.title[style*="text-align: left"],
+      #interview-section-4 h2#section-4.title,
+      #interview-section-5 h2#section-5.title,
+      #interview-section-4 h2#section-4.title[style*="font-size: 22px !important"],
+      #interview-section-5 h2#section-5.title[style*="font-size: 22px !important"] {
+        font-size: 20px !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        line-height: 1.3 !important;
         text-align: center !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
         display: block !important;
+        min-width: 0 !important;
+        overflow: visible !important;
+      }
+      
+      /* Ensure title-border doesn't add extra spacing */
+      #interview-section-4 .title-border,
+      #interview-section-5 .title-border {
+        padding-bottom: 5px !important;
+        margin-bottom: 0 !important;
+      }
+        flex-direction: column !important;
+        position: relative !important;
+        min-height: auto !important;
       }
 
-      .leader-overlay p {
-        order: 3 !important;
-        margin: 8px 0 !important;
+      /* On SP, show title before image, body text after image */
+      .leader-image {
+        order: 2 !important;
+      }
+
+      .leader-overlay {
+        order: 1 !important;
+        display: none !important;
+        visibility: hidden !important;
+      }
+
+      .leader-overlay h2,
+      #interview-section-3 .leader-overlay h2 {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .leader-overlay p,
+      #interview-section-3 .leader-overlay p {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
         padding: 0 !important;
       }
 
@@ -2224,28 +3430,15 @@
         box-sizing: border-box !important;
       }
       
-      /* Style ordered list in skill card */
-      #interview-section-5 .welfare-content > div[style*="background: #FFE680"] ol,
-      #skill-section .welfare-content > div[style*="background: #FFE680"] ol {
-        margin: 0 !important;
-        padding-left: 25px !important;
-        color: #333 !important;
+      /* Reduce paragraph gaps in skill card and match font size */
+      #skill-section .welfare-content > div[style*="background: #FFE680"] p {
+        margin-bottom: 10px !important;
         line-height: 1.8 !important;
-        list-style: decimal !important;
-        list-style-position: outside !important;
-      }
-      
-      #interview-section-5 .welfare-content > div[style*="background: #FFE680"] ol li,
-      #skill-section .welfare-content > div[style*="background: #FFE680"] ol li {
-        margin-bottom: 20px !important;
         font-size: 15px !important;
-        text-align: left !important;
-        padding-left: 5px !important;
       }
       
-      #interview-section-5 .welfare-content > div[style*="background: #FFE680"] ol li:last-child,
-      #skill-section .welfare-content > div[style*="background: #FFE680"] ol li:last-child {
-        margin-bottom: 0 !important;
+      #skill-section .welfare-content > div[style*="background: #FFE680"] p strong {
+        font-size: 15px !important;
       }
       
       /* Make skill card title 18px for SP */
@@ -2318,10 +3511,10 @@
       .leader-text-sp {
         display: block !important;
         order: 3 !important;
+        margin-top: 20px !important;
         padding: 0 20px !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        margin-top: 20px !important;
       }
       
       .leader-text-sp p {
@@ -2354,8 +3547,6 @@
       
       /* Ensure leader overlay paragraphs have consistent padding - match other sections */
       .leader-overlay p {
-        display: none !important;
-        visibility: hidden !important;
         padding: 0 !important;
         margin: 8px 0 !important;
         width: 100% !important;
@@ -2414,12 +3605,44 @@
       .center-carousel-frame {
         height: 500px !important;
       }
+      
+      /* Footer buttons mobile */
     }
     
     @media (max-width: 768px) {
       .profile-card {
         width: 600px !important;
-        height: 352px !important;
+        height: auto !important;
+        padding: 25px 25px 25px 25px !important;
+        display: flex;
+        align-items: center;
+      }
+      
+      /* Profile card list styling - 768px */
+      .profile-card ul {
+        margin: 0 !important;
+        padding: 0 0 0 20px !important;
+        list-style: disc !important;
+      }
+      
+      .profile-card ul li {
+        color: #333 !important;
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 18px !important;
+        margin-top: 0 !important;
+        text-align: left !important;
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      
+      .profile-card ul li:first-child {
+        margin-top: 0 !important;
+      }
+      
+      .profile-card ul li:last-child {
+        margin-bottom: 0 !important;
       }
       .welfare-content {
         width: 100%;
@@ -2452,72 +3675,6 @@
         transform: none !important;
         width: 100% !important;
         margin: 20px 0 !important;
-      }
-    }
-    
-    /* Fix title overflow on very small screens (468px and below) */
-    @media (max-width: 468px) {
-      /* Target section-5 title specifically */
-      #interview-section-5 .title-border {
-        padding: 0 20px !important;
-        box-sizing: border-box !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow: visible !important;
-      }
-      
-      /* Override inline styles for section-5 title */
-      #interview-section-5 .title-border .title,
-      #interview-section-5 .title-border h2.title,
-      #interview-section-5 h2.title,
-      #interview-section-5 h2.title[style*="font-size"],
-      #interview-section-5 h2.title[style*="font-size: 22px"],
-      #interview-section-5 h2.title[style*="font-size:22px"],
-      #interview-section-5 h2.title[style*="font-size: 22px !important"],
-      #interview-section-5 h2.title[style*="text-align: left"],
-      #interview-section-5 h2#section-5.title,
-      #interview-section-5 h2#section-5.title[style*="font-size: 22px !important"] {
-        font-size: 20px !important;
-        white-space: normal !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-        max-width: 100% !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        line-height: 1.3 !important;
-        text-align: center !important;
-        padding: 0 !important;
-        margin: 0 auto !important;
-        display: block !important;
-        min-width: 0 !important;
-        overflow: visible !important;
-      }
-      
-      /* Ensure title-border doesn't add extra spacing */
-      #interview-section-5 .title-border {
-        padding-bottom: 5px !important;
-        margin-bottom: 0 !important;
-      }
-    }
-    
-    /* Reset section-5 title styles for screens between 469px and 768px */
-    @media (min-width: 469px) and (max-width: 768px) {
-      #interview-section-5 .title-border .title,
-      #interview-section-5 .title-border h2.title,
-      #interview-section-5 h2.title,
-      #interview-section-5 h2.title[style*="font-size"],
-      #interview-section-5 h2.title[style*="font-size: 22px"],
-      #interview-section-5 h2.title[style*="font-size:22px"],
-      #interview-section-5 h2.title[style*="font-size: 22px !important"],
-      #interview-section-5 h2.title[style*="text-align: left"],
-      #interview-section-5 h2#section-5.title,
-      #interview-section-5 h2#section-5.title[style*="font-size: 22px !important"] {
-        font-size: 16px !important;
-        white-space: normal !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-        text-align: center !important;
-        line-height: 1.4 !important;
       }
     }
 
@@ -2700,9 +3857,10 @@
   <script>
     (function() {
       function adjustLeaderSection() {
-        if (window.innerWidth <= 750) {
+        if (window.innerWidth <= 768) {
           const leaderOverlay = document.querySelector('#interview-section-3 .leader-overlay');
           const leaderImage = document.querySelector('#interview-section-3 .leader-image');
+          const leaderTitle = document.querySelector('#interview-section-3 .leader-overlay h2');
           
           if (leaderOverlay) {
             // Get current style attribute and modify it
@@ -2722,10 +3880,29 @@
             leaderOverlay.style.setProperty('padding-right', '20px', 'important');
           }
           
+          // Hide the h2 title in leader-overlay at 768px and below
+          if (leaderTitle) {
+            leaderTitle.style.setProperty('display', 'none', 'important');
+            leaderTitle.style.setProperty('visibility', 'hidden', 'important');
+            leaderTitle.style.setProperty('opacity', '0', 'important');
+            leaderTitle.style.setProperty('height', '0', 'important');
+            leaderTitle.style.setProperty('margin', '0', 'important');
+            leaderTitle.style.setProperty('padding', '0', 'important');
+          }
+          
           if (leaderImage) {
             // Set image container padding to match text
             leaderImage.style.setProperty('padding-left', '20px', 'important');
             leaderImage.style.setProperty('padding-right', '20px', 'important');
+          }
+        } else {
+          // Show the h2 title above 768px
+          const leaderTitle = document.querySelector('#interview-section-3 .leader-overlay h2');
+          if (leaderTitle) {
+            leaderTitle.style.removeProperty('display');
+            leaderTitle.style.removeProperty('visibility');
+            leaderTitle.style.removeProperty('opacity');
+            leaderTitle.style.removeProperty('height');
           }
         }
       }
@@ -2743,6 +3920,94 @@
       setTimeout(adjustLeaderSection, 500);
       
       window.addEventListener('resize', adjustLeaderSection);
+    })();
+  </script>
+  
+  <!-- JavaScript to apply responsive font sizing to ALL titles -->
+  <script>
+    (function() {
+      function applyResponsiveFontSizing() {
+        const width = window.innerWidth;
+        
+        // Get all title elements
+        const allTitles = document.querySelectorAll('.title-border .title, h2.title, .title-border h2.title, #interview-section-4 .title-border .title, #interview-section-4 .title-border h2.title, #interview-section-4 h2.title, #interview-section-5 .title-border .title, #interview-section-5 .title-border h2.title, #interview-section-5 h2.title, #interview-section-2 .title-border .title, #interview-section-2 .title-border h2.title, #interview-section-2 h2.title, .white-text-card h2, .leader-overlay h2, #interview-section .white-text-card h2, #interview-section-3 .leader-overlay h2');
+        
+        // Only apply below 768px - set to 16px
+        if (width <= 768) {
+          // Apply to white-text-card h2 - use multiple selectors to ensure we catch it
+          const whiteCardTitle = document.querySelector('#interview-section .white-text-card h2') || 
+                                  document.querySelector('.white-text-card h2');
+          if (whiteCardTitle) {
+            whiteCardTitle.style.setProperty('font-size', '16px', 'important');
+          }
+          
+          // Apply to leader-overlay h2 - use specific selector
+          const leaderTitle = document.querySelector('#interview-section-3 .leader-overlay h2') || 
+                              document.querySelector('.leader-overlay h2');
+          if (leaderTitle) {
+            leaderTitle.style.setProperty('font-size', '16px', 'important');
+          }
+          
+          // Also apply to mobile title bar h2 elements
+          const mobileInterviewTitle = document.querySelector('.mobile-title-bar.interview-mobile-title h2');
+          if (mobileInterviewTitle) {
+            mobileInterviewTitle.style.setProperty('font-size', '16px', 'important');
+          }
+          
+          const mobileLeaderTitle = document.querySelector('.mobile-title-bar.leader-mobile-title h2');
+          if (mobileLeaderTitle) {
+            mobileLeaderTitle.style.setProperty('font-size', '16px', 'important');
+          }
+          
+          // Set all other titles to 16px
+          allTitles.forEach(function(title) {
+            // Skip card titles as they're handled above
+            if (!title.closest('.white-text-card') && !title.closest('.leader-overlay')) {
+              title.style.setProperty('font-size', '16px', 'important');
+            }
+          });
+        } else if (width > 768) {
+          // Above 768px, explicitly set ALL titles to 22px
+          const whiteCardTitle = document.querySelector('#interview-section .white-text-card h2') || 
+                                  document.querySelector('.white-text-card h2');
+          if (whiteCardTitle) {
+            whiteCardTitle.style.setProperty('font-size', '22px', 'important');
+          }
+          
+          const leaderTitle = document.querySelector('#interview-section-3 .leader-overlay h2') || 
+                              document.querySelector('.leader-overlay h2');
+          if (leaderTitle) {
+            leaderTitle.style.setProperty('font-size', '22px', 'important');
+          }
+          
+          // Reset ALL other titles to 22px
+          allTitles.forEach(function(title) {
+            // Skip card titles as they're handled above
+            if (!title.closest('.white-text-card') && !title.closest('.leader-overlay')) {
+              title.style.setProperty('font-size', '22px', 'important');
+            }
+          });
+        }
+      }
+      
+      // Run on DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', applyResponsiveFontSizing);
+      } else {
+        applyResponsiveFontSizing();
+      }
+      
+      // Run on resize
+      window.addEventListener('resize', applyResponsiveFontSizing);
+      
+      // Run multiple times to ensure it applies
+      setTimeout(applyResponsiveFontSizing, 100);
+      setTimeout(applyResponsiveFontSizing, 300);
+      setTimeout(applyResponsiveFontSizing, 500);
+      setTimeout(applyResponsiveFontSizing, 1000);
+      
+      // Also run on load to ensure it applies after all CSS loads
+      window.addEventListener('load', applyResponsiveFontSizing);
     })();
   </script>
   
@@ -2769,6 +4034,22 @@
             skillCard.style.setProperty('padding-bottom', '120px', 'important');
             skillCard.style.setProperty('padding-left', '40px', 'important');
             skillCard.style.setProperty('padding-right', '40px', 'important');
+            
+            // Override font-size for paragraphs and strong tags in skill card
+            const skillParagraphs = skillCard.querySelectorAll('p');
+            skillParagraphs.forEach(function(p) {
+              p.style.setProperty('font-size', '15px', 'important');
+              const strongTags = p.querySelectorAll('strong');
+              strongTags.forEach(function(strong) {
+                strong.style.setProperty('font-size', '15px', 'important');
+              });
+            });
+            
+            // Override font-size for h3 title in skill card
+            const skillTitle = skillCard.querySelector('h3');
+            if (skillTitle) {
+              skillTitle.style.setProperty('font-size', '18px', 'important');
+            }
           }
         }
       }
@@ -2789,6 +4070,55 @@
     })();
   </script>
   
+  <!-- JavaScript to adjust skill card spacing on desktop -->
+  <script>
+    (function() {
+      function adjustSkillCardDesktop() {
+        if (window.innerWidth > 768) {
+          const skillCardContainer = document.querySelector('#interview-section-5 .skill-card-container');
+          if (skillCardContainer) {
+            // Directly modify the style attribute to override inline styles
+            let currentStyle = skillCardContainer.getAttribute('style') || '';
+            // Remove existing margin-top and margin-bottom
+            currentStyle = currentStyle.replace(/margin-top\s*:\s*[^;]+;?/gi, '');
+            currentStyle = currentStyle.replace(/margin-bottom\s*:\s*[^;]+;?/gi, '');
+            // Add new margins
+            currentStyle += ' margin-top: 100px !important; margin-bottom: 100px !important;';
+            skillCardContainer.setAttribute('style', currentStyle);
+            // Also set via style object
+            skillCardContainer.style.marginTop = '100px';
+            skillCardContainer.style.marginBottom = '100px';
+          }
+        } else {
+          // Reset to original on mobile
+          const skillCardContainer = document.querySelector('#interview-section-5 .skill-card-container');
+          if (skillCardContainer) {
+            let currentStyle = skillCardContainer.getAttribute('style') || '';
+            currentStyle = currentStyle.replace(/margin-top\s*:\s*[^;]+;?/gi, '');
+            currentStyle = currentStyle.replace(/margin-bottom\s*:\s*[^;]+;?/gi, '');
+            currentStyle += ' margin-top: 50px; margin-bottom: 80px;';
+            skillCardContainer.setAttribute('style', currentStyle);
+          }
+        }
+      }
+      
+      // Run on DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', adjustSkillCardDesktop);
+      } else {
+        adjustSkillCardDesktop();
+      }
+      
+      // Run multiple times to ensure it applies
+      setTimeout(adjustSkillCardDesktop, 100);
+      setTimeout(adjustSkillCardDesktop, 300);
+      setTimeout(adjustSkillCardDesktop, 500);
+      setTimeout(adjustSkillCardDesktop, 1000);
+      
+      window.addEventListener('resize', adjustSkillCardDesktop);
+    })();
+  </script>
+  
   <!-- JavaScript to set font-size to 16px for specific titles on mobile -->
   <script>
     (function() {
@@ -2798,13 +4128,12 @@
         const interviewSection2Title = document.querySelector('#interview-section-2 h2.title');
         
         if (window.innerWidth <= 750) {
+          // Mobile: set to 16px
           if (changeTitle) {
-            // Override inline font-size
             changeTitle.style.setProperty('font-size', '16px', 'important');
           }
           
           if (messageTitle) {
-            // Override inline font-size
             messageTitle.style.setProperty('font-size', '16px', 'important');
           }
           
@@ -2812,17 +4141,17 @@
             interviewSection2Title.style.setProperty('font-size', '16px', 'important');
           }
         } else {
-          // Remove inline font-size styles when screen is larger to let CSS take over
+          // Desktop: restore to original 22px
           if (changeTitle) {
-            changeTitle.style.removeProperty('font-size');
+            changeTitle.style.setProperty('font-size', '22px', 'important');
           }
           
           if (messageTitle) {
-            messageTitle.style.removeProperty('font-size');
+            messageTitle.style.setProperty('font-size', '22px', 'important');
           }
           
           if (interviewSection2Title) {
-            interviewSection2Title.style.removeProperty('font-size');
+            interviewSection2Title.style.setProperty('font-size', '22px', 'important');
           }
         }
       }

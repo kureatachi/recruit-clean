@@ -924,15 +924,6 @@
       transition: none !important;
     }
     
-    .welfare-content {
-      width: 700px;
-      max-width: 100%;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .welfare-content p {
-      text-align: left;
-    }
     /* Hide mobile navigation above 1100px - let tablet.css handle 1100px and below */
     @media (min-width: 1101px) {
       .nav-ex {
@@ -1250,62 +1241,6 @@
       /* Ensure last item hover doesn't break alignment */
       .nav-cover__menu__dropdown li:last-child a:hover {
         padding-left: 4px !important;
-      }
-    }
-    
-    @media (max-width: 950px) {
-      /* ④ Long nav items can wrap, short ones stay on one line */
-      /* Short items stay on one line */
-      .nav li:nth-child(3) a, /* 企業情報 */
-      .nav li:nth-child(4) a, /* 事業・サービス */
-      .nav li:nth-child(5) a, /* 職種・仕事 */
-      .nav li:nth-child(7) a { /* 社員の声 */
-        white-space: nowrap;
-      }
-      
-      /* Long items: 福利厚生・制度 (6th), 募集要項・応募方法 (8th) */
-      .nav li:nth-child(6) a,  /* 福利厚生・制度 */
-      .nav li:nth-child(8) a { /* 募集要項・応募方法 */
-        white-space: normal;
-        word-break: keep-all;
-        max-width: 90px;
-        line-height: 1.3;
-        text-align: center;
-      }
-      
-      /* Further reduce spacing */
-      .nav li {
-        margin-right: 4px;
-      }
-      
-      .nav li:nth-child(6) a,  /* 福利厚生・制度 */
-      .nav li:nth-child(8) a { /* 募集要項・応募方法 */
-        font-size: 12px !important;
-      }
-      
-      .nav li:last-child {
-        margin-right: 0 !important;
-      }
-    }
-    
-    @media (max-width: 850px) {
-      /* Further adjustments for very small screens */
-      .nav li:nth-child(2) {
-        margin-right: 8px;
-      }
-      
-      .nav .logo {
-        max-width: 180px;
-      }
-      
-      .nav li a {
-        font-size: 12px !important;
-      }
-      
-      .nav li:nth-child(6) a,  /* 福利厚生・制度 */
-      .nav li:nth-child(8) a { /* 募集要項・応募方法 */
-        font-size: 11px !important;
-        max-width: 80px;
       }
     }
     
