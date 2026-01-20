@@ -1148,3 +1148,26 @@ ul.nav .nav-dropdown li:last-child a {
     pointer-events: auto !important;
   }
 }
+
+/* ============================================
+   COMMON PAGE STYLES - Prevent Flash & Layout
+   ============================================ */
+
+/* Prevent flash of unstyled content */
+#fade {
+  display: none;
+}
+
+/* Prevent horizontal scroll and enable smooth scrolling */
+html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+}

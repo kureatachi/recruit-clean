@@ -29,28 +29,6 @@
 
   <!-- Prevent flash of unstyled content -->
   <style>
-    #fade {
-      display: none;
-    }
-    
-    /* 採用サイトテキストの位置調整 - ロゴ内「SOU-GOU Inc.」の下側に揃える（デフォルト位置から3px下） */
-    .nav li:nth-child(2) span {
-      transform: translateY(3px) !important;
-      display: inline-block !important;
-    }
-    
-    /* モバイル版（1100px以下）では採用サイトテキストを非表示 */
-    @media (max-width: 1100px) {
-      .nav-ex > span[style*="採用サイト"],
-      .nav-ex > span:not(.menu-under):not(.menu__line) {
-        display: none !important;
-      }
-    }
-    
-    /* Smooth scroll behavior for anchor links */
-    html {
-      scroll-behavior: smooth;
-    }
     
     /* Table of contents minimal styling */
     .table-of-contents-grid {
