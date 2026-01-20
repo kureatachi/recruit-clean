@@ -22,7 +22,9 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/tablet.css">
   <link rel="stylesheet" href="css/sp.css">
-  <link rel="stylesheet" href="css/common.css">  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/interview-common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous">
@@ -722,139 +724,6 @@
   </script>
 
   <style>
-    /* Interview pages: Restore wider table of contents width (1200px instead of 700px) */
-    .table-of-contents-grid {
-      width: 1200px !important;
-      max-width: 1200px !important;
-    }
-    
-    /* Responsive adjustments for table of contents */
-    @media (max-width: 1400px) {
-      .table-of-contents-grid {
-        width: 1200px !important;
-        max-width: 1200px !important;
-        padding: 20px 50px !important;
-      }
-    }
-    
-    @media (max-width: 1200px) {
-      .table-of-contents-grid {
-        width: 1200px !important;
-        max-width: 100% !important;
-        padding: 20px 60px !important;
-      }
-    }
-    
-    @media (max-width: 1024px) {
-      .table-of-contents-grid {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 20px 30px !important;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .table-of-contents-grid {
-        padding: 15px 20px !important;
-      }
-      
-      .table-of-contents-grid > div {
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-      }
-      
-      .table-of-contents-grid > div > span:first-child {
-        margin-bottom: 8px !important;
-      }
-      
-      .table-of-contents-grid a {
-        padding: 6px 0 !important;
-      }
-    }
-    
-    /* Anchor link targets - proper scroll spacing for desktop and mobile */
-    #section-1,
-    #section-2,
-    #section-3,
-    #section-4,
-    #section-5 {
-      scroll-margin-top: 100px;
-      display: block;
-      position: relative;
-    }
-    
-    /* Mobile-specific scroll spacing and section-3 mobile target */
-    @media (max-width: 768px) {
-      #section-1,
-      #section-2,
-      #section-3,
-      #section-4,
-      #section-5 {
-        scroll-margin-top: 80px;
-      }
-      
-      /* Mobile title for section-1 */
-      .section-1-mobile-title {
-        scroll-margin-top: 80px;
-      }
-      
-      /* Desktop version of section-1 */
-      #section-1 {
-        scroll-margin-top: 100px;
-      }
-      
-      /* Mobile title for section-3 */
-      .section-3-mobile-title {
-        scroll-margin-top: 80px;
-      }
-      
-      /* Desktop version of section-3 */
-      #section-3 {
-        scroll-margin-top: 80px;
-      }
-    }
-    
-    
-    
-    
-    /* Ensure pankuzu breadcrumb links are clickable */
-    .pankuzu {
-      position: relative;
-      z-index: 100 !important;
-    }
-    
-    .pankuzu span {
-      position: relative;
-      z-index: 100 !important;
-    }
-    
-    .pankuzu span a {
-      pointer-events: auto !important;
-      position: relative;
-      z-index: 101 !important;
-      cursor: pointer !important;
-      display: inline-block !important;
-    }
-    
-    .pankuzu span a:hover {
-      text-decoration: underline;
-      opacity: 0.8;
-    }
-    
-    /* SP版: パンくずリストのリンクに黄色と下線を追加 */
-    @media screen and (max-width: 750px) {
-      .pankuzu span a {
-        color: #FFCE02 !important;
-        text-decoration: underline !important;
-      }
-      
-      .pankuzu span a:hover {
-        color: #FFD31B !important;
-        text-decoration: underline !important;
-        opacity: 1 !important;
-      }
-    }
-
     /* Prevent scroll_bar.js from affecting spacing on interview pages */
     #fade {
       position: relative !important;
@@ -942,77 +811,6 @@
       margin-right: 0;
     }
     /* Make entry box fully responsive from 1920px to 1100px (before hamburger menu) */
-    /* Profile Card Styling - Desktop */
-    .profile-card {
-      width: 1500px !important;
-      max-width: calc(100% - 40px) !important;
-      height: auto !important;
-      min-height: 275px !important;
-      background: #FFF0B0 !important;
-      padding: 42px 60px 42px 60px !important;
-      border-radius: 20px;
-      box-sizing: border-box;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      display: flex;
-      align-items: center;
-    }
-    
-    /* Profile card list styling - Desktop */
-    .profile-card ul {
-      margin: 0 !important;
-      padding: 0 0 0 20px !important;
-      list-style: disc !important;
-      width: 100%;
-    }
-    
-    .profile-card ul li {
-      color: #333 !important;
-      font-size: 17px !important;
-      line-height: 1.6 !important;
-      margin-bottom: 18px !important;
-      margin-top: 0 !important;
-      text-align: left !important;
-      padding-left: 0 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-    }
-    
-    .profile-card ul li:first-child {
-      margin-top: 0 !important;
-    }
-    
-    .profile-card ul li:last-child {
-      margin-bottom: 0 !important;
-    }
-    
-    /* Profile card responsive breakpoints - maintain consistent spacing */
-    @media (max-width: 1200px) {
-      .profile-card {
-        padding: 37px 50px 37px 50px !important;
-        max-width: calc(100% - 40px) !important;
-      }
-    }
-    
-    /* Adjust profile card width for screens around 1100px to prevent horizontal scroll */
-    @media (max-width: 1150px) {
-      .profile-card {
-        width: auto !important;
-        max-width: calc(100% - 40px) !important;
-        padding: 37px 40px 37px 40px !important;
-      }
-      
-      .profile-card ul li {
-        font-size: 16px !important;
-      }
-    }
-    
-    @media (max-width: 900px) {
-      .profile-card {
-        padding: 30px 35px 30px 35px !important;
-      }
-    }
-    
     /* Adjust skill card width for tablet sizes (751px - 1100px) to prevent edge-to-edge */
     @media (min-width: 751px) and (max-width: 1100px) {
       #skill-section .welfare-content > div[style*="background: #FFE680"],

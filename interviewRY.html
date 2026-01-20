@@ -22,7 +22,9 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/tablet.css">
   <link rel="stylesheet" href="css/sp.css">
-  <link rel="stylesheet" href="css/common.css">  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/interview-common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous">
@@ -98,7 +100,7 @@
               募集要項・応募方法
             </a>
           </li>
-          <li style="margin-left: 20px;">
+          <li>
             <a href="#" class="entry-link">
             <div class="entry-rectangle">
               <span class="entry-text">Entry</span>
@@ -780,82 +782,21 @@
   </script>
 
   <style>
-    /* Interview pages: Restore wider table of contents width (1200px instead of 700px) */
-    .table-of-contents-grid {
-      width: 1200px !important;
-      max-width: 1200px !important;
-    }
     
-    /* Responsive adjustments for table of contents */
-    @media (max-width: 1400px) {
-      .table-of-contents-grid {
-        width: 1200px !important;
-        max-width: 1200px !important;
-        padding: 20px 50px !important;
-      }
-    }
-    
-    @media (max-width: 1200px) {
-      .table-of-contents-grid {
-        width: 1200px !important;
-        max-width: 100% !important;
-        padding: 20px 60px !important;
-      }
-    }
-    
-    @media (max-width: 1024px) {
-      .table-of-contents-grid {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 20px 30px !important;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .table-of-contents-grid {
-        padding: 15px 20px !important;
-      }
-    }
-    
-    /* Anchor link targets - proper scroll spacing for desktop and mobile */
-    #section-1,
-    #section-2,
-    #section-3,
-    #section-4,
-    #section-5 {
-      scroll-margin-top: 100px;
-      display: block;
-      position: relative;
-    }
-    
-    /* Mobile-specific scroll spacing and section-3 mobile target */
-    @media (max-width: 768px) {
-      #section-1,
+    /* Override inline !important styles for section titles on mobile */
       #section-2,
-      #section-3,
+      #section-2.title,
       #section-4,
-      #section-5 {
-        scroll-margin-top: 80px;
+      #section-4.title,
+      #section-5,
+      #section-5.title {
+        font-size: 16px !important;
+        text-align: center !important;
       }
       
-      /* Mobile title for section-1 */
-      .section-1-mobile-title {
-        scroll-margin-top: 80px;
-      }
-      
-      /* Desktop version of section-1 */
-      #section-1 {
-        scroll-margin-top: 100px;
-      }
-      
-      /* Mobile title for section-3 */
-      .section-3-mobile-title {
-        scroll-margin-top: 80px;
-      }
-      
-      /* Desktop version of section-3 */
+      /* Fix white-space nowrap for section-3 on mobile */
       #section-3 {
-        scroll-margin-top: 80px;
+        white-space: normal !important;
       }
     }
     
@@ -1301,76 +1242,6 @@
     @media (min-width: 1101px) {
       .nav-ex {
         display: none !important;
-      }
-    }
-    /* Profile Card Styling - Desktop */
-    .profile-card {
-      width: 1500px !important;
-      max-width: calc(100% - 40px) !important;
-      height: auto !important;
-      min-height: 275px !important;
-      background: #FFF0B0 !important;
-      padding: 42px 60px 42px 60px !important;
-      border-radius: 20px;
-      box-sizing: border-box;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      display: flex;
-      align-items: center;
-    }
-    
-    /* Profile card list styling - Desktop */
-    .profile-card ul {
-      margin: 0 !important;
-      padding: 0 0 0 20px !important;
-      list-style: disc !important;
-      width: 100%;
-    }
-    
-    .profile-card ul li {
-      color: #333 !important;
-      font-size: 17px !important;
-      line-height: 1.6 !important;
-      margin-bottom: 18px !important;
-      margin-top: 0 !important;
-      text-align: left !important;
-      padding-left: 0 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-    }
-    
-    .profile-card ul li:first-child {
-      margin-top: 0 !important;
-    }
-    
-    .profile-card ul li:last-child {
-      margin-bottom: 0 !important;
-    }
-    
-    /* Profile card responsive breakpoints - maintain consistent spacing */
-    @media (max-width: 1200px) {
-      .profile-card {
-        padding: 37px 50px 37px 50px !important;
-        max-width: calc(100% - 40px) !important;
-      }
-    }
-    
-    /* Adjust profile card width for screens around 1100px to prevent horizontal scroll */
-    @media (max-width: 1150px) {
-      .profile-card {
-        width: auto !important;
-        max-width: calc(100% - 40px) !important;
-        padding: 37px 40px 37px 40px !important;
-      }
-      
-      .profile-card ul li {
-        font-size: 16px !important;
-      }
-    }
-    
-    @media (max-width: 900px) {
-      .profile-card {
-        padding: 30px 35px 30px 35px !important;
       }
     }
     
@@ -2162,18 +2033,27 @@
         text-align: center !important;
       }
       
-      /* Make ALL titles 16px for mobile */
+      /* Make ALL titles 16px for mobile - use ID selectors for highest specificity to override inline !important */
+      #section-2,
+      #section-2.title,
+      #section-4,
+      #section-4.title,
+      #section-5,
+      #section-5.title,
       .title,
       .title-border .title,
       h2.title,
       h2[style*="font-size"],
       .title-border h2.title,
+      #interview-section-2 .title-border .title,
+      #interview-section-2 .title-border h2.title,
+      #interview-section-2 h2.title,
       #interview-section-4 .title-border .title,
       #interview-section-4 .title-border h2.title,
-      #interview-section-4 h2.title[style*="font-size"],
+      #interview-section-4 h2.title,
       #interview-section-5 .title-border .title,
       #interview-section-5 .title-border h2.title,
-      #interview-section-5 h2.title[style*="font-size"],
+      #interview-section-5 h2.title,
       .white-text-card h2,
       .leader-overlay h2,
       .mobile-title-bar h2,
@@ -2197,16 +2077,40 @@
         text-align: center !important;
       }
       
-      /* Override all inline font-size styles for titles on mobile */
+      /* Override all inline font-size styles for titles on mobile - use ID selectors for highest specificity */
+      #section-2.title,
+      #section-2,
+      #section-4.title,
+      #section-4,
+      #section-5.title,
+      #section-5,
       h2[style*="font-size: 22px"],
       h2[style*="font-size:22px"],
       h2[style*="font-size: 18px"],
       h2[style*="font-size:18px"],
       h2[style*="font-size: 20px"],
       h2[style*="font-size:20px"],
+      h2.title[style*="font-size: 22px !important"],
+      h2.title[style*="font-size:22px !important"],
+      .title-border h2.title[style*="font-size: 22px !important"],
+      .title-border h2.title[style*="font-size:22px !important"],
       #interview-section-2 .title-border h2.title,
-      #interview-section-2 h2.title[style*="font-size: 22px"] {
+      #interview-section-2 h2.title,
+      #interview-section-2 h2.title[style*="font-size"],
+      #interview-section-4 .title-border h2.title,
+      #interview-section-4 h2.title,
+      #interview-section-4 h2.title[style*="font-size"],
+      #interview-section-5 .title-border h2.title,
+      #interview-section-5 h2.title,
+      #interview-section-5 h2.title[style*="font-size"] {
         font-size: 16px !important;
+        text-align: center !important;
+      }
+      
+      /* Fix white-space nowrap for section-3 on mobile */
+      #section-3[style*="white-space: nowrap"],
+      #section-3 {
+        white-space: normal !important;
       }
       
       .title-border span {
@@ -2835,10 +2739,15 @@
     .center-carousel-btn {
       width: 48px;
       height: 48px;
+      top: 30% !important;
+      transform: none !important;
     }
     .center-carousel-frame {
       height: 420px;
-      }
+    }
+    .center-carousel-inner {
+      padding: 0 5px !important;
+    }
     }
   </style>
   
@@ -2918,11 +2827,36 @@
       function applyResponsiveFontSizing() {
         const width = window.innerWidth;
         
-        // Get all title elements
-        const allTitles = document.querySelectorAll('.title-border .title, h2.title, .title-border h2.title, #interview-section-4 .title-border .title, #interview-section-4 .title-border h2.title, #interview-section-4 h2.title, #interview-section-5 .title-border .title, #interview-section-5 .title-border h2.title, #interview-section-5 h2.title, #interview-section-2 .title-border .title, #interview-section-2 .title-border h2.title, #interview-section-2 h2.title, .white-text-card h2, .leader-overlay h2, #interview-section .white-text-card h2, #interview-section-3 .leader-overlay h2');
+        // Get all title elements - including specific section IDs
+        const allTitles = document.querySelectorAll('.title-border .title, h2.title, .title-border h2.title, #section-2, #section-4, #section-5, #interview-section-4 .title-border .title, #interview-section-4 .title-border h2.title, #interview-section-4 h2.title, #interview-section-5 .title-border .title, #interview-section-5 .title-border h2.title, #interview-section-5 h2.title, #interview-section-2 .title-border .title, #interview-section-2 .title-border h2.title, #interview-section-2 h2.title, .white-text-card h2, .leader-overlay h2, #interview-section .white-text-card h2, #interview-section-3 .leader-overlay h2');
         
         // Only apply below 768px - set to 16px
         if (width <= 768) {
+          // Apply to specific section IDs first (highest priority)
+          const section2 = document.querySelector('#section-2');
+          if (section2) {
+            section2.style.setProperty('font-size', '16px', 'important');
+            section2.style.setProperty('text-align', 'center', 'important');
+          }
+          
+          const section4 = document.querySelector('#section-4');
+          if (section4) {
+            section4.style.setProperty('font-size', '16px', 'important');
+            section4.style.setProperty('text-align', 'center', 'important');
+          }
+          
+          const section5 = document.querySelector('#section-5');
+          if (section5) {
+            section5.style.setProperty('font-size', '16px', 'important');
+            section5.style.setProperty('text-align', 'center', 'important');
+          }
+          
+          // Fix white-space for section-3
+          const section3 = document.querySelector('#section-3');
+          if (section3) {
+            section3.style.setProperty('white-space', 'normal', 'important');
+          }
+          
           // Apply to white-text-card h2 - use multiple selectors to ensure we catch it
           const whiteCardTitle = document.querySelector('#interview-section .white-text-card h2') || 
                                   document.querySelector('.white-text-card h2');
@@ -2953,6 +2887,10 @@
             // Skip card titles as they're handled above
             if (!title.closest('.white-text-card') && !title.closest('.leader-overlay')) {
               title.style.setProperty('font-size', '16px', 'important');
+              // Center align titles
+              if (title.tagName === 'H2') {
+                title.style.setProperty('text-align', 'center', 'important');
+              }
             }
           });
         } else if (width > 768) {
