@@ -1192,12 +1192,18 @@ header {
     width: 140px !important;
     height: 6px !important;
     background: #FFCE02 !important;
-    margin: 16px auto 0 auto !important;
+    margin: 12px auto 0 auto !important;
     border: none !important;
     padding: 0 !important;
     position: relative !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
+  }
+  
+  /* Sections 4 and 5 - reduce spacing (bar too far) */
+  #interview-section-4 .title-border span,
+  #interview-section-5 .title-border span {
+    margin-top: 8px !important;
   }
 
   /* Center leader section title text */
@@ -1568,6 +1574,7 @@ header {
   .mobile-title-bar.leader-mobile-title h2[style*="font-size: 22px"],
   .mobile-title-bar.leader-mobile-title h2[style*="font-size:22px"] {
     transform: translateY(-40px) !important;
+    margin-bottom: 16px !important;
   }
   
   /* Consistent spacing for all mobile title bar yellow bars */
