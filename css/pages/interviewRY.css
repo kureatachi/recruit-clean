@@ -1241,10 +1241,113 @@ header {
     margin: 0 !important;
   }
   
+  /* Override inline styles for sections 4 and 5 welfare-content */
+  #interview-section-4 .welfare-content,
+  #interview-section-5 .welfare-content,
+  #interview-section-4 .welfare-content[style*="padding: 0"],
+  #interview-section-5 .welfare-content[style*="padding: 0"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
   /* Center align all titles on mobile */
   .title-border {
     padding-left: 0 !important;
     text-align: center !important;
+  }
+  
+  /* Ensure parent container doesn't constrain sections 4 and 5 */
+  .cont-basic.ex #interview-section-4,
+  .cont-basic.ex #interview-section-5 {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Apply same flex layout treatment to sections 4 and 5 as section 2 */
+  #interview-section-4,
+  #interview-section-5 {
+    display: flex !important;
+    flex-direction: column !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Title border containers - match section 2 styling exactly */
+  #interview-section-4 .title-border,
+  #interview-section-5 .title-border,
+  #interview-section-4 .title-border[style*="padding-left: 0"],
+  #interview-section-5 .title-border[style*="padding-left: 0"],
+  #interview-section-4 .title-border[style*="text-align: left"],
+  #interview-section-5 .title-border[style*="text-align: left"] {
+    order: 1 !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+  
+  
+  /* Welfare content order */
+  #interview-section-4 .welfare-content,
+  #interview-section-5 .welfare-content {
+    order: 2 !important;
+  }
+  
+  /* Ensure interview-item wrapper doesn't constrain width */
+  #interview-section-4 .interview-item,
+  #interview-section-5 .interview-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Ensure titles wrap properly and don't overflow - override all inline styles */
+  #interview-section-4 .title-border .title,
+  #interview-section-4 .title-border h2.title,
+  #interview-section-5 .title-border .title,
+  #interview-section-5 .title-border h2.title,
+  #section-4,
+  #section-4.title,
+  #section-5,
+  #section-5.title,
+  #section-4[style*="text-align: left"],
+  #section-5[style*="text-align: left"],
+  h2#section-4[style*="text-align: left"],
+  h2#section-5[style*="text-align: left"],
+  h2#section-4[style*="font-size: 22px"],
+  h2#section-5[style*="font-size: 22px"],
+  h2#section-4[style*="font-size: 22px !important"],
+  h2#section-5[style*="font-size: 22px !important"] {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center !important;
+    display: block !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
   }
   
   /* Make ALL titles 16px for mobile - use ID selectors for highest specificity to override inline !important */
@@ -1467,12 +1570,17 @@ header {
     transform: translateY(-40px) !important;
   }
   
-  .mobile-title-bar span {
+  /* Consistent spacing for all mobile title bar yellow bars */
+  .mobile-title-bar span,
+  .mobile-title-bar.interview-mobile-title span,
+  .mobile-title-bar.leader-mobile-title span {
     display: block !important;
     width: 100px !important;
     height: 6px !important;
     background: #FFCE02 !important;
     margin: 0 auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   #interview-section-2,
@@ -1551,21 +1659,40 @@ header {
     font-size: 15px !important;
   }
   
-  /* Leader section with image overlay */
-  .leader-image {
+  /* Leader section with image overlay - make fully responsive like first image */
+  .leader-image,
+  .leader-image[style*="width: 610px"],
+  .leader-image[style*="height: 395px"],
+  .leader-image[style*="position: absolute"],
+  .leader-image[style*="right: -40px"] {
     position: relative !important;
     width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
     right: auto !important;
     top: auto !important;
+    left: auto !important;
     margin-top: 30px !important;
     margin-bottom: 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     padding: 0 20px !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    z-index: auto !important;
   }
   
-  /* Ensure image inside has same width as text content */
-  .leader-image img {
+  /* Ensure image inside has same width as text content - override inline styles */
+  .leader-image img,
+  .leader-image img[style*="width: 100%"],
+  .leader-image img[style*="height: 100%"],
+  .leader-image img[style*="object-fit: cover"] {
     width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
+    object-fit: contain !important;
+    display: block !important;
   }
   
   /* Make first image width match second image - same padding */
