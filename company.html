@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/drawer_menu.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/pages/company.css">
   <link rel="stylesheet" href="css/tablet.css">
   <link rel="stylesheet" href="css/sp.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,480 +29,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous">
 
-  <!-- Prevent flash of unstyled content -->
-  <style>
-    
-    /* Align dt and dd first line height for Company Profile */
-    dl > div {
-      display: flex !important;
-      align-items: center !important;
-    }
-    
-    dl > div dt {
-      line-height: 1.8 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-    }
-    
-    dl > div dd {
-      line-height: 1.8 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-    }
-    
-    @media (max-width: 640px) {
-      .table-of-contents-inner {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 8px 10px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .table-of-contents-inner {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-      
-      .table-of-contents-inner a {
-        padding: 4px 0 !important;
-        line-height: 1.3 !important;
-      }
-    }
-    
-    @media (max-width: 640px) {
-      .table-of-contents-grid {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 15px 20px !important;
-        box-sizing: border-box !important;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .table-of-contents-grid {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 15px 20px !important;
-        box-sizing: border-box !important;
-      }
-    }
-    
-    /* Recruitment details section - responsive */
-    @media (max-width: 768px) {
-      .recruitment-details {
-        padding: 0 15px !important;
-      }
-      
-      .detail-row {
-        flex-direction: column !important;
-        gap: 15px !important;
-        padding: 20px 0 !important;
-      }
-      
-      .detail-label {
-        width: 100% !important;
-        margin-bottom: 5px !important;
-      }
-      
-      .detail-content {
-        width: 100% !important;
-      }
-    }
-    
-    /* Stats Grid - Semantic HTML Support */
-    .stats-grid {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .stats-grid li {
-      list-style: none;
-      margin: 0;
-    }
-    
-    /* Stats Grid Responsive Styles */
-    /* Large tablets and smaller desktops (1024px - 1400px) */
-    @media (max-width: 1400px) {
-      .stats-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 18px !important;
-        max-width: 100% !important;
-        padding: 0 20px !important;
-      }
-      
-      .stat-card {
-        padding: 36px 24px !important;
-        min-height: 280px !important;
-      }
-      
-      .stat-label {
-        font-size: 22px !important;
-        top: 20px !important;
-        left: 20px !important;
-      }
-      
-      .stat-card i {
-        font-size: 65px !important;
-      }
-      
-      .stat-card span[style*="font-size: 60px"] {
-        font-size: 50px !important;
-      }
-      
-      .stat-card span[style*="font-size: 21px"] {
-        font-size: 18px !important;
-      }
-      
-      .stat-card span[style*="font-size: 17px"] {
-        font-size: 15px !important;
-      }
-      
-      .stat-card span[style*="font-size: 12px"] {
-        font-size: 11px !important;
-      }
-    }
-    
-    /* Tablets (768px - 1024px) */
-    @media (max-width: 1024px) {
-      .stats-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 14px !important;
-        padding: 0 15px !important;
-      }
-      
-      .stat-card {
-        padding: 30px 18px !important;
-        min-height: 250px !important;
-      }
-      
-      .stat-label {
-        font-size: 20px !important;
-        top: 18px !important;
-        left: 18px !important;
-      }
-      
-      .stat-card i {
-        font-size: 60px !important;
-      }
-      
-      .stat-card > div {
-        gap: 15px !important;
-        margin-top: 25px !important;
-      }
-      
-      .stat-card span[style*="font-size: 60px"] {
-        font-size: 45px !important;
-      }
-      
-      .stat-card span[style*="font-size: 21px"] {
-        font-size: 17px !important;
-      }
-      
-      .stat-card span[style*="font-size: 17px"] {
-        font-size: 14px !important;
-      }
-      
-      .stat-card span[style*="font-size: 12px"] {
-        font-size: 10px !important;
-      }
-      
-      .stat-card div[style*="min-height: 60px"] {
-        min-height: 50px !important;
-      }
-    }
-    
-    /* Narrow tablets (800px - 1024px) - reduce sizes to maintain right gap */
-    @media (max-width: 900px) {
-      .stats-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 12px !important;
-        padding: 0 12px !important;
-      }
-      
-      .stat-card {
-        padding: 24px 14px !important;
-        min-height: 240px !important;
-      }
-      
-      .stat-label {
-        font-size: 18px !important;
-        top: 16px !important;
-        left: 16px !important;
-      }
-      
-      .stat-card img {
-        width: 75px !important;
-        height: 75px !important;
-      }
-      
-      .stat-card > div {
-        gap: 12px !important;
-        margin-top: 20px !important;
-      }
-      
-      .stat-card span[style*="font-size: 60px"] {
-        font-size: 42px !important;
-      }
-      
-      .stat-card span[style*="font-size: 21px"] {
-        font-size: 16px !important;
-      }
-      
-      .stat-card span[style*="font-size: 17px"] {
-        font-size: 13px !important;
-      }
-      
-      .stat-card span[style*="font-size: 12px"] {
-        font-size: 9px !important;
-      }
-      
-      .stat-card div[style*="min-height: 60px"] {
-        min-height: 45px !important;
-      }
-    }
-    
-    /* Very narrow tablets (768px - 900px) - further reduce before switching to 2 columns */
-    @media (max-width: 800px) {
-      .stats-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 10px !important;
-        padding: 0 10px !important;
-      }
-      
-      .stat-card {
-        padding: 20px 12px !important;
-        min-height: 220px !important;
-      }
-      
-      .stat-label {
-        font-size: 17px !important;
-        top: 14px !important;
-        left: 14px !important;
-      }
-      
-      .stat-card img {
-        width: 65px !important;
-        height: 65px !important;
-      }
-      
-      .stat-card > div {
-        gap: 10px !important;
-        margin-top: 18px !important;
-      }
-      
-      .stat-card span[style*="font-size: 60px"] {
-        font-size: 38px !important;
-      }
-      
-      .stat-card span[style*="font-size: 21px"] {
-        font-size: 15px !important;
-      }
-      
-      .stat-card span[style*="font-size: 17px"] {
-        font-size: 12px !important;
-      }
-      
-      .stat-card span[style*="font-size: 12px"] {
-        font-size: 8px !important;
-      }
-      
-      .stat-card div[style*="min-height: 60px"] {
-        min-height: 40px !important;
-      }
-    }
-    
-    /* Mobile landscape and small tablets (490px - 768px) - Keep 3 columns */
-    @media (max-width: 768px) {
-      .stats-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 8px !important;
-        padding: 0 10px !important;
-      }
-      
-      .stat-card {
-        padding: 18px 10px !important;
-        min-height: 200px !important;
-        aspect-ratio: 1 !important;
-      }
-      
-      .stat-label {
-        font-size: 16px !important;
-        top: 12px !important;
-        left: 12px !important;
-      }
-      
-      .stat-card img {
-        width: 55px !important;
-        height: 55px !important;
-      }
-      
-      .stat-card i {
-        font-size: 50px !important;
-      }
-      
-      .stat-card > div {
-        gap: 10px !important;
-        margin-top: 15px !important;
-      }
-      
-      .stat-card span[style*="font-size: 60px"] {
-        font-size: 38px !important;
-      }
-      
-      .stat-card span[style*="font-size: 21px"] {
-        font-size: 15px !important;
-      }
-      
-      .stat-card span[style*="font-size: 17px"] {
-        font-size: 12px !important;
-      }
-      
-      .stat-card span[style*="font-size: 12px"] {
-        font-size: 9px !important;
-      }
-      
-      .stat-card div[style*="min-height: 60px"] {
-        min-height: 40px !important;
-      }
-      
-      .stat-card div[style*="gap: 20px"] {
-        gap: 12px !important;
-      }
-    }
-    
-    /* Mobile portrait (490px - 640px) - Switch to 2 columns */
-    @media (max-width: 640px) {
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important;
-        padding: 0 10px !important;
-      }
-      
-      .stat-card {
-        padding: 22px 15px !important;
-        min-height: 200px !important;
-      }
-      
-      .stat-label {
-        font-size: 16px !important;
-        top: 12px !important;
-        left: 12px !important;
-      }
-      
-      .stat-card img {
-        width: 60px !important;
-        height: 60px !important;
-      }
-      
-      .stat-card i {
-        font-size: 50px !important;
-      }
-      
-      .stat-card > div {
-        gap: 10px !important;
-        margin-top: 15px !important;
-      }
-      
-      .stat-card span[style*="font-size: 60px"] {
-        font-size: 36px !important;
-      }
-      
-      .stat-card span[style*="font-size: 21px"] {
-        font-size: 15px !important;
-      }
-      
-      .stat-card span[style*="font-size: 17px"] {
-        font-size: 12px !important;
-      }
-      
-      .stat-card span[style*="font-size: 12px"] {
-        font-size: 9px !important;
-      }
-      
-      .stat-card div[style*="min-height: 60px"] {
-        min-height: 40px !important;
-      }
-    }
-    
-    /* Very small mobile (below 490px) - Switch to 1 column */
-    @media (max-width: 490px) {
-      section[style*="padding: 50px 0"] {
-        padding: 30px 0 !important;
-      }
-      
-      .stats-grid {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-        padding: 0 15px !important;
-      }
-      
-      .stat-card {
-        padding: 30px 20px !important;
-        min-height: auto !important;
-        aspect-ratio: auto !important;
-      }
-      
-      .stat-label {
-        font-size: 18px !important;
-        top: 15px !important;
-        left: 15px !important;
-      }
-      
-      .stat-card i {
-        font-size: 55px !important;
-      }
-      
-      .stat-card > div {
-        gap: 15px !important;
-        margin-top: 20px !important;
-      }
-      
-      .stat-card span[style*="font-size: 60px"] {
-        font-size: 42px !important;
-      }
-      
-      .stat-card span[style*="font-size: 21px"] {
-        font-size: 17px !important;
-      }
-      
-      .stat-card span[style*="font-size: 17px"] {
-        font-size: 14px !important;
-      }
-      
-      .stat-card span[style*="font-size: 12px"] {
-        font-size: 11px !important;
-      }
-      
-      .stat-card div[style*="min-height: 60px"] {
-        min-height: 50px !important;
-      }
-    }
-    
-    /* Additional responsive adjustments for section container */
-    @media (max-width: 1400px) {
-      section[style*="padding: 50px 0"] > div {
-        max-width: 100% !important;
-        padding: 0 20px !important;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      section[style*="padding: 50px 0"] {
-        padding: 40px 0 !important;
-      }
-      
-      section[style*="padding: 50px 0"] > div {
-        padding: 0 15px !important;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      section[style*="padding: 50px 0"] > div {
-        padding: 0 10px !important;
-      }
-    }
-  </style>
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -701,16 +228,16 @@
     <!-------------------------------->
 
     <!-- 統計グリッドセクション - 独立したセクション -->
-    <section style="width: 100%; margin: 0; padding: 20px 0 50px 0; box-sizing: border-box; background: transparent;">
-      <div style="max-width: 1400px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; width: 100%;">
-        <ul class="stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 0; width: 100%; box-sizing: border-box; list-style: none; padding: 0;">
+    <section class="company-stats-section">
+      <div class="company-stats-container">
+        <ul class="stats-grid">
               
               <!-- Card 1 -->
-              <li class="stat-card" style="background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); aspect-ratio: 1; min-height: 300px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; position: relative;">
+              <li class="stat-card">
                 <span class="stat-label" style="position: absolute; top: 22px; left: 22px; font-size: 24px; font-weight: 700; color: #002f6b; line-height: 1.4;">設立</span>
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; width: 100%; margin-top: 30px;">
+                <div class="stat-card-inner">
                   <img src="img/icons/ビルアイコン4.png" alt="設立" style="width: 90px; height: 90px; object-fit: contain;">
-                  <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center; gap: 5px;">
+                  <div class="stat-value-row">
                     <span style="font-size: 60px; font-weight: 700; color: #002f6b; line-height: 1.2; letter-spacing: -0.02em;">40</span>
                     <span style="font-size: 21px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">周年</span>
                   </div>
@@ -718,11 +245,11 @@
               </li>
 
               <!-- Card 2 -->
-              <li class="stat-card" style="background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); aspect-ratio: 1; min-height: 300px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; position: relative;">
+              <li class="stat-card">
                 <span class="stat-label" style="position: absolute; top: 22px; left: 22px; font-size: 24px; font-weight: 700; color: #002f6b; line-height: 1.4;">顧客数</span>
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; width: 100%; margin-top: 30px;">
+                <div class="stat-card-inner">
                   <img src="img/icons/顧客数.png" alt="顧客数" style="width: 100px; height: 100px; object-fit: contain;">
-                  <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center; gap: 5px;">
+                  <div class="stat-value-row">
                     <span style="font-size: 21px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">約</span>
                     <span style="font-size: 60px; font-weight: 700; color: #002f6b; line-height: 1.2; letter-spacing: -0.02em;">3</span>
                     <span style="font-size: 21px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">万</span>
@@ -732,12 +259,12 @@
               </li>
 
               <!-- Card 3 -->
-              <li class="stat-card" style="background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); aspect-ratio: 1; min-height: 300px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; position: relative;">
+              <li class="stat-card">
                 <span class="stat-label" style="position: absolute; top: 22px; left: 22px; font-size: 24px; font-weight: 700; color: #002f6b; line-height: 1.4;">年間発行部数</span>
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; width: 100%; margin-top: 30px;">
+                <div class="stat-card-inner">
                   <img src="img/icons/ノート青のアイコン素材4.png" alt="年間発行部数" style="width: 90px; height: 90px; object-fit: contain;">
-                  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                    <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center; gap: 5px; min-height: 60px;">
+                  <div class="stat-value-column">
+                    <div class="stat-value-row-min-height">
                       <span style="font-size: 21px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">約</span>
                       <span style="font-size: 60px; font-weight: 700; color: #002f6b; line-height: 1.2; letter-spacing: -0.02em;">100</span>
                       <span style="font-size: 21px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">万</span>
@@ -749,12 +276,12 @@
               </li>
 
               <!-- Card 4 -->
-              <li class="stat-card" style="background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); aspect-ratio: 1; min-height: 300px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; position: relative;">
+              <li class="stat-card">
                 <span class="stat-label" style="position: absolute; top: 22px; left: 22px; font-size: 24px; font-weight: 700; color: #002f6b; line-height: 1.4;">職種比</span>
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; width: 100%; margin-top: 30px;">
+                <div class="stat-card-inner">
                   <img src="img/icons/人物の組み合わせのアイコン素材.png" alt="職種比" style="width: 100px; height: 100px; object-fit: contain;">
-                  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                    <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; max-width: 100%; line-height: 1.2; min-height: 60px;">
+                  <div class="stat-value-column">
+                    <div class="stat-value-row-center">
                       <span style="font-size: 17px; font-weight: 600; color: #002f6b; letter-spacing: -0.03em; line-height: 1.2;">営業職</span>
                       <span style="font-size: 17px; font-weight: 600; color: #002f6b; letter-spacing: -0.03em; line-height: 1.2;">56%</span>
                       <span style="font-size: 17px; font-weight: 600; color: #002f6b; letter-spacing: -0.03em; line-height: 1.2;">営業事務職</span>
@@ -770,11 +297,11 @@
               </li>
 
               <!-- Card 5 -->
-              <li class="stat-card" style="background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); aspect-ratio: 1; min-height: 300px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; position: relative;">
+              <li class="stat-card">
                 <span class="stat-label" style="position: absolute; top: 22px; left: 22px; font-size: 24px; font-weight: 700; color: #002f6b; line-height: 1.4;">従業員数（男女比）</span>
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; width: 100%; margin-top: 30px;">
+                <div class="stat-card-inner">
                   <img src="img/icons/グループ 83.png" alt="従業員数" style="width: 90px; height: 90px; object-fit: contain;">
-                  <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center; gap: 5px; flex-wrap: wrap;">
+                  <div class="stat-value-row-wrap">
                     <span style="font-size: 60px; font-weight: 700; color: #002f6b; line-height: 1.2; letter-spacing: -0.02em;">62</span>
                     <span style="font-size: 21px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">名</span>
                     <span style="font-size: 17px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">男性</span>
@@ -787,11 +314,11 @@
               </li>
 
               <!-- Card 6 -->
-              <li class="stat-card" style="background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); aspect-ratio: 1; min-height: 300px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; position: relative;">
+              <li class="stat-card">
                 <span class="stat-label" style="position: absolute; top: 22px; left: 22px; font-size: 24px; font-weight: 700; color: #002f6b; line-height: 1.4;">平均勤続年数</span>
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; width: 100%; margin-top: 30px;">
+                <div class="stat-card-inner">
                   <img src="img/icons/出社アイコン.png" alt="平均勤続年数" style="width: 90px; height: 90px; object-fit: contain;">
-                  <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center; gap: 5px;">
+                  <div class="stat-value-row">
                     <span style="font-size: 60px; font-weight: 700; color: #002f6b; line-height: 1.2; letter-spacing: -0.02em;">11.7</span>
                     <span style="font-size: 21px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">年</span>
                   </div>
@@ -799,11 +326,11 @@
               </li>
 
               <!-- Card 7 -->
-              <li class="stat-card" style="background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); aspect-ratio: 1; min-height: 300px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; position: relative;">
+              <li class="stat-card">
                 <span class="stat-label" style="position: absolute; top: 22px; left: 22px; font-size: 24px; font-weight: 700; color: #002f6b; line-height: 1.4;">平均有給休暇取得日数</span>
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; width: 100%; margin-top: 30px;">
+                <div class="stat-card-inner">
                   <img src="img/icons/バカンスの無料イラスト1.png" alt="平均有給休暇取得日数" style="width: 90px; height: 90px; object-fit: contain;">
-                  <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center; gap: 5px;">
+                  <div class="stat-value-row">
                     <span style="font-size: 60px; font-weight: 700; color: #002f6b; line-height: 1.2; letter-spacing: -0.02em;">14.5</span>
                     <span style="font-size: 21px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">日</span>
                   </div>
@@ -811,11 +338,11 @@
               </li>
 
               <!-- Card 8 -->
-              <li class="stat-card" style="background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); aspect-ratio: 1; min-height: 300px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; position: relative;">
+              <li class="stat-card">
                 <span class="stat-label" style="position: absolute; top: 22px; left: 22px; font-size: 24px; font-weight: 700; color: #002f6b; line-height: 1.4;">平均残業時間（月）</span>
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; width: 100%; margin-top: 30px;">
+                <div class="stat-card-inner">
                   <img src="img/icons/時間経過のアイコン 2.png" alt="平均残業時間" style="width: 90px; height: 90px; object-fit: contain;">
-                  <div style="display: flex; flex-direction: row; align-items: baseline; justify-content: center; gap: 5px;">
+                  <div class="stat-value-row">
                     <span style="font-size: 60px; font-weight: 700; color: #002f6b; line-height: 1.2; letter-spacing: -0.02em;">11.7</span>
                     <span style="font-size: 21px; font-weight: 600; color: #002f6b; line-height: 1.2; letter-spacing: -0.03em;">時間</span>
                   </div>
@@ -949,940 +476,6 @@
 
     </section>
 
-    <style>
-      /* Responsive styles for alternating content section */
-      @media (max-width: 768px) {
-        .alternating-content-section {
-          max-width: 100% !important;
-          padding: 0 20px !important;
-          margin: 60px auto !important;
-        }
-        
-        .content-block {
-          flex-direction: column !important;
-          gap: 30px !important;
-          margin-bottom: 60px !important;
-        }
-        
-        .content-image {
-          flex: 1 1 auto !important;
-          max-width: 100% !important;
-          width: 100% !important;
-        }
-        
-        .content-text {
-          flex: 1 1 auto !important;
-          width: 100% !important;
-        }
-        
-        .content-text h3 {
-          font-size: 20px !important;
-        }
-        
-        .content-text p {
-          font-size: 15px !important;
-        }
-      }
-      
-      /* Responsive styles for Company Profile Table */
-      @media (max-width: 768px) {
-        /* Title border padding for 企業概要 */
-        #company-profile-section .title-border {
-          padding: 0 20px !important;
-          text-align: center !important;
-        }
-        
-        /* Ensure 企業概要 title stays centered */
-        #company-profile-section .title-border .title {
-          text-align: center !important;
-          margin: 0 auto !important;
-          display: block !important;
-        }
-        
-        /* Ensure all table containers have consistent padding */
-        #company-profile-section div[style*="max-width: 1000px"][style*="padding: 0 40px"],
-        #company-profile-section div[style*="max-width: 1000px"][style*="margin: 0 auto"][style*="padding: 0 40px"] {
-          padding: 0 20px !important;
-        }
-        
-        #company-profile-section > div:last-child > div:last-child,
-        #company-profile-section > div:nth-child(3) > div:last-child {
-          padding: 0 20px !important;
-        }
-        
-        #company-profile-section dl > div {
-          flex-direction: column !important;
-          padding: 15px 0 !important;
-        }
-        
-        #company-profile-section dl > div dt {
-          flex: 0 0 100% !important;
-          padding-right: 0 !important;
-          padding-bottom: 8px !important;
-          font-size: 14px !important;
-        }
-        
-        #company-profile-section dl > div dd {
-          flex: 0 0 100% !important;
-          font-size: 14px !important;
-        }
-      }
-      
-      /* Responsive styles for Vision Section - Overall */
-      @media (max-width: 1400px) {
-        section.wrap.under[style*="background: transparent"] {
-          padding: 40px 0 !important;
-        }
-        
-        #application-method {
-          margin-top: 60px !important;
-          margin-bottom: 20px !important;
-        }
-        
-        #president-message-section {
-          margin-top: 20px !important;
-        }
-        
-        #application-method > div[style*="margin-top: 50px"] {
-          margin-top: 40px !important;
-        }
-        
-        #application-method h3[style*="font-size: 20px"] {
-          font-size: 18px !important;
-          margin-bottom: 30px !important;
-        }
-        
-        .title-border .title {
-          font-size: 28px !important;
-          margin-bottom: 35px !important;
-        }
-      }
-      
-      @media (max-width: 1024px) {
-        section.wrap.under[style*="background: transparent"] {
-          padding: 35px 0 !important;
-        }
-        
-        .title-border .title {
-          font-size: 26px !important;
-          margin-bottom: 30px !important;
-        }
-      }
-      
-      @media (max-width: 1024px) {
-        #application-method {
-          margin-top: 50px !important;
-          margin-bottom: 20px !important;
-        }
-        
-        #president-message-section {
-          margin-top: 20px !important;
-        }
-        
-        #application-method > div[style*="margin-top: 50px"] {
-          margin-top: 35px !important;
-        }
-        
-        #application-method > div[style*="margin-top: 80px"] {
-          margin-top: 60px !important;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        section.wrap.under[style*="background: transparent"] {
-          padding: 30px 0 !important;
-        }
-        
-        #application-method {
-          margin-top: 40px !important;
-          margin-bottom: 20px !important;
-        }
-        
-        #president-message-section {
-          margin-top: 20px !important;
-        }
-        
-        #application-method > div[style*="margin-top: 50px"] {
-          margin-top: 30px !important;
-        }
-        
-        #application-method > div[style*="margin-top: 80px"] {
-          margin-top: 50px !important;
-        }
-        
-        #application-method h3[style*="font-size: 20px"] {
-          font-size: 18px !important;
-          margin-bottom: 25px !important;
-        }
-        
-        .title-border .title {
-          font-size: 24px !important;
-          margin-bottom: 25px !important;
-        }
-      }
-      
-      @media (max-width: 480px) {
-        section.wrap.under[style*="background: transparent"] {
-          padding: 25px 0 !important;
-        }
-        
-        #application-method {
-          margin-top: 30px !important;
-          margin-bottom: 15px !important;
-        }
-        
-        #president-message-section {
-          margin-top: 15px !important;
-        }
-        
-        .title-border .title {
-          font-size: 22px !important;
-          margin-bottom: 20px !important;
-        }
-        
-        /* Fix 企業概要 title centering at small screens (around 420px) */
-        #company-profile-section .title-border {
-          text-align: center !important;
-          padding: 0 20px !important;
-        }
-        
-        #company-profile-section .title-border .title {
-          text-align: center !important;
-          margin: 0 auto !important;
-          display: block !important;
-          min-width: auto !important;
-          width: fit-content !important;
-          max-width: 100% !important;
-        }
-        
-        #application-method h3[style*="font-size: 20px"] {
-          font-size: 16px !important;
-          margin-bottom: 20px !important;
-        }
-      }
-      
-      /* Responsive styles for 7 Promise Cards - Keep card size fixed, only adjust layout (columns) */
-      /* Keep original card size: padding: 22px 16px, img: 65px, font: 13px */
-      
-      @media (max-width: 1400px) {
-        .promise-cards-container {
-          padding: 0 20px !important;
-        }
-        
-        .promise-cards-grid {
-          grid-template-columns: repeat(5, auto) !important;
-          gap: 15px !important;
-          width: fit-content !important;
-          max-width: 100% !important;
-          margin: 0 auto !important;
-          justify-content: center !important;
-        }
-        
-        /* Keep original card size */
-        .promise-cards-grid > li {
-          padding: 22px 16px !important;
-          justify-content: center !important;
-          align-items: center !important;
-          width: auto !important;
-          min-width: 120px !important;
-          aspect-ratio: 1 !important;
-        }
-        
-        .promise-cards-grid img {
-          width: 65px !important;
-          height: 65px !important;
-          margin-bottom: 16px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-        
-        .promise-cards-grid p {
-          font-size: 13px !important;
-          text-align: center !important;
-          width: 100% !important;
-        }
-      }
-      
-      @media (max-width: 1200px) {
-        .promise-cards-container {
-          padding: 0 20px !important;
-        }
-        
-        .promise-cards-grid {
-          grid-template-columns: repeat(4, auto) !important;
-          gap: 15px !important;
-          width: fit-content !important;
-          max-width: 100% !important;
-          margin: 0 auto !important;
-          justify-content: center !important;
-        }
-        
-        /* Keep original card size */
-        .promise-cards-grid > li {
-          padding: 22px 16px !important;
-          justify-content: center !important;
-          align-items: center !important;
-          width: auto !important;
-          min-width: 120px !important;
-          aspect-ratio: 1 !important;
-        }
-        
-        .promise-cards-grid img {
-          width: 65px !important;
-          height: 65px !important;
-          margin-bottom: 16px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-        
-        .promise-cards-grid p {
-          font-size: 13px !important;
-          text-align: center !important;
-          width: 100% !important;
-        }
-      }
-      
-      @media (max-width: 1024px) {
-        .promise-cards-container {
-          padding: 0 15px !important;
-        }
-        
-        .promise-cards-grid {
-          grid-template-columns: repeat(4, auto) !important;
-          gap: 12px !important;
-          width: fit-content !important;
-          max-width: 100% !important;
-          margin: 0 auto !important;
-          justify-content: center !important;
-        }
-        
-        /* Keep original card size */
-        .promise-cards-grid > li {
-          padding: 22px 16px !important;
-          justify-content: center !important;
-          align-items: center !important;
-          width: auto !important;
-          min-width: 120px !important;
-          aspect-ratio: 1 !important;
-        }
-        
-        .promise-cards-grid img {
-          width: 65px !important;
-          height: 65px !important;
-          margin-bottom: 16px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-        
-        .promise-cards-grid p {
-          font-size: 13px !important;
-          text-align: center !important;
-          width: 100% !important;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        .promise-cards-container {
-          padding: 0 15px !important;
-        }
-        
-        .promise-cards-grid {
-          grid-template-columns: repeat(3, auto) !important;
-          gap: 12px !important;
-          width: fit-content !important;
-          max-width: 100% !important;
-          margin: 0 auto !important;
-          justify-content: center !important;
-        }
-        
-        /* Keep original card size */
-        .promise-cards-grid > li {
-          padding: 22px 16px !important;
-          justify-content: center !important;
-          align-items: center !important;
-          width: auto !important;
-          min-width: 120px !important;
-          aspect-ratio: 1 !important;
-        }
-        
-        .promise-cards-grid img {
-          width: 65px !important;
-          height: 65px !important;
-          margin-bottom: 16px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-        
-        .promise-cards-grid p {
-          font-size: 13px !important;
-          text-align: center !important;
-          width: 100% !important;
-        }
-      }
-      
-      @media (max-width: 600px) {
-        .promise-cards-container {
-          padding: 0 10px !important;
-        }
-        
-        .promise-cards-grid {
-          grid-template-columns: repeat(3, auto) !important;
-          gap: 10px !important;
-          width: fit-content !important;
-          max-width: 100% !important;
-          margin: 0 auto !important;
-          justify-content: center !important;
-        }
-        
-        /* Keep original card size */
-        .promise-cards-grid > li {
-          padding: 22px 16px !important;
-          justify-content: center !important;
-          align-items: center !important;
-          width: auto !important;
-          min-width: 110px !important;
-          aspect-ratio: 1 !important;
-        }
-        
-        .promise-cards-grid img {
-          width: 65px !important;
-          height: 65px !important;
-          margin-bottom: 16px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-        
-        .promise-cards-grid p {
-          font-size: 13px !important;
-          text-align: center !important;
-          width: 100% !important;
-        }
-      }
-      
-      /* Specific fix for 550px - 481px range - better spacing, prevent overlap */
-      @media (max-width: 550px) and (min-width: 481px) {
-        .promise-cards-container {
-          padding: 0 15px !important;
-          margin-bottom: 30px !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
-        }
-        
-        .promise-cards-grid {
-          grid-template-columns: repeat(2, 1fr) !important;
-          gap: 12px !important;
-          row-gap: 16px !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          margin: 0 auto 35px auto !important;
-          justify-content: center !important;
-          box-sizing: border-box !important;
-        }
-        
-        .promise-cards-grid > li {
-          padding: 18px 12px !important;
-          justify-content: center !important;
-          align-items: center !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          min-width: 0 !important;
-          box-sizing: border-box !important;
-          overflow: hidden !important;
-          aspect-ratio: 1 !important;
-        }
-        
-        .promise-cards-grid img {
-          width: 55px !important;
-          height: 55px !important;
-          margin-bottom: 10px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-          object-fit: contain !important;
-        }
-        
-        .promise-cards-grid p {
-          font-size: 12px !important;
-          text-align: center !important;
-          width: 100% !important;
-          line-height: 1.4 !important;
-          margin: 0 !important;
-          word-break: keep-all !important;
-        }
-        
-        /* Increase spacing between cards and text below */
-        .promise-text-content {
-          margin-top: 50px !important;
-          padding: 0 20px !important;
-        }
-        
-        .promise-text-content p {
-          font-size: 13px !important;
-          line-height: 1.7 !important;
-        }
-      }
-      
-      /* Fix for 380px-480px range to prevent card overlap */
-      @media (max-width: 480px) and (min-width: 381px) {
-        .promise-cards-container {
-          padding: 0 15px !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
-        }
-        
-        .promise-cards-grid {
-          grid-template-columns: repeat(2, 1fr) !important;
-          gap: 12px !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          margin: 0 auto !important;
-          box-sizing: border-box !important;
-        }
-        
-        .promise-cards-grid > li {
-          padding: 18px 12px !important;
-          justify-content: center !important;
-          align-items: center !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          min-width: 0 !important;
-          box-sizing: border-box !important;
-          aspect-ratio: 1 !important;
-        }
-        
-        .promise-cards-grid img {
-          width: 55px !important;
-          height: 55px !important;
-          margin-bottom: 12px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-        
-        .promise-cards-grid p {
-          font-size: 12px !important;
-          text-align: center !important;
-          width: 100% !important;
-          line-height: 1.4 !important;
-        }
-      }
-      
-      @media (max-width: 380px) {
-        .promise-cards-container {
-          padding: 0 10px !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
-        }
-        
-        .promise-cards-grid {
-          grid-template-columns: repeat(2, 1fr) !important;
-          gap: 10px !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          margin: 0 auto !important;
-          box-sizing: border-box !important;
-        }
-        
-        .promise-cards-grid > li {
-          padding: 16px 8px !important;
-          justify-content: center !important;
-          align-items: center !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          min-width: 0 !important;
-          box-sizing: border-box !important;
-          aspect-ratio: 1 !important;
-        }
-        
-        .promise-cards-grid img {
-          width: 50px !important;
-          height: 50px !important;
-          margin-bottom: 10px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-        
-        .promise-cards-grid p {
-          font-size: 11px !important;
-          text-align: center !important;
-          width: 100% !important;
-          line-height: 1.3 !important;
-        }
-      }
-      
-      /* Responsive styles for Promise Text Content */
-      @media (max-width: 1400px) {
-        .promise-text-content {
-          padding: 0 30px !important;
-          margin-top: 50px !important;
-        }
-        
-        .promise-text-content p {
-          font-size: 14px !important;
-        }
-      }
-      
-      @media (max-width: 1024px) {
-        .promise-text-content {
-          padding: 0 25px !important;
-          margin-top: 45px !important;
-        }
-        
-        .promise-text-content p {
-          font-size: 14px !important;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        .promise-text-content {
-          padding: 0 20px !important;
-          margin-top: 40px !important;
-        }
-        
-        .promise-text-content p {
-          font-size: 14px !important;
-        }
-      }
-      
-      @media (max-width: 600px) {
-        .promise-text-content {
-          padding: 0 15px !important;
-          margin-top: 35px !important;
-        }
-        
-        .promise-text-content p {
-          font-size: 13px !important;
-          line-height: 1.7 !important;
-        }
-      }
-      
-      @media (max-width: 480px) {
-        .promise-text-content {
-          padding: 0 15px !important;
-          margin-top: 30px !important;
-        }
-        
-        .promise-text-content p {
-          font-size: 13px !important;
-          line-height: 1.7 !important;
-        }
-      }
-      
-      /* Desktop styles for Vision section (1920px and above) */
-      @media (min-width: 1920px) {
-        #vision-content,
-        #vision-content-under-president {
-          max-width: 1920px !important;
-          padding: 0 120px !important;
-        }
-        
-        .vision-catchphrase {
-          font-size: 36px !important;
-          line-height: 1.4 !important;
-        }
-      }
-      
-      /* Align Card 4 text with Card 3 at 1920px */
-      @media (min-width: 1920px) {
-        /* Card 4 - ensure text alignment matches Card 3 by removing extra margin */
-        .stat-card:nth-child(4) > div > div > span[style*="font-size: 12px"] {
-          margin-top: 0 !important;
-        }
-      }
-      
-      /* Responsive styles for Vision section */
-      @media (max-width: 1919px) {
-        #vision-content,
-        #vision-content-under-president {
-          width: 100% !important;
-          max-width: 100% !important;
-          position: relative !important;
-          left: auto !important;
-          transform: none !important;
-        }
-      }
-      
-      @media (max-width: 1800px) {
-        #vision-content,
-        #vision-content-under-president {
-          padding: 0 clamp(40px, 4vw, 100px) !important;
-        }
-      }
-      
-      @media (max-width: 1400px) {
-        #vision-content,
-        #vision-content-under-president {
-          padding: 0 clamp(30px, 4vw, 80px) !important;
-          gap: clamp(30px, 3vw, 50px) !important;
-        }
-        
-        #vision-content > div:last-child p {
-          font-size: 13px !important;
-        }
-      }
-      
-      @media (max-width: 1200px) {
-        #vision-content,
-        #vision-content-under-president {
-          padding: 0 clamp(20px, 3vw, 40px) !important;
-          gap: clamp(20px, 2.5vw, 40px) !important;
-        }
-        
-        .vision-catchphrase {
-          font-size: 36px !important;
-          line-height: 1.4 !important;
-        }
-        
-        #vision-content > div:last-child p {
-          font-size: 13px !important;
-        }
-      }
-      
-      @media (max-width: 1024px) {
-        #vision-content,
-        #vision-content-under-president {
-          padding: 0 clamp(20px, 3vw, 35px) !important;
-          gap: clamp(25px, 3vw, 35px) !important;
-        }
-        
-        #vision-content > div:last-child p {
-          font-size: 13px !important;
-          margin-bottom: 18px !important;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        #vision-content,
-        #vision-content-under-president {
-          flex-direction: column !important;
-          gap: 30px !important;
-          padding: 0 20px !important;
-          align-items: center !important;
-        }
-        
-        #vision-content > div:first-child,
-        #vision-content-under-president > div:first-child {
-          flex: 0 0 100% !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          display: flex !important;
-          justify-content: center !important;
-          align-items: center !important;
-        }
-        
-        .vision-catchphrase {
-          font-size: 28px !important;
-          line-height: 1.4 !important;
-          text-align: center !important;
-          max-width: 240px !important;
-          margin: 0 auto !important;
-        }
-        
-        #vision-content > div:last-child,
-        #vision-content-under-president > div:last-child {
-          flex: 0 0 100% !important;
-          width: 100% !important;
-          max-width: 100% !important;
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: center !important;
-        }
-        
-        #vision-content > div:last-child p,
-        #vision-content-under-president > div:last-child p {
-          font-size: 13px !important;
-          text-align: center !important;
-          max-width: 100% !important;
-        }
-      }
-      
-      @media (max-width: 480px) {
-        #vision-content,
-        #vision-content-under-president {
-          padding: 0 15px !important;
-          gap: 25px !important;
-          align-items: center !important;
-        }
-        
-        #vision-content > div:first-child,
-        #vision-content-under-president > div:first-child {
-          display: flex !important;
-          justify-content: center !important;
-          align-items: center !important;
-        }
-        
-        .vision-catchphrase {
-          font-size: 24px !important;
-          line-height: 1.4 !important;
-          max-width: 220px !important;
-          text-align: center !important;
-          margin: 0 auto !important;
-        }
-        
-        #vision-content > div:last-child,
-        #vision-content-under-president > div:last-child {
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: center !important;
-        }
-        
-        #vision-content > div:last-child p,
-        #vision-content-under-president > div:last-child p {
-          font-size: 12px !important;
-          text-align: center !important;
-          max-width: 100% !important;
-        }
-      }
-      
-      /* Responsive styles for President's Message section */
-      @media (max-width: 1200px) {
-        #president-message-section > div:last-child {
-          max-width: 95% !important;
-          padding: 0 10px !important;
-        }
-        
-        #president-message-section > div:last-child > div:last-child > div {
-          text-align: left !important;
-        }
-
-        #president-message-section > div:last-child > div:last-child p {
-          text-align: left !important;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        /* Title border padding for 社長メッセージ */
-        #president-message-section .title-border {
-          padding: 0 20px !important;
-        }
-        
-        #president-message-section > div:last-child {
-          flex-direction: column !important;
-          gap: 30px !important;
-          padding: 0 20px !important;
-          align-items: center !important;
-        }
-        
-        #president-message-section > div:last-child > div:first-child {
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-        
-        #president-message-section > div:last-child > div:last-child {
-          width: 100% !important;
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: flex-start !important;
-          justify-content: flex-start !important;
-        }
-        
-        #president-message-section > div:last-child > div:last-child > div {
-          width: 100% !important;
-          text-align: left !important;
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: flex-start !important;
-        }
-
-        #president-message-section > div:last-child > div:last-child h3 {
-          font-size: 20px !important;
-        }
-
-        #president-message-section > div:last-child > div:last-child p {
-          font-size: 14px !important;
-          text-align: left !important;
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-      }
-      
-      /* Responsive styles for flow step cards */
-      @media (max-width: 768px) {
-        .flow-step-card {
-          flex-direction: column !important;
-          gap: 20px !important;
-          padding: 25px 20px !important;
-        }
-        
-        .step-number {
-          flex: 0 0 auto !important;
-          width: 100% !important;
-          padding-right: 0 !important;
-          min-height: auto !important;
-          flex-direction: row !important;
-          align-items: center !important;
-          justify-content: center !important;
-          gap: 15px !important;
-        }
-        
-        .step-number span:first-child {
-          font-size: 16px !important;
-          margin-bottom: 0 !important;
-        }
-        
-        .step-number span:last-child {
-          font-size: 50px !important;
-        }
-        
-        .step-divider {
-          display: none !important;
-        }
-        
-        .step-content {
-          width: 100% !important;
-          padding-left: 0 !important;
-        }
-        
-        .step-content h4 {
-          font-size: 16px !important;
-        }
-        
-        .step-content p {
-          font-size: 14px !important;
-        }
-      }
-      
-      /* Responsive styles for FAQ section */
-      @media (max-width: 768px) {
-        #faq-section .title-border {
-          padding: 0 20px !important;
-        }
-        
-        #faq-section > div:last-child {
-          max-width: 100% !important;
-          padding: 0 20px !important;
-        }
-        
-        .faq-item {
-          padding: 25px 0 !important;
-        }
-        
-        .faq-question {
-          flex-direction: column !important;
-          gap: 10px !important;
-          margin-bottom: 15px !important;
-        }
-        
-        .faq-question p {
-          font-size: 16px !important;
-          padding-left: 0 !important;
-        }
-        
-        .faq-answer {
-          padding-left: 0 !important;
-          flex-direction: column !important;
-          gap: 10px !important;
-        }
-        
-        .faq-answer p {
-          font-size: 14px !important;
-        }
-        
-        .faq-icon {
-          width: 36px !important;
-          height: 36px !important;
-          font-size: 16px !important;
-        }
-      }
-    </style>
 
     <!-------------------------------->
 
@@ -1933,57 +526,57 @@
             </h3>
             
             <!-- Company Profile Table -->
-            <div style="max-width: 1000px; margin: 0 auto; padding: 0 40px;">
-              <dl style="margin: 0; padding: 0;">
+            <div class="company-dl-container">
+              <dl class="company-dl">
                 <!-- Row 1: 会社名 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">会社名</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">株式会社そうごう（SOU-GOU Inc.）</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">会社名</dt>
+                  <dd class="company-dl-dd">株式会社そうごう（SOU-GOU Inc.）</dd>
               </div>
 
                 <!-- Row 2: 代表者名 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">代表者名</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">代表取締役社長 石原康行</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">代表者名</dt>
+                  <dd class="company-dl-dd">代表取締役社長 石原康行</dd>
             </div>
 
                 <!-- Row 3: 所在地本社 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">所在地本社</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">大阪府大阪市中央区南船場1-16-20ムラキビル3F</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">所在地本社</dt>
+                  <dd class="company-dl-dd">大阪府大阪市中央区南船場1-16-20ムラキビル3F</dd>
               </div>
 
                 <!-- Row 4: 設立年月日 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">設立年月日</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">1985年6月13日（創業: 1956年）</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">設立年月日</dt>
+                  <dd class="company-dl-dd">1985年6月13日（創業: 1956年）</dd>
               </div>
 
                 <!-- Row 5: 資本金 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">資本金</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">1,000万円</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">資本金</dt>
+                  <dd class="company-dl-dd">1,000万円</dd>
             </div>
 
                 <!-- Row 6: 従業員数 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">従業員数</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">62名（2024年度: 2024年11月30日現在）</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">従業員数</dt>
+                  <dd class="company-dl-dd">62名（2024年度: 2024年11月30日現在）</dd>
               </div>
 
                 <!-- Row 7: 事業内容 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">事業内容</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">事業内容</dt>
+                  <dd class="company-dl-dd">
                     電話帳企画制作出版、その他地域情報誌企画制作出版<br>
                     ホームページ企画制作、DX支援、中小企業経営サポート など
                   </dd>
             </div>
 
                 <!-- Row 8: 主な取り扱い媒体と制作実績 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">主な取り扱い媒体と制作実績<br><span style="font-size: 13px; font-weight: 400;">（2024年度実績）</span></dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">主な取り扱い媒体と制作実績<br><span style="font-size: 13px; font-weight: 400;">（2024年度実績）</span></dt>
+                  <dd class="company-dl-dd">
                     50音別電話帳『そうごうページ』：236地区　約50.5万部<br>
                     行政・地域情報誌：27地区　約20.3万部<br>
                     エンディングノート（終活ガイド）：26団体　約7万部<br>
@@ -2004,72 +597,72 @@
             </h3>
             
             <!-- Branch Offices Table -->
-            <div style="max-width: 1000px; margin: 0 auto; padding: 0 40px;">
-              <dl style="margin: 0; padding: 0;">
+            <div class="company-dl-container">
+              <dl class="company-dl">
                 <!-- Row 1: 札幌支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">札幌支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">北海道札幌市東区北9条東2丁目2-3 JPT北9条ビル2F</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">札幌支店</dt>
+                  <dd class="company-dl-dd">北海道札幌市東区北9条東2丁目2-3 JPT北9条ビル2F</dd>
               </div>
 
                 <!-- Row 2: 釧路支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">釧路支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">北海道釧路市鳥取北5丁目1番19号 千田ビル1F</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">釧路支店</dt>
+                  <dd class="company-dl-dd">北海道釧路市鳥取北5丁目1番19号 千田ビル1F</dd>
             </div>
 
                 <!-- Row 3: 秋田支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">秋田支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">秋田県秋田市旭南2丁目6-20 GNオフィスビル203</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">秋田支店</dt>
+                  <dd class="company-dl-dd">秋田県秋田市旭南2丁目6-20 GNオフィスビル203</dd>
                 </div>
 
                 <!-- Row 4: 長野支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">長野支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">長野県長野市稲葉北村東沖2726-7</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">長野支店</dt>
+                  <dd class="company-dl-dd">長野県長野市稲葉北村東沖2726-7</dd>
                   </div>
 
                 <!-- Row 5: 松本支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">松本支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">長野県塩尻市大門868-58</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">松本支店</dt>
+                  <dd class="company-dl-dd">長野県塩尻市大門868-58</dd>
                 </div>
 
                 <!-- Row 6: 山梨支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">山梨支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">山梨県北杜市須玉町若神子519-3</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">山梨支店</dt>
+                  <dd class="company-dl-dd">山梨県北杜市須玉町若神子519-3</dd>
               </div>
 
                 <!-- Row 7: 神奈川支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">神奈川支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">神奈川県平塚市豊原町7-5 TSビル2F</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">神奈川支店</dt>
+                  <dd class="company-dl-dd">神奈川県平塚市豊原町7-5 TSビル2F</dd>
                 </div>
 
                 <!-- Row 8: 静岡支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">静岡支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">静岡県田方郡函南町間宮650-10</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">静岡支店</dt>
+                  <dd class="company-dl-dd">静岡県田方郡函南町間宮650-10</dd>
                 </div>
 
                 <!-- Row 9: 京都支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">京都支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">京都府福知山市荒河声田和12-35</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">京都支店</dt>
+                  <dd class="company-dl-dd">京都府福知山市荒河声田和12-35</dd>
               </div>
 
                 <!-- Row 10: 関西支店 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">関西支店</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">大阪府大阪市中央区南船場1-16-20 ムラキビル3F</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">関西支店</dt>
+                  <dd class="company-dl-dd">大阪府大阪市中央区南船場1-16-20 ムラキビル3F</dd>
                 </div>
 
                 <!-- Row 11: 東京管理部 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">東京管理部</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">東京都中央区日本橋人形町2-14-9 三星ビル5F</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">東京管理部</dt>
+                  <dd class="company-dl-dd">東京都中央区日本橋人形町2-14-9 三星ビル5F</dd>
                   </div>
               </dl>
                 </div>
@@ -2082,33 +675,33 @@
             </h3>
             
             <!-- Company History Timeline -->
-            <div style="max-width: 1000px; margin: 0 auto; padding: 0 40px;">
-              <dl style="margin: 0; padding: 0;">
+            <div class="company-dl-container">
+              <dl class="company-dl">
                 <!-- Row 1: 1956年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1956年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1956年</dt>
+                  <dd class="company-dl-dd">
                     総合通信として創業<br>
                     秋田県、長野県(松本市)、神奈川県、大阪府に出張所を開設
                   </dd>
                 </div>
 
                 <!-- Row 2: 1966年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1966年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">北海道(札幌市)、山梨県(甲府市) に出張所を開設</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1966年</dt>
+                  <dd class="company-dl-dd">北海道(札幌市)、山梨県(甲府市) に出張所を開設</dd>
                 </div>
 
                 <!-- Row 3: 1975年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1975年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">静岡県、滋賀県に出張所を開設</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1975年</dt>
+                  <dd class="company-dl-dd">静岡県、滋賀県に出張所を開設</dd>
               </div>
 
                 <!-- Row 4: 1981年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1981年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1981年</dt>
+                  <dd class="company-dl-dd">
                     法人に改組、商号を株式会社総合出版に改称<br>
                     本社を大阪府大阪市に設置<br>
                     法人改組に伴い、出張所を支社に改称<br>
@@ -2117,81 +710,81 @@
                 </div>
 
                 <!-- Row 5: 1984年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1984年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">北見支社を閉鎖、釧路支社を開設</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1984年</dt>
+                  <dd class="company-dl-dd">北見支社を閉鎖、釧路支社を開設</dd>
                 </div>
 
                 <!-- Row 6: 1985年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1985年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">函館支社を開設</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1985年</dt>
+                  <dd class="company-dl-dd">函館支社を開設</dd>
               </div>
 
                 <!-- Row 7: 1986年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1986年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">株式会社日本通信香川を香川県高松市に設立</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1986年</dt>
+                  <dd class="company-dl-dd">株式会社日本通信香川を香川県高松市に設立</dd>
             </div>
 
                 <!-- Row 8: 1988年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1988年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">サプライ事業本部を神奈川市社内に開設</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1988年</dt>
+                  <dd class="company-dl-dd">サプライ事業本部を神奈川市社内に開設</dd>
               </div>
 
                 <!-- Row 9: 1989年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1989年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1989年</dt>
+                  <dd class="company-dl-dd">
                     札幌、旭川、釧路、函館支社を「株式会社そうごう」として分社<br>
                     株式会社そうごうを北海道札幌市に設立
                   </dd>
             </div>
 
                 <!-- Row 10: 1990年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1990年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">支社を支店に名称改称</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1990年</dt>
+                  <dd class="company-dl-dd">支社を支店に名称改称</dd>
               </div>
 
                 <!-- Row 11: 1993年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1993年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">株式会社そうごう金沢を石川県金沢市に設立</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1993年</dt>
+                  <dd class="company-dl-dd">株式会社そうごう金沢を石川県金沢市に設立</dd>
               </div>
 
                 <!-- Row 12: 1996年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">1996年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">サプライ事業本部を東京都中央区に移転</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">1996年</dt>
+                  <dd class="company-dl-dd">サプライ事業本部を東京都中央区に移転</dd>
             </div>
 
                 <!-- Row 13: 2003年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">2003年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">サプライ事業本部を東京都中央区内で移転</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">2003年</dt>
+                  <dd class="company-dl-dd">サプライ事業本部を東京都中央区内で移転</dd>
               </div>
 
                 <!-- Row 14: 2004年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">2004年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">2004年</dt>
+                  <dd class="company-dl-dd">
                     『メディカルガイド』 札幌手稲区版を発刊、全道展開を開始<br>
                     企画物出版へ参入
                   </dd>
               </div>
 
                 <!-- Row 15: 2005年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">2005年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">インターネット及びモバイル広告事業へ参入</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">2005年</dt>
+                  <dd class="company-dl-dd">インターネット及びモバイル広告事業へ参入</dd>
             </div>
 
                 <!-- Row 16: 2010年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">2010年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">2010年</dt>
+                  <dd class="company-dl-dd">
                     株式会社総合出版から秋田、長野、松本、甲府、神奈川、静岡、関西、京都、香川の9支店を株式会社そうごうに営業譲渡<br>
                     滋賀に営業所を開設<br>
                     本社を北海道札幌市から兵庫県西宮市に移転<br>
@@ -2200,21 +793,21 @@
               </div>
 
                 <!-- Row 17: 2016年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">2016年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">本社を兵庫県西宮市から大阪府大阪市に移転</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">2016年</dt>
+                  <dd class="company-dl-dd">本社を兵庫県西宮市から大阪府大阪市に移転</dd>
             </div>
 
                 <!-- Row 18: 2017年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">2017年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">東京都中央区に管理部を設置</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">2017年</dt>
+                  <dd class="company-dl-dd">東京都中央区に管理部を設置</dd>
             </div>
 
                 <!-- Row 19: 2024年 -->
-                <div style="padding: 20px 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: flex-start;">
-                  <dt style="flex: 0 0 40%; font-size: 15px; font-weight: 600; color: #333; margin: 0; padding-right: 20px; box-sizing: border-box; text-align: center;">2024年</dt>
-                  <dd style="flex: 0 0 60%; font-size: 15px; color: #333; margin: 0; line-height: 1.8;">一般社団法人 日本未来企業研究所「<a href="https://jfr.or.jp/" target="_blank" rel="noopener noreferrer" style="color: #003E8F; text-decoration: underline;">未来創造企業<i class="fa-solid fa-up-right-from-square" style="margin-left: 4px; font-size: 0.85em;"></i></a>」の第9期に認定</dd>
+                <div class="company-dl-row">
+                  <dt class="company-dl-dt">2024年</dt>
+                  <dd class="company-dl-dd">一般社団法人 日本未来企業研究所「<a href="https://jfr.or.jp/" target="_blank" rel="noopener noreferrer" style="color: #003E8F; text-decoration: underline;">未来創造企業<i class="fa-solid fa-up-right-from-square" style="margin-left: 4px; font-size: 0.85em;"></i></a>」の第9期に認定</dd>
               </div>
               </dl>
               </div>
@@ -2364,401 +957,8 @@
   <script src="js/fade_in.js"></script>
   <script src="js/scroll_bar.js"></script>
   <script src="js/header.js"></script>
+  <script src="js/pages/company.js"></script>
 
-  <style>
-    /* Responsive menu font size for desktop - match other pages */
-    /* Ensure wrap.under doesn't add extra padding */
-    /* 見出しのスタイル - base styles moved to common.css */
-    /* Page-specific: width and white-space overrides */
-    .title-border .title {
-      width: auto;
-      min-width: 300px;
-      white-space: nowrap;
-    }
-    
-    /* Fix 企業概要 title centering at small screens */
-    @media (max-width: 450px) {
-      #company-profile-section .title-border .title {
-        min-width: auto !important;
-        width: fit-content !important;
-        max-width: 100% !important;
-        white-space: normal !important;
-      }
-    }
-    
-    /* 1920pxのレイアウト・サイズを750pxまで維持 - tablet.cssの影響を完全にオーバーライド */
-    /* Shrink text for third button on very small screens (420px and below) */
-    /* Keep icon and arrow sizes at original size - only shrink text */
-    @media (max-width: 768px) {
-      /* 働く環境 section - Reduce padding and remove extra spacing at 768px */
-      /* Target the inner container div with padding: 0 40px (line 2309) */
-      div[style*="padding: 0 40px"][style*="box-sizing: border-box"] {
-        padding: 0 10px !important;
-      }
-      
-      /* Reduce card internal padding on mobile - Yellow cards */
-      div[style*="background: #FFF0B0"][style*="padding: 50px 60px"] {
-        padding: 30px 20px !important;
-      }
-      
-      /* Reduce container top margin on mobile - Yellow Cards Container */
-      div[style*="max-width: 1200px"][style*="margin: 50px auto 0 auto"][style*="position: relative"] {
-        margin-top: 30px !important;
-      }
-      
-      /* Reduce section margin-top - 働く環境 section wrapper */
-      div[style*="margin-top: 50px"] {
-        margin-top: 30px !important;
-      }
-      
-      /* Reduce h3 margin-bottom in 働く環境 section */
-      h3[style*="margin-bottom: 40px"][style*="text-align: center"] {
-        margin-bottom: 30px !important;
-      }
-      
-      /* Internal Links CTA Block - Responsive (under 働く環境) */
-      div[style*="max-width: 700px"][style*="margin: 60px auto"] {
-        padding: 0 20px !important;
-        margin-top: 40px !important;
-      }
-      
-      div[style*="border-top: 2px solid #e0e0e0"] {
-        padding-top: 30px !important;
-      }
-      
-      div[style*="display: flex"][style*="justify-content: center"][style*="gap: 30px"] {
-        flex-direction: column !important;
-        gap: 20px !important;
-        align-items: center !important;
-      }
-      
-      div[style*="display: flex"][style*="justify-content: center"] span[style*="color: #e0e0e0"] {
-        display: none !important;
-      }
-      
-      div[style*="display: flex"][style*="justify-content: center"] a {
-        font-size: 15px !important;
-      }
-    }
-
-  /* Center carousel */
-  .center-carousel-section {
-    position: relative;
-    margin: -120px 0 0 0 !important;
-    padding: 80px 0 !important;
-    overflow: hidden;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
-  }
-  .center-carousel-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('img/interview/interview-main-image.png');
-    background-size: cover;
-    background-position: center;
-    filter: blur(2px);
-    transform: scale(1.05);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  .center-carousel-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 1400px !important;
-    margin: 0 auto;
-    padding: 0 60px !important;
-    width: 100% !important;
-  }
-  .center-carousel-head {
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-  }
-  .center-carousel-title-bg {
-    font-size: 150px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    margin: 0;
-    color: rgba(100, 100, 100, 0.3);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    z-index: 1;
-  }
-  .center-carousel-title-text {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    color: #333;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 20px 0;
-  }
-  .center-carousel-frame {
-    position: relative;
-    height: 420px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .center-carousel-track {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .center-carousel-item {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    width: 340px;
-    transform-origin: center center;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, z-index 0s;
-    opacity: 0;
-  }
-  .center-card {
-    background: #fff;
-    border-radius: 0;
-    overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-  }
-  .center-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .center-carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 56px;
-    height: 56px;
-    border: none;
-    border-radius: 50%;
-    background: #333;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 5;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  }
-  .center-carousel-btn.prev {
-    left: 10px;
-  }
-  .center-carousel-btn.next {
-    right: 10px;
-  }
-
-  @media (max-width: 1024px) {
-    .center-carousel-section {
-      padding: 80px 0 0 0;
-    }
-    .center-carousel-inner {
-      padding: 0 30px;
-    }
-    .center-carousel-item {
-      width: 280px;
-    }
-    .center-carousel-frame {
-      height: 460px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .center-carousel-section {
-      padding: 40px 0 !important;
-      margin-top: -60px !important;
-    }
-    
-    /* Hide carousel background image on mobile */
-    .center-carousel-bg {
-      display: none !important;
-    }
-    
-    /* Make MESSAGE text larger on mobile */
-    .center-carousel-head .center-carousel-title-bg,
-    .center-carousel-title-bg {
-      font-size: 70px !important;
-      padding-top: 15px !important;
-      padding-bottom: 20px !important;
-      margin-top: -20px !important;
-      margin-bottom: 0 !important;
-    }
-    
-    .center-carousel-title-text {
-      margin-top: 20px !important;
-      margin-bottom: 10px !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      position: relative !important;
-    }
-    
-    .center-carousel-head {
-      margin-bottom: 20px !important;
-    }
-    
-    .center-carousel-head h2 {
-      font-size: 28px !important;
-    }
-    
-    .center-carousel-head p {
-      font-size: 16px !important;
-    }
-    
-    .center-carousel-item {
-      width: 85vw !important;
-      max-width: 350px !important;
-    }
-    
-    .center-carousel-frame {
-      height: 500px !important;
-    }
-    
-    .center-carousel-btn {
-      width: 48px;
-      height: 48px;
-      top: 30% !important;
-    }
-    
-    .center-carousel-inner {
-      padding: 0 5px !important;
-    }
-  }
-  
-  /* Stats Grid - Semantic HTML Support */
-  .stats-grid {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .stats-grid li {
-    list-style: none;
-    margin: 0;
-  }
-  
-  /* Full width JOIN US banner */
-  .contact-wrap {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    position: relative !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
-    box-sizing: border-box !important;
-  }
-  
-  
-  </style>
-
-  <script>
-    // Center carousel functionality
-    var centerCarouselIndex = 0;
-    var centerCarouselItems = [];
-
-    function initCenterCarousel() {
-      centerCarouselItems = Array.from(document.querySelectorAll('.center-carousel-item'));
-      updateCenterCarousel();
-    }
-
-    function moveCenterCarousel(direction) {
-      if (!centerCarouselItems.length) return;
-      var total = centerCarouselItems.length;
-      centerCarouselIndex = (centerCarouselIndex + direction + total) % total;
-      updateCenterCarousel();
-    }
-
-    function updateCenterCarousel() {
-      var total = centerCarouselItems.length;
-      var baseOffset = 380; // horizontal spacing between cards
-
-      centerCarouselItems.forEach(function(item, index) {
-        var pos = index - centerCarouselIndex;
-        if (pos > total / 2) pos -= total;
-        if (pos < -total / 2) pos += total;
-
-        var translateX = pos * baseOffset;
-        var scale = pos === 0 ? 1 : 0.82;
-        var opacity = pos === 0 ? 1 : (Math.abs(pos) === 1 ? 0.7 : 0);
-        var z = pos === 0 ? 3 : (Math.abs(pos) === 1 ? 2 : 1);
-
-        item.style.transform = 'translate(-50%, 0) translateX(' + translateX + 'px) scale(' + scale + ')';
-        item.style.opacity = opacity;
-        item.style.zIndex = z;
-        item.style.pointerEvents = pos === 0 ? 'auto' : 'none';
-        
-        // Add click handler for center card
-        if (pos === 0) {
-          item.style.cursor = 'pointer';
-          item.onclick = function(e) {
-            // Only navigate if clicking on the card itself, not on buttons
-            if (e.target.closest('.center-carousel-btn')) {
-              return;
-            }
-            // Determine which card is centered and link accordingly
-            var img = item.querySelector('img');
-            if (img) {
-              var imgSrc = img.getAttribute('src');
-              if (imgSrc && imgSrc.includes('card-1.png')) {
-                window.location.href = 'interviewNK.html';
-              } else if (imgSrc && imgSrc.includes('card-2.png')) {
-                window.location.href = 'interviewRY.html';
-              } else if (imgSrc && imgSrc.includes('card-3.png')) {
-                window.location.href = 'interviewYO.html';
-              } else if (imgSrc && imgSrc.includes('card-4.png')) {
-                window.location.href = 'interviewHS.html';
-              }
-            }
-          };
-        } else {
-          item.style.cursor = 'default';
-          item.onclick = null;
-        }
-      });
-      
-      updateCenterDots();
-    }
-
-    function goToCenterCarousel(index) {
-      centerCarouselIndex = index;
-      updateCenterCarousel();
-    }
-
-    function updateCenterDots() {
-      var dots = document.querySelectorAll('.center-dot');
-      dots.forEach(function(dot, index) {
-        if (index === centerCarouselIndex) {
-          dot.classList.add('active');
-          dot.style.background = '#333';
-        } else {
-          dot.classList.remove('active');
-          dot.style.background = '#ddd';
-        }
-      });
-    }
-
-    // Initialize carousel when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initCenterCarousel);
-    } else {
-      initCenterCarousel();
-    }
-  </script>
-  
 </body>
 
 </html>
-
-
-
-
