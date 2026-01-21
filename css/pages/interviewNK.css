@@ -871,6 +871,7 @@ header {
     line-height: 1.6 !important;
     word-break: break-all !important;
     overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
   }
   
   .pankuzu span {
@@ -1851,5 +1852,6 @@ body.breadcrumb-legacy .pankuzu {
   body.breadcrumb-legacy .pankuzu {
     padding-top: 20px !important;
     padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }
