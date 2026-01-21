@@ -1200,10 +1200,17 @@ header {
     transform: translateX(-50%) !important;
   }
   
-  /* Sections 4 and 5 - reduce spacing (bar too far) */
+  /* Sections 4 and 5 - reduce spacing (bar too far) - override inline !important */
   #interview-section-4 .title-border span,
-  #interview-section-5 .title-border span {
+  #interview-section-5 .title-border span,
+  #interview-section-4 .title-border span[style*="margin: 20px"],
+  #interview-section-5 .title-border span[style*="margin: 20px"],
+  #interview-section-4 .title-border span[style*="margin: 20px 0 0 0 !important"],
+  #interview-section-5 .title-border span[style*="margin: 20px 0 0 0 !important"] {
     margin-top: 8px !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
   }
 
   /* Center leader section title text */
@@ -1569,18 +1576,23 @@ header {
     z-index: 10 !important;
   }
   
-  /* Move only leader-mobile-title h2 text 40px up */
+  /* Move only leader-mobile-title h2 text 40px up - override inline margin: 0 */
   .mobile-title-bar.leader-mobile-title h2,
   .mobile-title-bar.leader-mobile-title h2[style*="font-size: 22px"],
-  .mobile-title-bar.leader-mobile-title h2[style*="font-size:22px"] {
+  .mobile-title-bar.leader-mobile-title h2[style*="font-size:22px"],
+  .mobile-title-bar.leader-mobile-title h2.section-3-mobile-title,
+  .mobile-title-bar.leader-mobile-title h2[style*="margin: 0"],
+  #interview-section-3 .mobile-title-bar.leader-mobile-title h2 {
     transform: translateY(-40px) !important;
-    margin-bottom: 16px !important;
+    margin: 0 0 16px 0 !important;
   }
   
-  /* Consistent spacing for all mobile title bar yellow bars */
+  /* Consistent spacing for all mobile title bar yellow bars - override inline margin */
   .mobile-title-bar span,
   .mobile-title-bar.interview-mobile-title span,
-  .mobile-title-bar.leader-mobile-title span {
+  .mobile-title-bar.leader-mobile-title span,
+  .mobile-title-bar.leader-mobile-title span[style*="margin: 10px"],
+  #interview-section-3 .mobile-title-bar.leader-mobile-title span {
     display: block !important;
     width: 100px !important;
     height: 6px !important;
