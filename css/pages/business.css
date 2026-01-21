@@ -1,0 +1,527 @@
+/* ============================================
+   Business Page Styles - Extracted from business.html
+   ============================================ */
+
+/* Vision intro sections - remove left padding on mobile */
+.vision-intro > div {
+  padding: 0 15px !important;
+}
+
+.vision-title {
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+}
+
+.vision-description {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+/* Achievement card - better mobile layout */
+.achievement-card {
+  padding: 20px 15px !important;
+}
+
+.achievement-card .service-title {
+  font-size: 18px !important;
+}
+
+.achievement-card .achievement-row span {
+  font-size: 13px !important;
+}
+
+/* Strategy cards */
+.strategy-card {
+  padding: 20px 15px !important;
+}
+
+.strategy-card-title {
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+}
+
+.strategy-intro,
+.strategy-list li {
+  font-size: 13px !important;
+}
+
+/* Responsive menu font size adjustments - match other pages */
+@media (max-width: 768px) {
+  /* 事業全体の概要 cards - center icon, title, and text container (with left-aligned text) */
+  .service-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .service-card .service-icon {
+    margin: 0 auto 20px auto !important;
+  }
+  
+  .service-card .service-content {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  .service-card .service-title {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .service-card .service-description {
+    text-align: left !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* Achievement card responsive styles */
+  .achievement-card {
+    padding: 30px 20px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  .achievement-card .service-icon {
+    margin-bottom: 20px !important;
+  }
+  
+  .achievement-card .service-content {
+    width: 100% !important;
+  }
+  
+  .achievement-card .service-title,
+  .achievement-card .service-subtitle {
+    text-align: left !important;
+  }
+  
+  .achievement-card .achievement-list {
+    padding-left: 0 !important;
+  }
+  
+  .achievement-card .achievement-row {
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 15px 0 !important;
+  }
+  
+  .achievement-card .achievement-divider {
+    background: linear-gradient(to right, #002f6b 0%, #002f6b 100%, #e0e0e0 100%, #e0e0e0 100%) !important;
+  }
+  
+  .achievement-card .achievement-row span:first-child {
+    margin-bottom: 5px;
+    min-width: 100% !important;
+  }
+  
+  .achievement-card .achievement-row span:last-child {
+    text-align: left !important;
+    white-space: normal !important;
+    margin-top: 0 !important;
+    min-width: 100% !important;
+  }
+  
+  /* Service cards responsive styles (exclude achievement-card) */
+  .service-card:not(.achievement-card) {
+    padding: 25px 20px !important;
+  }
+  
+  .services-container {
+    padding: 0 15px !important;
+  }
+  
+  /* Strategy cards responsive */
+  .vision-intro {
+    padding: 0 15px !important;
+    margin: 30px auto 40px auto !important;
+  }
+  
+  .strategy-cards-container {
+    padding: 0 15px !important;
+  }
+  
+  .strategy-card {
+    padding: 25px 20px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* Center carousel */
+.center-carousel-section {
+  position: relative;
+  margin: -120px 0 0 0 !important;
+  padding: 80px 0 !important;
+  overflow: hidden;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+}
+
+.center-carousel-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../img/interview/interview-main-image.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  transform: scale(1.05);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.center-carousel-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px !important;
+  margin: 0 auto;
+  padding: 0 60px !important;
+  width: 100% !important;
+}
+
+.center-carousel-head {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.center-carousel-title-bg {
+  font-size: 150px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin: 0;
+  color: rgba(100, 100, 100, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.center-carousel-title-text {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #333;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 0;
+}
+
+.center-carousel-frame {
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.center-carousel-item {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 340px;
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, z-index 0s;
+  opacity: 0;
+}
+
+.center-card {
+  background: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.center-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.center-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.center-carousel-btn.prev {
+  left: 10px;
+}
+
+.center-carousel-btn.next {
+  right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .center-carousel-section {
+    padding: 80px 0 0 0;
+  }
+  .center-carousel-inner {
+    padding: 0 30px;
+  }
+  .center-carousel-item {
+    width: 280px;
+  }
+  .center-carousel-frame {
+    height: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  .center-carousel-section {
+    padding: 40px 0 !important;
+    margin-top: -60px !important;
+  }
+  
+  /* Hide carousel background image on mobile */
+  .center-carousel-bg {
+    display: none !important;
+  }
+  
+  /* Make MESSAGE text larger on mobile */
+  .center-carousel-head .center-carousel-title-bg,
+  .center-carousel-title-bg {
+    font-size: 70px !important;
+    padding-top: 15px !important;
+    padding-bottom: 20px !important;
+    margin-top: -20px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .center-carousel-title-text {
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    position: relative !important;
+  }
+  
+  .center-carousel-head {
+    margin-bottom: 20px !important;
+  }
+  
+  .center-carousel-head h2 {
+    font-size: 28px !important;
+  }
+  
+  .center-carousel-head p {
+    font-size: 16px !important;
+  }
+  
+  .center-carousel-item {
+    width: 85vw !important;
+    max-width: 350px !important;
+  }
+  
+  .center-carousel-frame {
+    height: 500px !important;
+  }
+  
+  .center-carousel-btn {
+    width: 48px;
+    height: 48px;
+    top: 30% !important;
+  }
+  
+  .center-carousel-inner {
+    padding: 0 5px !important;
+  }
+}
+
+/* ============================================
+   Repeated Inline Style Patterns - Extracted to Classes
+   ============================================ */
+
+/* Container patterns */
+.business-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.business-container-padded {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.business-vision-intro {
+  max-width: 700px;
+  margin: 40px auto 50px auto;
+  padding: 0;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.business-vision-intro-spacing {
+  max-width: 700px;
+  margin: 60px auto 50px auto;
+  padding: 0;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Section margin patterns */
+.business-section-standard {
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.business-section-top-only {
+  margin-bottom: 0;
+  margin-top: 80px;
+}
+
+.business-section-bottom-only {
+  margin-bottom: 80px;
+  margin-top: 0;
+}
+
+/* Service card patterns */
+.business-service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.business-service-card-large {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.business-service-card-achievement {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 25px;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Service icon pattern */
+.business-service-icon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  background: #FFCE02;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Service content pattern */
+.business-service-content {
+  flex: 1;
+  padding: 0;
+}
+
+.business-service-content-min-width {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Achievement row pattern */
+.business-achievement-row {
+  padding: 15px 0;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.business-achievement-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.business-achievement-list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Strategy card pattern */
+.business-strategy-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 25px;
+}
+
+/* Table of contents pattern */
+.business-toc-grid {
+  width: 700px;
+  max-width: 100%;
+  margin: 30px auto;
+  padding: 20px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+.business-toc-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 0.1em;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.business-toc-link {
+  color: #003E8F;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
